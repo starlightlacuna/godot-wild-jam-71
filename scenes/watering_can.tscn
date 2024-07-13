@@ -1,0 +1,124 @@
+[gd_scene load_steps=16 format=3 uid="uid://bc85tc1241p10"]
+
+[ext_resource type="Script" path="res://scripts/watering_can.gd" id="1_dflf2"]
+[ext_resource type="Texture2D" uid="uid://b7vx0c7b80lw4" path="res://assets/Watering Can.png" id="2_cfmov"]
+[ext_resource type="Texture2D" uid="uid://c87xac60fk24w" path="res://assets/Water Drop.png" id="3_dragd"]
+
+[sub_resource type="Curve" id="Curve_qkbey"]
+_data = [Vector2(0, 1), 0.0, -1.52875, 0, 0, Vector2(1, 0), -0.385149, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l30yj"]
+curve = SubResource("Curve_qkbey")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mhimk"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 10.0
+angle_min = 60.0
+angle_max = 90.0
+angle_curve = SubResource("CurveTexture_l30yj")
+initial_velocity_min = 50.0
+initial_velocity_max = 70.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.2
+scale_max = 0.4
+
+[sub_resource type="Animation" id="Animation_5fknd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.523599]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u5klu"]
+_data = {
+"RESET": SubResource("Animation_5fknd")
+}
+
+[sub_resource type="Animation" id="Animation_0fce7"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_h5sjd"]
+resource_name = "WateringCan_water"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.523599]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4udy2"]
+_data = {
+"Idle": SubResource("Animation_0fce7"),
+"Water": SubResource("Animation_h5sjd")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hwnch"]
+animation = &"Watering Can/Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ce2r0"]
+animation = &"Watering Can/Water"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_10880"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_50pp1"]
+graph_offset = Vector2(-61.2728, -3.45455)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_hwnch")
+nodes/Idle/position = Vector2(560, 60)
+nodes/Water/node = SubResource("AnimationNodeAnimation_ce2r0")
+nodes/Water/position = Vector2(560, 220)
+nodes/Watering/node = SubResource("AnimationNodeBlend2_10880")
+nodes/Watering/position = Vector2(860, 100)
+nodes/output/position = Vector2(1220, 120)
+node_connections = [&"Watering", 0, &"Idle", &"Watering", 1, &"Water", &"output", 0, &"Watering"]
+
+[node name="WateringCan" type="Node2D"]
+rotation = 0.523599
+script = ExtResource("1_dflf2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cfmov")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(88, -18)
+process_material = SubResource("ParticleProcessMaterial_mhimk")
+texture = ExtResource("3_dragd")
+speed_scale = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u5klu"),
+"Watering Can": SubResource("AnimationLibrary_4udy2")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_50pp1")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Watering/blend_amount = 0.0
