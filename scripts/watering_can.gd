@@ -34,10 +34,9 @@ func stop_watering():
 	
 func start_particles():
 	particles.set_emitting(true)
-	
+
 func stop_particles():
 	particles.set_emitting(false)
-
 
 func _on_start_watering_button_pressed():
 	start_watering()

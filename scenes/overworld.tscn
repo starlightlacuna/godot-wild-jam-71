@@ -1,0 +1,263 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3uanji8fpvfa"]
+
+[ext_resource type="PackedScene" uid="uid://bj4lyjvqat0g1" path="res://scenes/laika.tscn" id="1_4xd42"]
+[ext_resource type="Script" path="res://scripts/overworld.gd" id="1_k7e5g"]
+[ext_resource type="Script" path="res://scripts/inventory_bar.gd" id="2_ws02y"]
+[ext_resource type="PackedScene" uid="uid://dlq5s3lqa238y" path="res://scenes/tree.tscn" id="3_ua6d7"]
+[ext_resource type="PackedScene" uid="uid://da1h2gwu1yrna" path="res://scenes/crate.tscn" id="4_rftad"]
+[ext_resource type="Texture2D" uid="uid://73oxfsd7akvl" path="res://assets/Inventory Slot.png" id="5_wbu12"]
+[ext_resource type="PackedScene" uid="uid://dqx0xdl86u1s5" path="res://scenes/lever.tscn" id="6_rham3"]
+
+[node name="Overworld" type="Node"]
+script = ExtResource("1_k7e5g")
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="UILayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -518.0
+offset_top = -100.0
+offset_right = 518.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="InventoryBar" type="HBoxContainer" parent="UILayer/UI/MarginContainer"]
+layout_mode = 2
+script = ExtResource("2_ws02y")
+
+[node name="InventorySlot0" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+layout_mode = 2
+texture = ExtResource("5_wbu12")
+
+[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="InventorySlot1" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+layout_mode = 2
+texture = ExtResource("5_wbu12")
+
+[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="InventorySlot2" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+layout_mode = 2
+texture = ExtResource("5_wbu12")
+
+[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="InventorySlot3" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+layout_mode = 2
+texture = ExtResource("5_wbu12")
+
+[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="InventorySlot4" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+layout_mode = 2
+texture = ExtResource("5_wbu12")
+
+[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="InventorySlot5" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+layout_mode = 2
+texture = ExtResource("5_wbu12")
+
+[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="InventorySlot6" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+layout_mode = 2
+texture = ExtResource("5_wbu12")
+
+[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="InventorySlot7" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+layout_mode = 2
+texture = ExtResource("5_wbu12")
+
+[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="InventorySlot8" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+layout_mode = 2
+texture = ExtResource("5_wbu12")
+
+[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot8"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="InventorySlot9" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+layout_mode = 2
+texture = ExtResource("5_wbu12")
+
+[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot9"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Laika" parent="." instance=ExtResource("1_4xd42")]
+position = Vector2(416, 311)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Tree" parent="." instance=ExtResource("3_ua6d7")]
+
+[node name="Tree2" parent="." instance=ExtResource("3_ua6d7")]
+position = Vector2(344, 107)
+
+[node name="Tree3" parent="." instance=ExtResource("3_ua6d7")]
+position = Vector2(117, 206)
+
+[node name="Crate" parent="." instance=ExtResource("4_rftad")]
+position = Vector2(532, 126)
+
+[node name="Lever" parent="." instance=ExtResource("6_rham3")]
+position = Vector2(193, 48)
+
+[connection signal="state_changed" from="Lever" to="." method="_on_lever_state_changed"]

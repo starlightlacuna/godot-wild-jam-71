@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj4lyjvqat0g1"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_6uwon"]
+[ext_resource type="Texture2D" uid="uid://6d3nfm4g6jfs" path="res://assets/Laika.png" id="1_u54sc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sp5s1"]
+radius = 29.0
+height = 118.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vkves"]
+radius = 60.0
+
+[node name="Laika" type="CharacterBody2D"]
+script = ExtResource("1_6uwon")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_u54sc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_sp5s1")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(30, 0)
+shape = SubResource("CircleShape2D_vkves")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="InteractionArea"]
+offset_left = -29.0
+offset_top = -59.0
+offset_right = 90.0
+offset_bottom = 60.0
+color = Color(0.513726, 0.529412, 1, 0.247059)
