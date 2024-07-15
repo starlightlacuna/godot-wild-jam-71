@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3uanji8fpvfa"]
+[gd_scene load_steps=11 format=3 uid="uid://d3uanji8fpvfa"]
 
 [ext_resource type="PackedScene" uid="uid://bj4lyjvqat0g1" path="res://scenes/laika.tscn" id="1_4xd42"]
 [ext_resource type="Script" path="res://scripts/overworld.gd" id="1_k7e5g"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dqx0xdl86u1s5" path="res://scenes/lever.tscn" id="6_rham3"]
 [ext_resource type="Script" path="res://scripts/item_pickups.gd" id="8_7xjmu"]
 [ext_resource type="PackedScene" uid="uid://cipef8bbjvqce" path="res://scenes/item_location.tscn" id="8_ydxqx"]
+[ext_resource type="PackedScene" uid="uid://tmae7k5ts7y1" path="res://scenes/seashell.tscn" id="10_vw5lo"]
 
 [node name="Overworld" type="Node"]
 script = ExtResource("1_k7e5g")
@@ -99,5 +100,20 @@ position = Vector2(532, 126)
 
 [node name="Crate2" parent="ItemPickups" instance=ExtResource("4_rftad")]
 position = Vector2(636, 254)
+
+[node name="Seashell" parent="ItemPickups" instance=ExtResource("10_vw5lo")]
+position = Vector2(254, 417)
+
+[node name="Seashell2" parent="ItemPickups" instance=ExtResource("10_vw5lo")]
+position = Vector2(473, 473)
+
+[node name="Seashell3" parent="ItemPickups" instance=ExtResource("10_vw5lo")]
+position = Vector2(732, 415)
+
+[node name="Seashell4" parent="ItemPickups" instance=ExtResource("10_vw5lo")]
+position = Vector2(628, 529)
+
+[node name="Seashell5" parent="ItemPickups" instance=ExtResource("10_vw5lo")]
+position = Vector2(889, 350)
 
 [connection signal="state_changed" from="Lever" to="." method="_on_lever_state_changed"]
