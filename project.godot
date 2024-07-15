@@ -14,6 +14,11 @@ config/name="Godot Wild Jam 71"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ItemDatabase="*res://scripts/item_database.gd"
+PlayerInventory="*res://scripts/player_inventory.gd"
+
 [display]
 
 window/size/viewport_width=1280

@@ -1,5 +1,4 @@
-# Crate
 extends InteractableComponent
 
 func interact():
-	print("Interacted with a crate!")
+	print("Interacted with an ItemLocation!")

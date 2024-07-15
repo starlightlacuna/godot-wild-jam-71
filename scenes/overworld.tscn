@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3uanji8fpvfa"]
+[gd_scene load_steps=10 format=3 uid="uid://d3uanji8fpvfa"]
 
 [ext_resource type="PackedScene" uid="uid://bj4lyjvqat0g1" path="res://scenes/laika.tscn" id="1_4xd42"]
 [ext_resource type="Script" path="res://scripts/overworld.gd" id="1_k7e5g"]
 [ext_resource type="Script" path="res://scripts/inventory_bar.gd" id="2_ws02y"]
+[ext_resource type="PackedScene" uid="uid://q7uo116g1vmy" path="res://scenes/inventory_slot.tscn" id="3_fot4b"]
 [ext_resource type="PackedScene" uid="uid://dlq5s3lqa238y" path="res://scenes/tree.tscn" id="3_ua6d7"]
 [ext_resource type="PackedScene" uid="uid://da1h2gwu1yrna" path="res://scenes/crate.tscn" id="4_rftad"]
-[ext_resource type="Texture2D" uid="uid://73oxfsd7akvl" path="res://assets/Inventory Slot.png" id="5_wbu12"]
 [ext_resource type="PackedScene" uid="uid://dqx0xdl86u1s5" path="res://scenes/lever.tscn" id="6_rham3"]
+[ext_resource type="Script" path="res://scripts/item_pickups.gd" id="8_7xjmu"]
+[ext_resource type="PackedScene" uid="uid://cipef8bbjvqce" path="res://scenes/item_location.tscn" id="8_ydxqx"]
 
 [node name="Overworld" type="Node"]
 script = ExtResource("1_k7e5g")
@@ -41,205 +43,35 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 script = ExtResource("2_ws02y")
 
-[node name="InventorySlot0" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+[node name="InventorySlot0" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
 layout_mode = 2
-texture = ExtResource("5_wbu12")
 
-[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot0"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 4
-
-[node name="InventorySlot1" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+[node name="InventorySlot1" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
 layout_mode = 2
-texture = ExtResource("5_wbu12")
 
-[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot1"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 4
-
-[node name="InventorySlot2" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+[node name="InventorySlot2" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
 layout_mode = 2
-texture = ExtResource("5_wbu12")
 
-[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 4
-
-[node name="InventorySlot3" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+[node name="InventorySlot3" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
 layout_mode = 2
-texture = ExtResource("5_wbu12")
 
-[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot3"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 4
-
-[node name="InventorySlot4" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+[node name="InventorySlot4" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
 layout_mode = 2
-texture = ExtResource("5_wbu12")
 
-[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot4"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 4
-
-[node name="InventorySlot5" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+[node name="InventorySlot5" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
 layout_mode = 2
-texture = ExtResource("5_wbu12")
 
-[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot5"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 4
-
-[node name="InventorySlot6" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+[node name="InventorySlot6" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
 layout_mode = 2
-texture = ExtResource("5_wbu12")
 
-[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot6"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 4
-
-[node name="InventorySlot7" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+[node name="InventorySlot7" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
 layout_mode = 2
-texture = ExtResource("5_wbu12")
 
-[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot7"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 4
-
-[node name="InventorySlot8" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+[node name="InventorySlot8" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
 layout_mode = 2
-texture = ExtResource("5_wbu12")
 
-[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot8"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 4
-
-[node name="InventorySlot9" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar"]
+[node name="InventorySlot9" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
 layout_mode = 2
-texture = ExtResource("5_wbu12")
-
-[node name="ItemIcon" type="TextureRect" parent="UILayer/UI/MarginContainer/InventoryBar/InventorySlot9"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 4
 
 [node name="Laika" parent="." instance=ExtResource("1_4xd42")]
 position = Vector2(416, 311)
@@ -254,10 +86,18 @@ position = Vector2(344, 107)
 [node name="Tree3" parent="." instance=ExtResource("3_ua6d7")]
 position = Vector2(117, 206)
 
-[node name="Crate" parent="." instance=ExtResource("4_rftad")]
-position = Vector2(532, 126)
-
 [node name="Lever" parent="." instance=ExtResource("6_rham3")]
 position = Vector2(193, 48)
+
+[node name="ItemLocation" parent="." instance=ExtResource("8_ydxqx")]
+
+[node name="ItemPickups" type="Node" parent="."]
+script = ExtResource("8_7xjmu")
+
+[node name="Crate" parent="ItemPickups" instance=ExtResource("4_rftad")]
+position = Vector2(532, 126)
+
+[node name="Crate2" parent="ItemPickups" instance=ExtResource("4_rftad")]
+position = Vector2(636, 254)
 
 [connection signal="state_changed" from="Lever" to="." method="_on_lever_state_changed"]

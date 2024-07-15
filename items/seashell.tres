@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://c8mdjiy8c3e3a"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_7k5sv"]
+
+[resource]
+script = ExtResource("1_7k5sv")
+item_id = 1
+item_name = "Seashell"
+texture_path = "res://assets/Seashell.png"

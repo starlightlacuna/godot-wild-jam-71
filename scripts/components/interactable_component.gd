@@ -1,5 +1,5 @@
 class_name InteractableComponent
-extends Node
+extends Area2D
 
 func interact():
-	pass
+	print("Hello world I guess")

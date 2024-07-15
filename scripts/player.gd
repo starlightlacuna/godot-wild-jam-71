@@ -11,9 +11,9 @@ func _unhandled_input(event: InputEvent):
 	if !event.is_action_pressed("action"):
 		return
 	
-	var bodies = interaction_area.get_overlapping_bodies()
+	var bodies = interaction_area.get_overlapping_areas()
 	for node in bodies:
-		var interactable_component = node.get_node_or_null("InteractableComponent")
+		var interactable_component = node.get_owner().get_node_or_null("InteractableComponent")
 		if interactable_component == null:
 			continue
 		(interactable_component as InteractableComponent).interact()
@@ -27,7 +27,7 @@ func _physics_process(delta):
 	var next_position: Vector2 = direction * speed * delta
 	set_global_position(get_global_position() + next_position)
 	
-	var rotation = Vector2.RIGHT.angle_to(last_direction)
-	interaction_area.set_rotation(rotation)
+	var interaction_rotation = Vector2.RIGHT.angle_to(last_direction)
+	interaction_area.set_rotation(interaction_rotation)
 	
 	move_and_slide()

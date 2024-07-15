@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://da1h2gwu1yrna"]
+[gd_scene load_steps=5 format=3 uid="uid://da1h2gwu1yrna"]
 
 [ext_resource type="Texture2D" uid="uid://c5g4vwbq3183s" path="res://assets/Crate.png" id="1_5pemn"]
-[ext_resource type="Script" path="res://scripts/crate_interactable_component.gd" id="2_wmn83"]
+[ext_resource type="Script" path="res://scripts/interactables/crate.gd" id="1_aeqxm"]
+[ext_resource type="Script" path="res://scripts/interactables/crate_interactable_component.gd" id="3_q07s8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hp1v"]
 size = Vector2(80, 70)
 
 [node name="Crate" type="StaticBody2D"]
+script = ExtResource("1_aeqxm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -15,5 +17,8 @@ texture = ExtResource("1_5pemn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3hp1v")
 
-[node name="InteractableComponent" type="Node" parent="."]
-script = ExtResource("2_wmn83")
+[node name="InteractableComponent" type="Area2D" parent="."]
+script = ExtResource("3_q07s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("RectangleShape2D_3hp1v")

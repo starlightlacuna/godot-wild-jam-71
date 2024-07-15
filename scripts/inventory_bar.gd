@@ -1,11 +1,26 @@
+# class_name InventoryBar
 extends HBoxContainer
 
+@onready var slots: Array = get_children()
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	PlayerInventory.inventory_updated.connect(update_bar)
 
+func add_item(item_id: int):
+	# Get first empty slot
+	for slot in slots:
+		var inventory_slot = slot as InventorySlot
+		if inventory_slot.has_item():
+			continue
+		inventory_slot.set_item(item_id)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func update_bar():
+	# Clear all inventory slots first
+	for slot in slots:
+		(slot as InventorySlot).remove_item()
+	
+	# Then push all inventory items into the slots
+	var index := 0
+	for item in PlayerInventory.items:
+		(slots[index] as InventorySlot).set_item(item.get_item_id())
+		index += 1
