@@ -5,7 +5,17 @@ extends CharacterBody2D
 var last_direction: Vector2 = Vector2.RIGHT
 
 @onready var interaction_area: Area2D = $InteractionArea
-#@onready var inventory_slots = $CanvasLayer/UI/MarginContainer/InventoryBar.get_children()
+@onready var sprite: Sprite2D = $Sprite2D
+
+func _ready():
+	#Dialogic.start("Introduction")
+	pass
+
+func _input(event: InputEvent):
+	# Check if a dialog is already running
+	if Dialogic.current_timeline != null:
+		return
+
 
 func _unhandled_input(event: InputEvent):
 	if !event.is_action_pressed("action"):
@@ -18,8 +28,16 @@ func _unhandled_input(event: InputEvent):
 			continue
 		(interactable_component as InteractableComponent).interact()
 		return
+		
+func _process(delta):
+	if last_direction.x > 0:
+		sprite.flip_h = true
+	else:
+		sprite.flip_h = false
 
 func _physics_process(delta):
+	if Dialogic.current_timeline != null:
+		return
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if direction != Vector2.ZERO:
 		last_direction = direction

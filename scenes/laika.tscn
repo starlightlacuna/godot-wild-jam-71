@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bj4lyjvqat0g1"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_6uwon"]
-[ext_resource type="Texture2D" uid="uid://6d3nfm4g6jfs" path="res://assets/Laika.png" id="1_u54sc"]
+[ext_resource type="Texture2D" uid="uid://dhqiw73wpr8oo" path="res://assets/art/LAIKAsmol.png" id="2_2dhfw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sp5s1"]
 radius = 29.0
@@ -14,7 +14,9 @@ radius = 60.0
 script = ExtResource("1_6uwon")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_u54sc")
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("2_2dhfw")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 0)

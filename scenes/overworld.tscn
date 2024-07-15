@@ -4,11 +4,11 @@
 [ext_resource type="Script" path="res://scripts/overworld.gd" id="1_k7e5g"]
 [ext_resource type="Script" path="res://scripts/inventory_bar.gd" id="2_ws02y"]
 [ext_resource type="PackedScene" uid="uid://q7uo116g1vmy" path="res://scenes/inventory_slot.tscn" id="3_fot4b"]
-[ext_resource type="PackedScene" uid="uid://dlq5s3lqa238y" path="res://scenes/tree.tscn" id="3_ua6d7"]
 [ext_resource type="PackedScene" uid="uid://da1h2gwu1yrna" path="res://scenes/crate.tscn" id="4_rftad"]
 [ext_resource type="PackedScene" uid="uid://dqx0xdl86u1s5" path="res://scenes/lever.tscn" id="6_rham3"]
 [ext_resource type="Script" path="res://scripts/item_pickups.gd" id="8_7xjmu"]
 [ext_resource type="PackedScene" uid="uid://cipef8bbjvqce" path="res://scenes/item_location.tscn" id="8_ydxqx"]
+[ext_resource type="PackedScene" uid="uid://7dye65i2xd2d" path="res://scenes/spring_tree.tscn" id="10_5kjmt"]
 [ext_resource type="PackedScene" uid="uid://tmae7k5ts7y1" path="res://scenes/seashell.tscn" id="10_vw5lo"]
 
 [node name="Overworld" type="Node"]
@@ -79,14 +79,6 @@ position = Vector2(416, 311)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Tree" parent="." instance=ExtResource("3_ua6d7")]
-
-[node name="Tree2" parent="." instance=ExtResource("3_ua6d7")]
-position = Vector2(344, 107)
-
-[node name="Tree3" parent="." instance=ExtResource("3_ua6d7")]
-position = Vector2(117, 206)
-
 [node name="Lever" parent="." instance=ExtResource("6_rham3")]
 position = Vector2(193, 48)
 
@@ -115,5 +107,13 @@ position = Vector2(628, 529)
 
 [node name="Seashell5" parent="ItemPickups" instance=ExtResource("10_vw5lo")]
 position = Vector2(889, 350)
+
+[node name="SpringTree" parent="." instance=ExtResource("10_5kjmt")]
+
+[node name="SpringTree2" parent="." instance=ExtResource("10_5kjmt")]
+position = Vector2(358, 13)
+
+[node name="SpringTree3" parent="." instance=ExtResource("10_5kjmt")]
+position = Vector2(88, 259)
 
 [connection signal="state_changed" from="Lever" to="." method="_on_lever_state_changed"]

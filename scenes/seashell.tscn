@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://tmae7k5ts7y1"]
 
 [ext_resource type="Script" path="res://scripts/interactables/seashell.gd" id="1_imvxi"]
-[ext_resource type="Texture2D" uid="uid://4ukvud7vkb2u" path="res://assets/Seashell.png" id="2_0gpqp"]
+[ext_resource type="Texture2D" uid="uid://be4mdwacuukop" path="res://assets/art/SUMMERitem.png" id="2_dn1dg"]
 [ext_resource type="Script" path="res://scripts/components/interactable_component.gd" id="3_bsm7j"]
 [ext_resource type="Script" path="res://scripts/components/item_component.gd" id="4_c7wrd"]
 [ext_resource type="Resource" uid="uid://c8mdjiy8c3e3a" path="res://items/seashell.tres" id="5_dpigv"]
@@ -13,15 +13,18 @@ radius = 42.0
 script = ExtResource("1_imvxi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_0gpqp")
+scale = Vector2(0.362134, 0.362134)
+texture = ExtResource("2_dn1dg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.585148, 0.585148)
 shape = SubResource("CircleShape2D_738hg")
 
 [node name="InteractableComponent" type="Area2D" parent="."]
 script = ExtResource("3_bsm7j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+scale = Vector2(0.585148, 0.585148)
 shape = SubResource("CircleShape2D_738hg")
 
 [node name="ItemComponent" type="Node" parent="."]
