@@ -1,33 +1,15 @@
-# #[background fade="0.0"]
-# #Once upon a time not so long ago\
-# #When humans only dreamt of the moon\
-# #They sent a little dog into space
-# #Her name was Laika.
-# #A smart dog, she was part of humanity's first foray into the cosmos.\
-# #With their hopes and dreams, her mission was to land on the moon.
-# #As her ship exited the Earth, she entered a vast unknown world.
-# #It was beautiful.
-# #But good things rarely last.
-# #[background fade="0.0"]
-join Laika (Dizzy) 0
-Laika (Dizzy): Oh my–where am I?
-update Laika [ mirrored="true"]
-Laika: What happened to my ship?
-join "Alien Cat" (Neutral) 4 [ z_index="1"]
-"Alien Cat" (Neutral): Greetings Earthling! Welcome to our planet!
-update Laika [animation="Tada" length="0.2" mirrored="false"]
-Laika (Sparkle): Whoa... a green cat?!
-Laika (Neutral): Who are you?
-set {alien_cat_name} = "Keeki"
-"Alien Cat": My name is Keeki. I am a guardian of this planet.
-Laika: I am Laika! I was supposed to be orbiting Earth, but somehow my space ship was pulled away from orbit.
-"Alien Cat": It appears that you were caught in the wake of a passing spacecraft's warp drive.
-"Alien Cat": The turbulence ripped off parts of your ship and scattered them across our planet. It caused quite a commotion.
-Laika (Disappointed): I... I'm so sorry, this was never meant to happen.
-update Laika [ mirrored="true"]
-Laika: And the ship is in bad shape... I can't possibly finish my mission now.
-"Alien Cat": Worry not, my friends have collected the parts of your ship.
-update Laika (Neutral) [animation="Bounce" length="0.2" mirrored="false"]
-"Alien Cat": They are usually delighted to welcome visitors, but they are quite upset at the moment. If you help repair what you have broken, I am sure they will be willing to return those parts to you.
-Laika (Starstruck): R-really? I'll do anything I can to help! I need to finish my mission no matter what!
-"Alien Cat" (Happy): I am glad to hear it. Here is a map of all the locations where the parts were found.
+[background fade="0.0"]
+Once upon a time not so long ago,\
+When humans only dreamt of going to the moon,\
+They sent a little dog into space.
+Her name was Laika.
+A stray from the streets of Moscow, she was chosen for her hardiness.\
+The first Earthling to enter orbit needed to be tough to handle spaceflight.
+As her ship exited the Earth’s atmosphere, she entered the vast expanse of outer space.
+For a moment, she beheld the seemingly boundless universe beyond the sky.
+It was beautiful.
+And then the moment ended.
+Her home shrank in the viewport as her ship began to drift
+far,
+far,
+far away...

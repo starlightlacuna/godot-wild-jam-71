@@ -1,0 +1,24 @@
+[background arg="res://assets/art/dialog/BG_Convo2_Spaceship.PNG.png" fade="0.0"]
+join Laika (Dizzy) 0
+Laika (Dizzy): Oh my–where am I?
+update Laika [ mirrored="true"]
+Laika: What happened to my ship?
+join "Alien Cat" (Neutral) 4 [ z_index="1"]
+"Alien Cat" (Neutral): Greetings Earthling! Welcome to our planet!
+update Laika [animation="Tada" length="0.2" mirrored="false"]
+Laika (Sparkle): Whoa... a green cat?!
+Laika (Neutral): Who are you?
+set {alien_cat_name} = "Keeki"
+"Alien Cat": My name is Keeki. I am a guardian of this planet.
+Laika: I'm Laika! I was supposed to be orbiting Earth, but somehow my space ship was pulled away from orbit.
+"Alien Cat": It appears that you were caught in the wake of a passing spacecraft's warp drive.
+"Alien Cat": The turbulence ripped off parts of your ship and scattered them across our planet. It caused quite a commotion.
+Laika (Disappointed): I... I'm so sorry, this was never meant to happen.
+update Laika [ mirrored="true"]
+Laika: And the ship is in bad shape... I can't possibly finish my mission now.
+"Alien Cat": Worry not, my friends have collected the parts of your ship.
+update Laika (Neutral) [animation="Bounce" length="0.2" mirrored="false"]
+"Alien Cat": They are usually delighted to welcome visitors, but they are quite upset at the moment. If you help repair what you have broken, I am sure they will be willing to return those parts to you.
+Laika (Starstruck): R-really? I'll do anything I can to help! I need to finish my mission no matter what!
+"Alien Cat" (Happy): I am glad to hear it. Here is a map of all the locations where the parts were found.
+[update_position time="0.0"]

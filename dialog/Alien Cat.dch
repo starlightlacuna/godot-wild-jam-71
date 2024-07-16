@@ -13,7 +13,7 @@
 "display_name": "{alien_cat_name}",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, 0),
+"offset": Vector2(-60, 0),
 "portraits": {
 "Happy": {
 "export_overrides": {
@@ -34,5 +34,5 @@
 "scene": ""
 }
 },
-"scale": 1.0
+"scale": 0.8
 }
