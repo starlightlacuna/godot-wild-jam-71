@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqbf74yx1c013"]
+
+[ext_resource type="Texture2D" uid="uid://dwnnwlnxnp5uw" path="res://icon.svg" id="1_eroak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocnbj"]
+
+[node name="Water" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.347021, 0.810255, 0.866873, 1)
+scale = Vector2(43.8084, 7.38473)
+texture = ExtResource("1_eroak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(279.52, 44.96)
+shape = SubResource("RectangleShape2D_ocnbj")

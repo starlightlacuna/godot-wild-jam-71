@@ -27,6 +27,7 @@ directories/dch_directory={
 "Laika": "res://dialog/Laika.dch"
 }
 directories/dtl_directory={
+"Awakening": "res://dialog/Awakening.dtl",
 "Introduction": "res://dialog/Introduction.dtl"
 }
 text/letter_speed=0.01
@@ -100,6 +101,12 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Environment"
+2d_physics/layer_3="Pickups"
 
 [rendering]
 

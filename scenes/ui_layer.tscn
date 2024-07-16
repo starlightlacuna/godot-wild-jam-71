@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5vf0jvpw54qa"]
+
+[ext_resource type="Script" path="res://scripts/inventory_bar.gd" id="1_h3xei"]
+[ext_resource type="PackedScene" uid="uid://q7uo116g1vmy" path="res://scenes/inventory_slot.tscn" id="2_yeiw7"]
+
+[node name="UILayer" type="CanvasLayer"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -518.0
+offset_top = -100.0
+offset_right = 518.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="InventoryBar" type="HBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+script = ExtResource("1_h3xei")
+
+[node name="InventorySlot0" parent="UI/MarginContainer/InventoryBar" instance=ExtResource("2_yeiw7")]
+layout_mode = 2
+
+[node name="InventorySlot1" parent="UI/MarginContainer/InventoryBar" instance=ExtResource("2_yeiw7")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="UI/MarginContainer/InventoryBar" instance=ExtResource("2_yeiw7")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="UI/MarginContainer/InventoryBar" instance=ExtResource("2_yeiw7")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="UI/MarginContainer/InventoryBar" instance=ExtResource("2_yeiw7")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="UI/MarginContainer/InventoryBar" instance=ExtResource("2_yeiw7")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="UI/MarginContainer/InventoryBar" instance=ExtResource("2_yeiw7")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="UI/MarginContainer/InventoryBar" instance=ExtResource("2_yeiw7")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="UI/MarginContainer/InventoryBar" instance=ExtResource("2_yeiw7")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="UI/MarginContainer/InventoryBar" instance=ExtResource("2_yeiw7")]
+layout_mode = 2

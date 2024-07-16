@@ -11,6 +11,9 @@ func add_item(item_node: Node) -> void:
 		items.push_back(item_node)
 	inventory_updated.emit()
 
+func get_items() -> Array:
+	return items
+
 func remove_item(index: int) -> Node:
 	var item_node = items.pop_at(index)
 	inventory_updated.emit()

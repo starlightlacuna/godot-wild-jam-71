@@ -2,90 +2,39 @@
 
 [ext_resource type="PackedScene" uid="uid://bj4lyjvqat0g1" path="res://scenes/laika.tscn" id="1_4xd42"]
 [ext_resource type="Script" path="res://scripts/overworld.gd" id="1_k7e5g"]
-[ext_resource type="Script" path="res://scripts/inventory_bar.gd" id="2_ws02y"]
-[ext_resource type="PackedScene" uid="uid://q7uo116g1vmy" path="res://scenes/inventory_slot.tscn" id="3_fot4b"]
+[ext_resource type="PackedScene" uid="uid://c5vf0jvpw54qa" path="res://scenes/ui_layer.tscn" id="2_jb6yf"]
+[ext_resource type="PackedScene" uid="uid://uhsbhwmmsc57" path="res://scenes/follow_camera.tscn" id="4_bmrfg"]
 [ext_resource type="PackedScene" uid="uid://da1h2gwu1yrna" path="res://scenes/crate.tscn" id="4_rftad"]
 [ext_resource type="PackedScene" uid="uid://dqx0xdl86u1s5" path="res://scenes/lever.tscn" id="6_rham3"]
-[ext_resource type="Script" path="res://scripts/item_pickups.gd" id="8_7xjmu"]
+[ext_resource type="PackedScene" uid="uid://doonoiw2vp4f3" path="res://scenes/item_pickups.tscn" id="8_b1w4y"]
 [ext_resource type="PackedScene" uid="uid://cipef8bbjvqce" path="res://scenes/item_location.tscn" id="8_ydxqx"]
-[ext_resource type="PackedScene" uid="uid://7dye65i2xd2d" path="res://scenes/spring_tree.tscn" id="10_5kjmt"]
-[ext_resource type="PackedScene" uid="uid://tmae7k5ts7y1" path="res://scenes/seashell.tscn" id="10_vw5lo"]
+[ext_resource type="PackedScene" uid="uid://7dye65i2xd2d" path="res://scenes/spring/spring_tree.tscn" id="10_5kjmt"]
+[ext_resource type="PackedScene" uid="uid://tmae7k5ts7y1" path="res://scenes/summer/seashell.tscn" id="10_vw5lo"]
 
 [node name="Overworld" type="Node"]
 script = ExtResource("1_k7e5g")
 
-[node name="UILayer" type="CanvasLayer" parent="."]
-
-[node name="UI" type="Control" parent="UILayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-
-[node name="MarginContainer" type="MarginContainer" parent="UILayer/UI"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -518.0
-offset_top = -100.0
-offset_right = 518.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/margin_bottom = 10
-
-[node name="InventoryBar" type="HBoxContainer" parent="UILayer/UI/MarginContainer"]
-layout_mode = 2
-script = ExtResource("2_ws02y")
-
-[node name="InventorySlot0" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
-layout_mode = 2
-
-[node name="InventorySlot1" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
-layout_mode = 2
-
-[node name="InventorySlot2" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
-layout_mode = 2
-
-[node name="InventorySlot3" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
-layout_mode = 2
-
-[node name="InventorySlot4" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
-layout_mode = 2
-
-[node name="InventorySlot5" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
-layout_mode = 2
-
-[node name="InventorySlot6" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
-layout_mode = 2
-
-[node name="InventorySlot7" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
-layout_mode = 2
-
-[node name="InventorySlot8" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
-layout_mode = 2
-
-[node name="InventorySlot9" parent="UILayer/UI/MarginContainer/InventoryBar" instance=ExtResource("3_fot4b")]
-layout_mode = 2
+[node name="UILayer" parent="." instance=ExtResource("2_jb6yf")]
 
 [node name="Laika" parent="." instance=ExtResource("1_4xd42")]
 position = Vector2(416, 311)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="FollowCamera" parent="." instance=ExtResource("4_bmrfg")]
 
 [node name="Lever" parent="." instance=ExtResource("6_rham3")]
 position = Vector2(193, 48)
 
 [node name="ItemLocation" parent="." instance=ExtResource("8_ydxqx")]
 
-[node name="ItemPickups" type="Node" parent="."]
-script = ExtResource("8_7xjmu")
+[node name="SpringTree" parent="." instance=ExtResource("10_5kjmt")]
+
+[node name="SpringTree2" parent="." instance=ExtResource("10_5kjmt")]
+position = Vector2(358, 13)
+
+[node name="SpringTree3" parent="." instance=ExtResource("10_5kjmt")]
+position = Vector2(88, 259)
+
+[node name="ItemPickups" parent="." instance=ExtResource("8_b1w4y")]
 
 [node name="Crate" parent="ItemPickups" instance=ExtResource("4_rftad")]
 position = Vector2(532, 126)
@@ -107,13 +56,5 @@ position = Vector2(628, 529)
 
 [node name="Seashell5" parent="ItemPickups" instance=ExtResource("10_vw5lo")]
 position = Vector2(889, 350)
-
-[node name="SpringTree" parent="." instance=ExtResource("10_5kjmt")]
-
-[node name="SpringTree2" parent="." instance=ExtResource("10_5kjmt")]
-position = Vector2(358, 13)
-
-[node name="SpringTree3" parent="." instance=ExtResource("10_5kjmt")]
-position = Vector2(88, 259)
 
 [connection signal="state_changed" from="Lever" to="." method="_on_lever_state_changed"]

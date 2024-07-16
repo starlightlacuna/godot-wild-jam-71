@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://doonoiw2vp4f3"]
+
+[ext_resource type="Script" path="res://scripts/item_pickups.gd" id="1_cpb3k"]
+
+[node name="ItemPickups" type="Node"]
+script = ExtResource("1_cpb3k")

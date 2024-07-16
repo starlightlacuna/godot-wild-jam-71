@@ -5,6 +5,9 @@ extends HBoxContainer
 
 func _ready():
 	PlayerInventory.inventory_updated.connect(update_bar)
+	
+	# Set the player inventory in case the player changed scenes.
+	update_bar()
 
 func update_bar():
 	# Clear all inventory slots first

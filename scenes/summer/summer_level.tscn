@@ -1,0 +1,117 @@
+[gd_scene load_steps=12 format=3 uid="uid://cgqum4im6hv1q"]
+
+[ext_resource type="PackedScene" uid="uid://c5vf0jvpw54qa" path="res://scenes/ui_layer.tscn" id="1_2r5s5"]
+[ext_resource type="PackedScene" uid="uid://bj4lyjvqat0g1" path="res://scenes/laika.tscn" id="1_b62lh"]
+[ext_resource type="Script" path="res://scripts/levels/summer_level.gd" id="1_rm6ff"]
+[ext_resource type="PackedScene" uid="uid://uhsbhwmmsc57" path="res://scenes/follow_camera.tscn" id="2_sougm"]
+[ext_resource type="PackedScene" uid="uid://doonoiw2vp4f3" path="res://scenes/item_pickups.tscn" id="3_x415i"]
+[ext_resource type="PackedScene" uid="uid://tmae7k5ts7y1" path="res://scenes/summer/seashell.tscn" id="4_dxnld"]
+[ext_resource type="Texture2D" uid="uid://dwnnwlnxnp5uw" path="res://icon.svg" id="6_h4e6a"]
+[ext_resource type="PackedScene" uid="uid://bqbf74yx1c013" path="res://scenes/summer/water.tscn" id="8_rv3eq"]
+
+[sub_resource type="Animation" id="Animation_7oga7"]
+resource_name = "summer_waves"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(0.5, 2, 1),
+"update": 0,
+"values": [Vector2(1959, 841), Vector2(1959, 1063), Vector2(1959, 841)]
+}
+
+[sub_resource type="Animation" id="Animation_vssli"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1959, 1063)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkkgj"]
+_data = {
+"RESET": SubResource("Animation_vssli"),
+"summer_waves": SubResource("Animation_7oga7")
+}
+
+[node name="SummerLevel" type="Node"]
+script = ExtResource("1_rm6ff")
+
+[node name="UILayer" parent="." instance=ExtResource("1_2r5s5")]
+
+[node name="Laika" parent="." instance=ExtResource("1_b62lh")]
+collision_mask = 2
+
+[node name="FollowCamera" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_sougm")]
+player_node = NodePath("../Laika")
+
+[node name="ItemPickups" parent="." instance=ExtResource("3_x415i")]
+
+[node name="Seashell0" parent="ItemPickups" instance=ExtResource("4_dxnld")]
+z_index = 1
+position = Vector2(389, 189)
+
+[node name="Seashell1" parent="ItemPickups" instance=ExtResource("4_dxnld")]
+z_index = 1
+position = Vector2(768, 450)
+
+[node name="Seashell2" parent="ItemPickups" instance=ExtResource("4_dxnld")]
+z_index = 1
+position = Vector2(1275, 348)
+
+[node name="Seashell3" parent="ItemPickups" instance=ExtResource("4_dxnld")]
+z_index = 1
+position = Vector2(1646, 495)
+
+[node name="Seashell4" parent="ItemPickups" instance=ExtResource("4_dxnld")]
+z_index = 1
+position = Vector2(1788, 262)
+
+[node name="Seashell5" parent="ItemPickups" instance=ExtResource("4_dxnld")]
+z_index = 1
+position = Vector2(837, 150)
+
+[node name="Seashell6" parent="ItemPickups" instance=ExtResource("4_dxnld")]
+z_index = 1
+position = Vector2(2240, 474)
+
+[node name="Seashell7" parent="ItemPickups" instance=ExtResource("4_dxnld")]
+z_index = 1
+position = Vector2(2576, 312)
+
+[node name="Seashell8" parent="ItemPickups" instance=ExtResource("4_dxnld")]
+z_index = 1
+position = Vector2(2825, 524)
+
+[node name="Seashell9" parent="ItemPickups" instance=ExtResource("4_dxnld")]
+z_index = 1
+position = Vector2(3054, 302)
+
+[node name="Ground" type="Sprite2D" parent="."]
+modulate = Color(0.882353, 0.862745, 0.443137, 1)
+position = Vector2(1960, 306)
+scale = Vector2(43.8084, 7.38473)
+texture = ExtResource("6_h4e6a")
+metadata/_edit_lock_ = true
+
+[node name="Water" parent="." instance=ExtResource("8_rv3eq")]
+position = Vector2(1959, 1063)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fkkgj")
+}
+autoplay = "summer_waves"
