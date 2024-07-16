@@ -8,12 +8,59 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "",
+"default_portrait": "Neutral",
 "description": "",
 "display_name": "Laika",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
-"portraits": {},
+"portraits": {
+"Disappointed": {
+"export_overrides": {
+"image": "\"res://assets/art/dialog/LAIKA right2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Dizzy": {
+"export_overrides": {
+"image": "\"res://assets/art/dialog/LAIKA right4.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Neutral": {
+"export_overrides": {
+"image": "\"res://assets/art/dialog/LAIKA right1.png\""
+},
+"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1.0,
+"scene": ""
+},
+"Sparkle": {
+"export_overrides": {
+"image": "\"res://assets/art/dialog/LAIKA right3.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Starstruck": {
+"export_overrides": {
+"image": "\"res://assets/art/dialog/LAIKA right5.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
 "scale": 1.0
 }

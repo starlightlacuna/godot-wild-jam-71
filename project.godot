@@ -23,6 +23,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Alien Cat": "res://dialog/Alien Cat.dch",
 "Laika": "res://dialog/Laika.dch"
 }
 directories/dtl_directory={
@@ -45,6 +46,9 @@ animations/leave_default_length=0.5
 animations/leave_default_wait=true
 animations/join_default_wait=true
 text/autopauses={}
+variables={
+"alien_cat_name": "???"
+}
 
 [display]
 
