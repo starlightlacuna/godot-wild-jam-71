@@ -1,0 +1,451 @@
+[gd_scene load_steps=14 format=3 uid="uid://d33axe0hewbry"]
+
+[ext_resource type="Script" path="res://scripts/levels/autumn_level.gd" id="1_hsa64"]
+[ext_resource type="PackedScene" uid="uid://c5vf0jvpw54qa" path="res://scenes/ui_layer.tscn" id="1_k17lt"]
+[ext_resource type="PackedScene" uid="uid://uhsbhwmmsc57" path="res://scenes/follow_camera.tscn" id="2_0e1om"]
+[ext_resource type="PackedScene" uid="uid://bj4lyjvqat0g1" path="res://scenes/laika.tscn" id="3_6jacw"]
+[ext_resource type="Texture2D" uid="uid://c3t3b7ol6580q" path="res://assets/art/autumn/leaves-grass.png" id="4_76yta"]
+[ext_resource type="PackedScene" uid="uid://cl8kkitjm8svm" path="res://scenes/world_bounds.tscn" id="4_wv48v"]
+[ext_resource type="PackedScene" uid="uid://dcfah01ajyklu" path="res://scenes/autumn/autumn_tree.tscn" id="6_ks3rb"]
+[ext_resource type="PackedScene" uid="uid://bi4yqhkdpm6rx" path="res://scenes/autumn/autumn_bush.tscn" id="7_s84wb"]
+[ext_resource type="PackedScene" uid="uid://c03oxytja15oo" path="res://scenes/autumn/autumn_berry_bush.tscn" id="9_00eyu"]
+[ext_resource type="Script" path="res://scripts/levels/berries.gd" id="9_5tdko"]
+[ext_resource type="PackedScene" uid="uid://dpvpq6ogmcufh" path="res://scenes/autumn/autumn_mushroom.tscn" id="9_8u2f8"]
+[ext_resource type="PackedScene" uid="uid://1ljqet1bdubp" path="res://scenes/autumn/autumn_grass.tscn" id="10_aqns1"]
+[ext_resource type="PackedScene" uid="uid://bctd13llogu6t" path="res://scenes/autumn/autumn_berry.tscn" id="10_njpgf"]
+
+[node name="AutumnLevel" type="Node"]
+script = ExtResource("1_hsa64")
+
+[node name="UILayer" parent="." instance=ExtResource("1_k17lt")]
+
+[node name="FollowCamera" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_0e1om")]
+limit_right = 2048
+limit_bottom = 2048
+player_node = NodePath("../WorldObjects/Laika")
+
+[node name="WorldBounds" parent="." instance=ExtResource("4_wv48v")]
+
+[node name="Bottom" parent="WorldBounds" index="2"]
+position = Vector2(1848, 2048)
+
+[node name="Right" parent="WorldBounds" index="3"]
+position = Vector2(2048, 1848)
+
+[node name="Ground" type="TextureRect" parent="."]
+offset_right = 2048.0
+offset_bottom = 2048.0
+texture = ExtResource("4_76yta")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="WorldObjects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Laika" parent="WorldObjects" instance=ExtResource("3_6jacw")]
+position = Vector2(394, 300)
+
+[node name="StaticObjects" type="Node2D" parent="WorldObjects"]
+y_sort_enabled = true
+
+[node name="AutumnTree" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(93, 219)
+
+[node name="AutumnTree2" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(570, 91)
+scale = Vector2(0.729067, 0.729067)
+
+[node name="AutumnTree3" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(594, 688)
+scale = Vector2(0.546275, 0.546275)
+
+[node name="AutumnTree4" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(573, 851)
+
+[node name="AutumnTree5" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(18.0001, 893)
+scale = Vector2(0.76105, 0.76105)
+
+[node name="AutumnTree6" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(179, 304)
+scale = Vector2(0.727057, 0.727057)
+
+[node name="AutumnTree16" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(57, 385)
+
+[node name="AutumnTree7" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(558, 993)
+
+[node name="AutumnTree8" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(713, 927)
+scale = Vector2(0.821207, 0.821207)
+
+[node name="AutumnTree25" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1087, 873)
+scale = Vector2(0.729465, 0.729465)
+
+[node name="AutumnTree26" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1088, 1025)
+scale = Vector2(0.651858, 0.651858)
+
+[node name="AutumnTree27" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(990, 1132)
+scale = Vector2(0.729465, 0.729465)
+
+[node name="AutumnTree28" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(857, 1315)
+scale = Vector2(0.729465, 0.729465)
+
+[node name="AutumnTree36" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1035, 1355)
+scale = Vector2(0.581391, 0.581391)
+
+[node name="AutumnTree29" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1116, 1254)
+scale = Vector2(0.892522, 0.892522)
+
+[node name="AutumnTree35" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(883, 1464)
+scale = Vector2(0.608443, 0.608443)
+
+[node name="AutumnTree30" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(823, 1593)
+scale = Vector2(0.729465, 0.729465)
+
+[node name="AutumnTree31" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(561, 1531)
+scale = Vector2(0.729465, 0.729465)
+
+[node name="AutumnTree32" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(338, 1543)
+scale = Vector2(0.729465, 0.729465)
+
+[node name="AutumnTree33" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(230, 1481)
+scale = Vector2(0.604935, 0.604935)
+
+[node name="AutumnTree34" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(80, 1463)
+scale = Vector2(0.873497, 0.873497)
+
+[node name="AutumnTree18" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1159, 222)
+scale = Vector2(0.696437, 0.696437)
+
+[node name="AutumnTree19" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1526, 337)
+scale = Vector2(0.587739, 0.587739)
+
+[node name="AutumnTree20" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1588, 237)
+scale = Vector2(0.544047, 0.544047)
+
+[node name="AutumnTree21" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1679, 163)
+scale = Vector2(0.696437, 0.696437)
+
+[node name="AutumnTree22" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1757, 276)
+scale = Vector2(0.696437, 0.696437)
+
+[node name="AutumnTree23" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1867, 311)
+scale = Vector2(0.509012, 0.509012)
+
+[node name="AutumnTree24" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1973, 358)
+scale = Vector2(0.620302, 0.620302)
+
+[node name="AutumnTree43" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1731, 836)
+scale = Vector2(0.785998, 0.785998)
+
+[node name="AutumnTree44" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1866, 904)
+scale = Vector2(0.563659, 0.563659)
+
+[node name="AutumnTree45" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1758, 942)
+scale = Vector2(0.393592, 0.393592)
+
+[node name="AutumnTree46" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1555, 1570)
+scale = Vector2(1.46779, 1.46779)
+
+[node name="AutumnTree9" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(408, 1737)
+
+[node name="AutumnTree37" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(287, 1664)
+
+[node name="AutumnTree38" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(117, 1713)
+scale = Vector2(0.906888, 0.906888)
+
+[node name="AutumnTree39" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(241, 1805)
+scale = Vector2(0.524348, 0.524348)
+
+[node name="AutumnTree40" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(91, 1926)
+scale = Vector2(0.731138, 0.731138)
+
+[node name="AutumnTree41" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(308, 1997)
+scale = Vector2(0.628807, 0.628807)
+
+[node name="AutumnTree10" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(435, 776)
+scale = Vector2(0.912176, 0.912176)
+
+[node name="AutumnTree11" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(744, 153)
+scale = Vector2(0.620692, 0.620692)
+
+[node name="AutumnTree17" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(844, 77)
+scale = Vector2(0.620692, 0.620692)
+
+[node name="AutumnTree12" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(579, 2088)
+
+[node name="AutumnTree42" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(753, 2162)
+
+[node name="AutumnTree13" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1979, 2106)
+
+[node name="AutumnTree47" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1751, 1654)
+scale = Vector2(0.686267, 0.686267)
+
+[node name="AutumnTree48" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1585, 1748)
+scale = Vector2(0.885161, 0.885161)
+
+[node name="AutumnTree49" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1642, 1867)
+scale = Vector2(0.578907, 0.578907)
+
+[node name="AutumnTree51" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1642, 2118)
+scale = Vector2(0.713584, 0.713584)
+
+[node name="AutumnTree52" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1466, 2207)
+scale = Vector2(0.713584, 0.713584)
+
+[node name="AutumnTree53" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1476, 1832)
+scale = Vector2(0.713584, 0.713584)
+
+[node name="AutumnTree50" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(1789, 2023)
+scale = Vector2(0.6475, 0.6475)
+
+[node name="AutumnTree14" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(442, 903)
+scale = Vector2(0.524897, 0.524897)
+
+[node name="AutumnTree15" parent="WorldObjects/StaticObjects" instance=ExtResource("6_ks3rb")]
+position = Vector2(692, 246)
+scale = Vector2(0.479428, 0.476161)
+
+[node name="AutumnBush" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(174, 384)
+scale = Vector2(1.2773, 1.2773)
+
+[node name="AutumnBush2" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(693, 335)
+scale = Vector2(0.805115, 0.805115)
+
+[node name="AutumnBush3" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(1243, 552)
+scale = Vector2(1.429, 1.429)
+
+[node name="AutumnBush4" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(376, 692)
+scale = Vector2(1.34982, 1.34982)
+
+[node name="AutumnBush5" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(132, 454)
+
+[node name="AutumnBush7" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(502, 1028)
+scale = Vector2(0.664338, 0.664338)
+
+[node name="AutumnBush8" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(585, 1613)
+scale = Vector2(1.40698, 1.40698)
+
+[node name="AutumnBush10" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(971, 1977)
+scale = Vector2(1.28729, 1.28729)
+
+[node name="AutumnBush20" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(1060, 1919)
+scale = Vector2(1.49113, 1.49113)
+
+[node name="AutumnBush21" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(1063, 1982)
+scale = Vector2(0.678939, 0.678939)
+
+[node name="AutumnBush22" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(1139, 1962)
+scale = Vector2(1.08381, 1.08381)
+
+[node name="AutumnBush9" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(433, 997)
+
+[node name="AutumnBush11" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(1210, 483)
+scale = Vector2(2.12343, 2.12343)
+
+[node name="AutumnBush15" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(1709, 424)
+scale = Vector2(1.62699, 1.62699)
+
+[node name="AutumnBush16" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(1778, 464)
+scale = Vector2(1.21653, 1.21653)
+
+[node name="AutumnBush12" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(1815, 1093)
+
+[node name="AutumnBush19" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(1898, 1054)
+scale = Vector2(1.45459, 1.45459)
+
+[node name="AutumnBush13" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(1794, 1720)
+scale = Vector2(1.36497, 1.36497)
+
+[node name="AutumnBush17" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(93, 2008)
+scale = Vector2(1.28806, 1.28806)
+
+[node name="AutumnBush18" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(417, 2017)
+scale = Vector2(1.28806, 1.28806)
+
+[node name="AutumnBush14" parent="WorldObjects/StaticObjects" instance=ExtResource("7_s84wb")]
+position = Vector2(515, 1686)
+scale = Vector2(1.09883, 1.09883)
+
+[node name="AutumnMushroom" parent="WorldObjects/StaticObjects" instance=ExtResource("9_8u2f8")]
+position = Vector2(603, 186)
+
+[node name="AutumnMushroom3" parent="WorldObjects/StaticObjects" instance=ExtResource("9_8u2f8")]
+position = Vector2(361, 944)
+scale = Vector2(1.6161, 1.6161)
+
+[node name="AutumnMushroom5" parent="WorldObjects/StaticObjects" instance=ExtResource("9_8u2f8")]
+position = Vector2(707, 1525)
+scale = Vector2(2.20902, 2.20902)
+
+[node name="AutumnMushroom6" parent="WorldObjects/StaticObjects" instance=ExtResource("9_8u2f8")]
+position = Vector2(239, 1919)
+scale = Vector2(1.68315, 1.68315)
+
+[node name="AutumnMushroom2" parent="WorldObjects/StaticObjects" instance=ExtResource("9_8u2f8")]
+position = Vector2(224, 437)
+scale = Vector2(0.58363, 0.58363)
+
+[node name="AutumnMushroom4" parent="WorldObjects/StaticObjects" instance=ExtResource("9_8u2f8")]
+position = Vector2(1315, 728)
+scale = Vector2(1.1164, 1.1164)
+
+[node name="AutumnMushroom7" parent="WorldObjects/StaticObjects" instance=ExtResource("9_8u2f8")]
+position = Vector2(1097, 1842)
+scale = Vector2(1.62322, 1.62322)
+
+[node name="AutumnGrass" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(334, 392)
+
+[node name="AutumnGrass2" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(517, 327)
+
+[node name="AutumnGrass3" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(865, 374)
+
+[node name="AutumnGrass4" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(1467, 449)
+
+[node name="AutumnGrass5" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(1356, 112)
+
+[node name="AutumnGrass6" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(1489, 701)
+
+[node name="AutumnGrass7" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(1582, 933)
+
+[node name="AutumnGrass8" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(1897, 1225)
+
+[node name="AutumnGrass9" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(1326, 918)
+
+[node name="AutumnGrass10" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(1205, 1342)
+
+[node name="AutumnGrass11" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(1325, 1534)
+
+[node name="AutumnGrass12" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(944, 1675)
+
+[node name="AutumnGrass13" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(674, 1798)
+
+[node name="AutumnGrass14" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(620, 1145)
+
+[node name="AutumnGrass15" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(329, 1103)
+
+[node name="AutumnGrass16" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(173, 817)
+
+[node name="AutumnGrass17" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(60, 1029)
+
+[node name="AutumnGrass18" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(875, 633)
+
+[node name="AutumnGrass19" parent="WorldObjects/StaticObjects" instance=ExtResource("10_aqns1")]
+position = Vector2(1957, 1539)
+
+[node name="Berries" type="Node2D" parent="WorldObjects"]
+y_sort_enabled = true
+script = ExtResource("9_5tdko")
+berry_scene = ExtResource("10_njpgf")
+
+[node name="AutumnBerryBush" parent="WorldObjects/Berries" instance=ExtResource("9_00eyu")]
+position = Vector2(624, 292)
+scale = Vector2(1.21658, 1.21658)
+
+[node name="AutumnBerryBush2" parent="WorldObjects/Berries" instance=ExtResource("9_00eyu")]
+position = Vector2(1132, 528)
+
+[node name="AutumnBerryBush3" parent="WorldObjects/Berries" instance=ExtResource("9_00eyu")]
+position = Vector2(1892, 1123)
+scale = Vector2(0.861377, 0.861377)
+
+[node name="AutumnBerryBush4" parent="WorldObjects/Berries" instance=ExtResource("9_00eyu")]
+position = Vector2(1955, 95)
+
+[node name="AutumnBerryBush5" parent="WorldObjects/Berries" instance=ExtResource("9_00eyu")]
+position = Vector2(452, 1476)
+
+[node name="AutumnBerryBush6" parent="WorldObjects/Berries" instance=ExtResource("9_00eyu")]
+position = Vector2(340, 754)
+
+[node name="AutumnBerryBush7" parent="WorldObjects/Berries" instance=ExtResource("9_00eyu")]
+position = Vector2(1744, 1773)
+
+[node name="AutumnBerryBush8" parent="WorldObjects/Berries" instance=ExtResource("9_00eyu")]
+position = Vector2(658, 1686)
+scale = Vector2(1.77922, 1.77922)
+
+[editable path="WorldBounds"]

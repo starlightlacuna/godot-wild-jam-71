@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://tmae7k5ts7y1"]
+[gd_scene load_steps=6 format=3 uid="uid://tmae7k5ts7y1"]
 
-[ext_resource type="Script" path="res://scripts/interactables/seashell.gd" id="1_imvxi"]
 [ext_resource type="Texture2D" uid="uid://be4mdwacuukop" path="res://assets/art/summer/SUMMERitem.png" id="2_b3dfm"]
 [ext_resource type="Script" path="res://scripts/components/interactable_component.gd" id="3_bsm7j"]
 [ext_resource type="Script" path="res://scripts/components/item_component.gd" id="4_c7wrd"]
@@ -12,7 +11,6 @@ radius = 42.0
 [node name="Seashell" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_imvxi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)

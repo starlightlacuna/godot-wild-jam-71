@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi4yqhkdpm6rx"]
+
+[ext_resource type="Texture2D" uid="uid://cmk3f7mxmin3f" path="res://assets/art/autumn/FALLbush2.png" id="1_1emca"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_27qd6"]
+radius = 14.0
+height = 50.0
+
+[node name="AutumnBush" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1emca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_27qd6")

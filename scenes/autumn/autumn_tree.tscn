@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcfah01ajyklu"]
+
+[ext_resource type="Texture2D" uid="uid://bcwph7vgex5xd" path="res://assets/art/autumn/FALLtree.png" id="1_nvpgw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cnxqn"]
+radius = 54.5454
+height = 145.455
+
+[node name="AutumnTree" type="StaticBody2D"]
+scale = Vector2(0.6, 0.6)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -181.818)
+texture = ExtResource("1_nvpgw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -21.8182)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_cnxqn")

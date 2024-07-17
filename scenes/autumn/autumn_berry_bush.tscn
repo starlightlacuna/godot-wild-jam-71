@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://c03oxytja15oo"]
+
+[ext_resource type="PackedScene" uid="uid://bi4yqhkdpm6rx" path="res://scenes/autumn/autumn_bush.tscn" id="1_1qv00"]
+[ext_resource type="Script" path="res://scripts/autumn_berry_bush.gd" id="2_bs50p"]
+[ext_resource type="Script" path="res://scripts/components/interactable_component.gd" id="2_jphlw"]
+[ext_resource type="Texture2D" uid="uid://bwpogmkbrqhip" path="res://assets/art/autumn/FALLitem.png" id="3_jlcd2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_27qd6"]
+radius = 14.0
+height = 50.0
+
+[node name="AutumnBerryBush" instance=ExtResource("1_1qv00")]
+script = ExtResource("2_bs50p")
+
+[node name="InteractableComponent" type="Area2D" parent="." index="2"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_jphlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" index="0"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_27qd6")
+
+[node name="Berries" type="Node2D" parent="." index="3"]
+
+[node name="Berry" type="Sprite2D" parent="Berries" index="0"]
+position = Vector2(33, -42)
+rotation = 0.0203103
+scale = Vector2(0.133743, 0.133743)
+texture = ExtResource("3_jlcd2")
+
+[node name="Berry2" type="Sprite2D" parent="Berries" index="1"]
+position = Vector2(-24, -34)
+rotation = -0.155339
+scale = Vector2(0.133992, 0.133992)
+texture = ExtResource("3_jlcd2")
+
+[node name="Berry3" type="Sprite2D" parent="Berries" index="2"]
+position = Vector2(-44, -15)
+rotation = 0.021052
+scale = Vector2(0.111428, 0.111428)
+texture = ExtResource("3_jlcd2")
+
+[node name="Berry4" type="Sprite2D" parent="Berries" index="3"]
+position = Vector2(1, -65)
+rotation = -0.0318717
+scale = Vector2(0.169216, 0.169216)
+texture = ExtResource("3_jlcd2")
+
+[node name="Berry5" type="Sprite2D" parent="Berries" index="4"]
+position = Vector2(6, -19)
+rotation = -0.0318717
+scale = Vector2(0.169216, 0.169216)
+texture = ExtResource("3_jlcd2")
+
+[node name="Berry6" type="Sprite2D" parent="Berries" index="5"]
+position = Vector2(40, -13)
+rotation = 0.107519
+scale = Vector2(0.0785366, 0.0785366)
+texture = ExtResource("3_jlcd2")

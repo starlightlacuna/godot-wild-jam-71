@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://doonoiw2vp4f3" path="res://scenes/item_pickups.tscn" id="8_b1w4y"]
 [ext_resource type="PackedScene" uid="uid://cipef8bbjvqce" path="res://scenes/item_location.tscn" id="8_ydxqx"]
 [ext_resource type="PackedScene" uid="uid://7dye65i2xd2d" path="res://scenes/spring/spring_tree.tscn" id="10_5kjmt"]
-[ext_resource type="PackedScene" uid="uid://tmae7k5ts7y1" path="res://scenes/summer/seashell.tscn" id="10_vw5lo"]
+[ext_resource type="PackedScene" uid="uid://tmae7k5ts7y1" path="res://scenes/summer/summer_seashell.tscn" id="10_vw5lo"]
 
 [node name="Overworld" type="Node"]
 script = ExtResource("1_k7e5g")

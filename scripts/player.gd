@@ -12,7 +12,7 @@ func _ready():
 	#Dialogic.start("Introduction")
 	pass
 
-func _input(event: InputEvent):
+func _input(_event: InputEvent):
 	# Check if a dialog is already running
 	if Dialogic.current_timeline != null:
 		return
@@ -28,9 +28,9 @@ func _unhandled_input(event: InputEvent):
 		if interactable_component == null:
 			continue
 		(interactable_component as InteractableComponent).interact()
-		return
+		#return
 		
-func _process(delta):
+func _process(_delta):
 	if last_direction.x > 0:
 		sprite.flip_h = true
 	else:

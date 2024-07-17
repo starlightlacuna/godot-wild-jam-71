@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ljqet1bdubp"]
+
+[ext_resource type="Texture2D" uid="uid://cfjirbbexb2iv" path="res://assets/art/autumn/FALLgrass.png" id="1_ktlh8"]
+
+[node name="AutumnGrass" type="Sprite2D"]
+modulate = Color(0.792157, 0.658824, 0.486275, 1)
+position = Vector2(0, -20)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ktlh8")
