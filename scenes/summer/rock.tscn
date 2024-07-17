@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://chmoyewv6v0lm"]
+
+[ext_resource type="Texture2D" uid="uid://otfmrpklf78a" path="res://assets/art/summer/SUMMERbush2.png" id="1_2xe3x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bwc65"]
+radius = 25.0
+height = 136.0
+
+[node name="Rock" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -61)
+texture = ExtResource("1_2xe3x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -23)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bwc65")

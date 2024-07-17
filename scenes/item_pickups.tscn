@@ -2,5 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/item_pickups.gd" id="1_cpb3k"]
 
-[node name="ItemPickups" type="Node"]
+[node name="ItemPickups" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_cpb3k")

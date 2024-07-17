@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdowcuhg5aw7l"]
+
+[ext_resource type="Texture2D" uid="uid://c5wvripqm4atu" path="res://assets/art/summer/SUMMERbush1.png" id="1_w8chv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trur7"]
+size = Vector2(90, 20)
+
+[node name="Bush" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -52)
+texture = ExtResource("1_w8chv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_trur7")

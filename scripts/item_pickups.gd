@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 func _ready():
 	# Here we're connecting all the children's interacted signals to our handler

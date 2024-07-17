@@ -1,13 +1,33 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgqum4im6hv1q"]
+[gd_scene load_steps=16 format=3 uid="uid://cgqum4im6hv1q"]
 
 [ext_resource type="PackedScene" uid="uid://c5vf0jvpw54qa" path="res://scenes/ui_layer.tscn" id="1_2r5s5"]
 [ext_resource type="PackedScene" uid="uid://bj4lyjvqat0g1" path="res://scenes/laika.tscn" id="1_b62lh"]
 [ext_resource type="Script" path="res://scripts/levels/summer_level.gd" id="1_rm6ff"]
 [ext_resource type="PackedScene" uid="uid://uhsbhwmmsc57" path="res://scenes/follow_camera.tscn" id="2_sougm"]
+[ext_resource type="Texture2D" uid="uid://brasmtykbknug" path="res://assets/art/summer/Sand.png" id="3_loy8g"]
 [ext_resource type="PackedScene" uid="uid://doonoiw2vp4f3" path="res://scenes/item_pickups.tscn" id="3_x415i"]
 [ext_resource type="PackedScene" uid="uid://tmae7k5ts7y1" path="res://scenes/summer/seashell.tscn" id="4_dxnld"]
-[ext_resource type="Texture2D" uid="uid://dwnnwlnxnp5uw" path="res://icon.svg" id="6_h4e6a"]
+[ext_resource type="PackedScene" uid="uid://2hisfaum1rkl" path="res://scenes/summer/summer_tree.tscn" id="7_8rej2"]
 [ext_resource type="PackedScene" uid="uid://bqbf74yx1c013" path="res://scenes/summer/water.tscn" id="8_rv3eq"]
+[ext_resource type="PackedScene" uid="uid://chmoyewv6v0lm" path="res://scenes/summer/rock.tscn" id="10_y06n7"]
+[ext_resource type="PackedScene" uid="uid://cdowcuhg5aw7l" path="res://scenes/summer/bush.tscn" id="11_okl1x"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fdnbc"]
+
+[sub_resource type="Animation" id="Animation_vssli"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldObjects/Water:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1959, 1063)]
+}
 
 [sub_resource type="Animation" id="Animation_7oga7"]
 resource_name = "summer_waves"
@@ -16,29 +36,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Water:position")
+tracks/0/path = NodePath("WorldObjects/Water:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 3, 6),
-"transitions": PackedFloat32Array(0.5, 2, 1),
+"transitions": PackedFloat32Array(-1.5, -2, 1),
 "update": 0,
-"values": [Vector2(1959, 841), Vector2(1959, 1063), Vector2(1959, 841)]
-}
-
-[sub_resource type="Animation" id="Animation_vssli"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Water:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1959, 1063)]
+"values": [Vector2(1600, 1200), Vector2(1600, 1400), Vector2(1600, 1200)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fkkgj"]
@@ -50,68 +55,171 @@ _data = {
 [node name="SummerLevel" type="Node"]
 script = ExtResource("1_rm6ff")
 
+[node name="FollowCamera" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_sougm")]
+limit_left = 0
+limit_top = 0
+limit_right = 3200
+limit_bottom = 1600
+player_node = NodePath("../WorldObjects/Laika")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -30
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.960784, 0.72549, 1)
+
 [node name="UILayer" parent="." instance=ExtResource("1_2r5s5")]
 
-[node name="Laika" parent="." instance=ExtResource("1_b62lh")]
-collision_mask = 2
-
-[node name="FollowCamera" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_sougm")]
-player_node = NodePath("../Laika")
-
-[node name="ItemPickups" parent="." instance=ExtResource("3_x415i")]
-
-[node name="Seashell0" parent="ItemPickups" instance=ExtResource("4_dxnld")]
-z_index = 1
-position = Vector2(389, 189)
-
-[node name="Seashell1" parent="ItemPickups" instance=ExtResource("4_dxnld")]
-z_index = 1
-position = Vector2(768, 450)
-
-[node name="Seashell2" parent="ItemPickups" instance=ExtResource("4_dxnld")]
-z_index = 1
-position = Vector2(1275, 348)
-
-[node name="Seashell3" parent="ItemPickups" instance=ExtResource("4_dxnld")]
-z_index = 1
-position = Vector2(1646, 495)
-
-[node name="Seashell4" parent="ItemPickups" instance=ExtResource("4_dxnld")]
-z_index = 1
-position = Vector2(1788, 262)
-
-[node name="Seashell5" parent="ItemPickups" instance=ExtResource("4_dxnld")]
-z_index = 1
-position = Vector2(837, 150)
-
-[node name="Seashell6" parent="ItemPickups" instance=ExtResource("4_dxnld")]
-z_index = 1
-position = Vector2(2240, 474)
-
-[node name="Seashell7" parent="ItemPickups" instance=ExtResource("4_dxnld")]
-z_index = 1
-position = Vector2(2576, 312)
-
-[node name="Seashell8" parent="ItemPickups" instance=ExtResource("4_dxnld")]
-z_index = 1
-position = Vector2(2825, 524)
-
-[node name="Seashell9" parent="ItemPickups" instance=ExtResource("4_dxnld")]
-z_index = 1
-position = Vector2(3054, 302)
-
-[node name="Ground" type="Sprite2D" parent="."]
-modulate = Color(0.882353, 0.862745, 0.443137, 1)
-position = Vector2(1960, 306)
-scale = Vector2(43.8084, 7.38473)
-texture = ExtResource("6_h4e6a")
+[node name="Ground" type="TextureRect" parent="."]
+modulate = Color(1, 1, 0.901961, 1)
+offset_right = 800.0
+offset_bottom = 400.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_loy8g")
+stretch_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="Water" parent="." instance=ExtResource("8_rv3eq")]
-position = Vector2(1959, 1063)
+[node name="WorldBounds" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Left" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(0, 200)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_fdnbc")
+
+[node name="Top" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(200, 0)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_fdnbc")
+
+[node name="Bottom" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(3000, 1600)
+shape = SubResource("WorldBoundaryShape2D_fdnbc")
+
+[node name="Right" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(3200, 1400)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_fdnbc")
+
+[node name="WorldObjects" type="Node2D" parent="."]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="Water" parent="WorldObjects" instance=ExtResource("8_rv3eq")]
+position = Vector2(1959, 1063)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WorldObjects"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_fkkgj")
 }
 autoplay = "summer_waves"
+
+[node name="Laika" parent="WorldObjects" instance=ExtResource("1_b62lh")]
+position = Vector2(1108, 463)
+
+[node name="ItemPickups" parent="WorldObjects" instance=ExtResource("3_x415i")]
+
+[node name="Seashell0" parent="WorldObjects/ItemPickups" instance=ExtResource("4_dxnld")]
+position = Vector2(203, 263)
+rotation = -1.67901
+scale = Vector2(0.945, 0.945)
+
+[node name="Seashell1" parent="WorldObjects/ItemPickups" instance=ExtResource("4_dxnld")]
+position = Vector2(723, 511)
+rotation = -0.279253
+
+[node name="Seashell2" parent="WorldObjects/ItemPickups" instance=ExtResource("4_dxnld")]
+position = Vector2(1275, 348)
+
+[node name="Seashell3" parent="WorldObjects/ItemPickups" instance=ExtResource("4_dxnld")]
+position = Vector2(1637, 465)
+rotation = -0.331613
+
+[node name="Seashell4" parent="WorldObjects/ItemPickups" instance=ExtResource("4_dxnld")]
+position = Vector2(1966, 64)
+rotation = -0.16739
+
+[node name="Seashell5" parent="WorldObjects/ItemPickups" instance=ExtResource("4_dxnld")]
+position = Vector2(928, 113)
+rotation = 1.07338
+
+[node name="Seashell6" parent="WorldObjects/ItemPickups" instance=ExtResource("4_dxnld")]
+position = Vector2(1259, 866)
+rotation = -2.32407
+scale = Vector2(1.765, 1.765)
+
+[node name="Seashell7" parent="WorldObjects/ItemPickups" instance=ExtResource("4_dxnld")]
+position = Vector2(2409, 293)
+rotation = -1.00536
+scale = Vector2(1.205, 1.205)
+
+[node name="Seashell8" parent="WorldObjects/ItemPickups" instance=ExtResource("4_dxnld")]
+position = Vector2(2498, 847)
+rotation = 0.213755
+scale = Vector2(1.975, 1.975)
+
+[node name="Seashell9" parent="WorldObjects/ItemPickups" instance=ExtResource("4_dxnld")]
+position = Vector2(2961, 486)
+rotation = 2.73505
+scale = Vector2(0.865, 0.865)
+
+[node name="SummerTree" parent="WorldObjects" instance=ExtResource("7_8rej2")]
+position = Vector2(112, 109)
+
+[node name="SummerTree2" parent="WorldObjects" instance=ExtResource("7_8rej2")]
+position = Vector2(628, 334)
+scale = Vector2(-0.945, 0.945)
+
+[node name="SummerTree3" parent="WorldObjects" instance=ExtResource("7_8rej2")]
+position = Vector2(1239, 151)
+
+[node name="SummerTree4" parent="WorldObjects" instance=ExtResource("7_8rej2")]
+position = Vector2(2001, 100)
+scale = Vector2(0.925, 0.925)
+
+[node name="SummerTree5" parent="WorldObjects" instance=ExtResource("7_8rej2")]
+position = Vector2(2912, 338)
+scale = Vector2(1.255, 1.255)
+
+[node name="SummerTree6" parent="WorldObjects" instance=ExtResource("7_8rej2")]
+position = Vector2(2486, 216)
+scale = Vector2(-1, 1)
+
+[node name="SummerTree7" parent="WorldObjects" instance=ExtResource("7_8rej2")]
+position = Vector2(1628, 292)
+scale = Vector2(1.115, 1.115)
+
+[node name="Rock" parent="WorldObjects" instance=ExtResource("10_y06n7")]
+position = Vector2(370, 153)
+scale = Vector2(0.954, 0.954)
+
+[node name="Rock2" parent="WorldObjects" instance=ExtResource("10_y06n7")]
+position = Vector2(1599, 522)
+scale = Vector2(0.668556, 0.668556)
+
+[node name="Rock3" parent="WorldObjects" instance=ExtResource("10_y06n7")]
+position = Vector2(2715, 600)
+scale = Vector2(1.16703, 1.16703)
+
+[node name="Bush" parent="WorldObjects" instance=ExtResource("11_okl1x")]
+position = Vector2(912, 383)
+scale = Vector2(0.915, 0.915)
+
+[node name="Bush2" parent="WorldObjects" instance=ExtResource("11_okl1x")]
+position = Vector2(2071, 347)
+scale = Vector2(1.125, 1.125)
+
+[node name="Bush3" parent="WorldObjects" instance=ExtResource("11_okl1x")]
+position = Vector2(132, 487)
+
+[node name="Bush4" parent="WorldObjects" instance=ExtResource("11_okl1x")]
+position = Vector2(3154, 55)

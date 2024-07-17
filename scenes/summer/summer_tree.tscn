@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://2hisfaum1rkl"]
+
+[ext_resource type="Texture2D" uid="uid://b3pvlymx8n6g4" path="res://assets/art/summer/SUMMERtree.png" id="1_1timq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6eng7"]
+radius = 16.0
+height = 70.0
+
+[node name="SummerTree" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -143)
+texture = ExtResource("1_1timq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_6eng7")
