@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw3a5vgyry6et"]
+
+[ext_resource type="Script" path="res://scripts/winter_igloo.gd" id="1_cbb1a"]
+[ext_resource type="Texture2D" uid="uid://blxqbbevl6hn6" path="res://assets/art/winter/WINTERigloo1.png" id="1_o4qfk"]
+[ext_resource type="Script" path="res://scripts/components/interactable_component.gd" id="3_eu8bt"]
+
+[node name="Igloo" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_cbb1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -87)
+texture = ExtResource("1_o4qfk")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(23, 233, 40, 194, 71, 75, 71, -76, 41, -191, 24, -233, -33, -233, -60, -141, -60, 141, -34, 233)
+
+[node name="InteractableComponent" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_eu8bt")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="InteractableComponent"]
+rotation = 1.5708
+polygon = PackedVector2Array(23, 233, 40, 194, 71, 75, 71, -76, 41, -191, 24, -233, -33, -233, -60, -141, -60, 141, -34, 233)

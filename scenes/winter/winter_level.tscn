@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://bamqynbi6ep7i"]
+
+[ext_resource type="Script" path="res://scripts/winter_level.gd" id="1_pf25o"]
+[ext_resource type="PackedScene" uid="uid://c5vf0jvpw54qa" path="res://scenes/ui_layer.tscn" id="1_rcrab"]
+[ext_resource type="PackedScene" uid="uid://uhsbhwmmsc57" path="res://scenes/follow_camera.tscn" id="2_uebdg"]
+[ext_resource type="PackedScene" uid="uid://cl8kkitjm8svm" path="res://scenes/world_bounds.tscn" id="3_2f47k"]
+[ext_resource type="Texture2D" uid="uid://cvm5f20r1dntw" path="res://assets/art/winter/Suelo nieve.jpg" id="4_7kcwg"]
+[ext_resource type="PackedScene" uid="uid://bj4lyjvqat0g1" path="res://scenes/laika.tscn" id="5_p7ch4"]
+[ext_resource type="PackedScene" uid="uid://djqcwod63wlun" path="res://scenes/winter/winter_water.tscn" id="6_v6b8m"]
+[ext_resource type="PackedScene" uid="uid://cw3a5vgyry6et" path="res://scenes/winter/winter_igloo.tscn" id="7_liatu"]
+[ext_resource type="PackedScene" uid="uid://bn3d740rmep6r" path="res://scenes/winter/ice_block.tscn" id="8_y1wcd"]
+[ext_resource type="Script" path="res://scripts/ice_blocks.gd" id="9_afjbt"]
+[ext_resource type="Texture2D" uid="uid://bjofkypefk20y" path="res://assets/art/winter/WINTERgrass.png" id="10_r05x6"]
+
+[node name="WinterLevel" type="Node"]
+script = ExtResource("1_pf25o")
+
+[node name="UILayer" parent="." instance=ExtResource("1_rcrab")]
+
+[node name="FollowCamera" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_uebdg")]
+limit_right = 2048
+player_node = NodePath("../WorldObjects/Laika")
+
+[node name="WorldBounds" parent="." instance=ExtResource("3_2f47k")]
+
+[node name="Bottom" parent="WorldBounds" index="2"]
+position = Vector2(1848, 2560)
+
+[node name="Right" parent="WorldBounds" index="3"]
+position = Vector2(2048, 2360)
+
+[node name="Ground" type="TextureRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 1280.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_7kcwg")
+stretch_mode = 1
+
+[node name="WorldObjects" type="Node2D" parent="."]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="Laika" parent="WorldObjects" instance=ExtResource("5_p7ch4")]
+position = Vector2(992, 563)
+
+[node name="Water" parent="WorldObjects" instance=ExtResource("6_v6b8m")]
+position = Vector2(996, 1448)
+
+[node name="IceBlock" parent="WorldObjects" instance=ExtResource("8_y1wcd")]
+position = Vector2(727, 557)
+
+[node name="Igloo" parent="WorldObjects" instance=ExtResource("7_liatu")]
+position = Vector2(1034, 307)
+
+[node name="StaticObjects" type="Node2D" parent="WorldObjects"]
+y_sort_enabled = true
+
+[node name="IceBlocks" type="Node2D" parent="WorldObjects"]
+y_sort_enabled = true
+script = ExtResource("9_afjbt")
+ice_block_scene = ExtResource("8_y1wcd")
+
+[node name="Spawner0" type="Marker2D" parent="WorldObjects/IceBlocks"]
+position = Vector2(398, 940)
+
+[node name="Sprite2D" type="Sprite2D" parent="WorldObjects/IceBlocks/Spawner0"]
+texture = ExtResource("10_r05x6")
+
+[node name="Spawner1" type="Marker2D" parent="WorldObjects/IceBlocks"]
+position = Vector2(970, 935)
+
+[node name="Sprite2D" type="Sprite2D" parent="WorldObjects/IceBlocks/Spawner1"]
+texture = ExtResource("10_r05x6")
+
+[node name="Spawner2" type="Marker2D" parent="WorldObjects/IceBlocks"]
+position = Vector2(1511, 940)
+
+[node name="Sprite2D" type="Sprite2D" parent="WorldObjects/IceBlocks/Spawner2"]
+texture = ExtResource("10_r05x6")
+
+[editable path="WorldBounds"]

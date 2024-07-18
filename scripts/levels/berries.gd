@@ -22,7 +22,6 @@ func on_berry_bush_interacted(node: Node) -> void:
 	add_child(berry)
 	var interacted_signal = (berry.get_node("InteractableComponent") as InteractableComponent).interacted
 	interacted_signal.connect(on_berry_interacted)
-	print(interacted_signal.is_connected(on_berry_interacted))
 	
 
 func on_berry_interacted(node: Node):

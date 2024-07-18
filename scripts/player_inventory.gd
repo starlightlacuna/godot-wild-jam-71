@@ -1,3 +1,4 @@
+class_name Inventory
 extends Node
 
 signal inventory_updated()
@@ -14,7 +15,7 @@ func add_item(item_node: Node) -> void:
 func get_items() -> Array:
 	return items
 
-func remove_item(index: int) -> Node:
+func remove_item_at(index: int) -> Node:
 	var item_node = items.pop_at(index)
 	inventory_updated.emit()
 	return item_node

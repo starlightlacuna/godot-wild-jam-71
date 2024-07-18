@@ -6,19 +6,19 @@ var item_id := -1
 @onready var item_icon: TextureRect = $ItemIcon
 
 func _ready():
-	set_item_texture()
+	update_item_texture()
 
 func has_item() -> bool:
 	return item_id != -1
 
 func remove_item():
-	item_id = -1
+	set_item(-1)
 
 func set_item(p_item_id: int):
 	item_id = p_item_id
-	set_item_texture()
+	update_item_texture()
 
-func set_item_texture():
+func update_item_texture():
 	if !has_item():
 		item_icon.set_texture(null)
 	else:

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn3d740rmep6r"]
+
+[ext_resource type="Texture2D" uid="uid://cs4ps4lwhng1x" path="res://assets/art/winter/WINTERitem.png" id="1_kxi4r"]
+[ext_resource type="Script" path="res://scripts/components/interactable_component.gd" id="2_p2qmb"]
+[ext_resource type="PackedScene" uid="uid://b04pxmccwol40" path="res://scenes/components/item_component.tscn" id="3_8pmms"]
+[ext_resource type="Resource" uid="uid://hjomke66hq5c" path="res://items/ice_block.tres" id="4_0qpg4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c41nt"]
+size = Vector2(126, 39)
+
+[node name="IceBlock" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kxi4r")
+offset = Vector2(0, -48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_c41nt")
+
+[node name="InteractableComponent" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_p2qmb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_c41nt")
+
+[node name="ItemComponent" parent="." instance=ExtResource("3_8pmms")]
+reference = ExtResource("4_0qpg4")
