@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sp5s1"]
 radius = 25.0
-height = 90.0
+height = 80.115
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vkves"]
 radius = 60.0
@@ -22,7 +22,7 @@ texture = ExtResource("2_2dhfw")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -37.0575)
+position = Vector2(-2, -25)
 shape = SubResource("CapsuleShape2D_sp5s1")
 
 [node name="InteractionArea" type="Area2D" parent="."]

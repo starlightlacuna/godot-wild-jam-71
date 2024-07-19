@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bamqynbi6ep7i"]
+[gd_scene load_steps=16 format=3 uid="uid://bamqynbi6ep7i"]
 
 [ext_resource type="Script" path="res://scripts/winter_level.gd" id="1_pf25o"]
 [ext_resource type="PackedScene" uid="uid://c5vf0jvpw54qa" path="res://scenes/ui_layer.tscn" id="1_rcrab"]
@@ -10,12 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://cw3a5vgyry6et" path="res://scenes/winter/winter_igloo.tscn" id="7_liatu"]
 [ext_resource type="PackedScene" uid="uid://bn3d740rmep6r" path="res://scenes/winter/ice_block.tscn" id="8_y1wcd"]
 [ext_resource type="Script" path="res://scripts/ice_blocks.gd" id="9_afjbt"]
+[ext_resource type="PackedScene" uid="uid://bqo5tqdenqv4g" path="res://scenes/winter/winter_tree.tscn" id="9_c8688"]
 [ext_resource type="Texture2D" uid="uid://bjofkypefk20y" path="res://assets/art/winter/WINTERgrass.png" id="10_r05x6"]
+[ext_resource type="PackedScene" uid="uid://d0rbdgt7mc6aa" path="res://scenes/winter/winter_rocks.tscn" id="10_wyn4n"]
+[ext_resource type="PackedScene" uid="uid://dmscuwxl0d314" path="res://scenes/winter/winter_bush.tscn" id="11_5nqbq"]
+[ext_resource type="PackedScene" uid="uid://oicjq2bcnim8" path="res://scenes/winter/ice_block_spawner.tscn" id="11_5sifd"]
 
 [node name="WinterLevel" type="Node"]
 script = ExtResource("1_pf25o")
 
 [node name="UILayer" parent="." instance=ExtResource("1_rcrab")]
+visible = false
 
 [node name="FollowCamera" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_uebdg")]
 limit_right = 2048
@@ -35,6 +40,43 @@ offset_bottom = 1280.0
 scale = Vector2(2, 2)
 texture = ExtResource("4_7kcwg")
 stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Path" type="Sprite2D" parent="Ground"]
+position = Vector2(423.5, 240.5)
+rotation = 0.692163
+scale = Vector2(1.89046, 2.33739)
+texture = ExtResource("10_r05x6")
+
+[node name="Path2" type="Sprite2D" parent="Ground"]
+position = Vector2(509.5, 300.5)
+rotation = 0.395175
+scale = Vector2(2.56741, 2.16907)
+texture = ExtResource("10_r05x6")
+
+[node name="Path3" type="Sprite2D" parent="Ground"]
+position = Vector2(643.5, 345.5)
+rotation = 0.133555
+scale = Vector2(2.43993, 2.04808)
+texture = ExtResource("10_r05x6")
+
+[node name="Path4" type="Sprite2D" parent="Ground"]
+position = Vector2(745, 383)
+rotation = 0.456807
+scale = Vector2(2.43356, 2.12288)
+texture = ExtResource("10_r05x6")
+
+[node name="Path5" type="Sprite2D" parent="Ground"]
+position = Vector2(840, 435)
+rotation = 0.456807
+scale = Vector2(2.43356, 2.12288)
+texture = ExtResource("10_r05x6")
+
+[node name="Path6" type="Sprite2D" parent="Ground"]
+position = Vector2(962.5, 487)
+rotation = 0.316756
+scale = Vector2(2.66722, 2.12288)
+texture = ExtResource("10_r05x6")
 
 [node name="WorldObjects" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -44,38 +86,188 @@ metadata/_edit_lock_ = true
 position = Vector2(992, 563)
 
 [node name="Water" parent="WorldObjects" instance=ExtResource("6_v6b8m")]
-position = Vector2(996, 1448)
-
-[node name="IceBlock" parent="WorldObjects" instance=ExtResource("8_y1wcd")]
-position = Vector2(727, 557)
+position = Vector2(996, 2041)
 
 [node name="Igloo" parent="WorldObjects" instance=ExtResource("7_liatu")]
-position = Vector2(1034, 307)
+position = Vector2(656, 350)
 
 [node name="StaticObjects" type="Node2D" parent="WorldObjects"]
 y_sort_enabled = true
+
+[node name="Tree" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(710, 1099)
+scale = Vector2(1.0579, 1.0579)
+
+[node name="Tree25" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(772, 1232)
+scale = Vector2(0.66783, 0.66783)
+
+[node name="Tree16" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(269, 1023)
+scale = Vector2(0.95204, 0.95204)
+
+[node name="Tree17" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(434, 1070)
+scale = Vector2(0.95204, 0.95204)
+
+[node name="Tree18" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(604, 994)
+scale = Vector2(0.794136, 0.794136)
+
+[node name="Tree20" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1921, 1247)
+scale = Vector2(0.95204, 0.95204)
+
+[node name="Tree23" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1974, 1381)
+scale = Vector2(0.719966, 0.719966)
+
+[node name="Tree24" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1818, 1365)
+scale = Vector2(0.814376, 0.814376)
+
+[node name="Tree21" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1037, 1103)
+scale = Vector2(0.95204, 0.95204)
+
+[node name="Tree22" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(882, 1027)
+scale = Vector2(0.935604, 0.935604)
+
+[node name="Tree19" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(540, 1228)
+scale = Vector2(0.95204, 0.95204)
+
+[node name="Tree2" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1320, 217)
+scale = Vector2(0.625014, 0.625014)
+
+[node name="Tree5" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1972, 498)
+scale = Vector2(1.69736, 1.69736)
+
+[node name="Tree6" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1793, 379)
+scale = Vector2(1.23462, 1.23462)
+
+[node name="Tree15" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1633, 97)
+scale = Vector2(0.938548, 0.938548)
+
+[node name="Tree7" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1428, 128)
+scale = Vector2(1.04392, 1.04392)
+
+[node name="Tree4" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1640, 295)
+scale = Vector2(0.798792, 0.798792)
+
+[node name="Tree3" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(138, 444)
+scale = Vector2(1.04995, 1.04995)
+
+[node name="Tree8" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(75, 293)
+scale = Vector2(1.1494, 1.1494)
+
+[node name="Tree9" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(203, 147)
+scale = Vector2(1.05848, 1.05848)
+
+[node name="Tree10" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(396, 55)
+scale = Vector2(1.05848, 1.05848)
+
+[node name="Tree11" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(601, 63)
+scale = Vector2(1.05848, 1.05848)
+
+[node name="Tree12" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(794, 32)
+scale = Vector2(0.901194, 0.901194)
+
+[node name="Tree13" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(983, 85)
+scale = Vector2(1.05848, 1.05848)
+
+[node name="Tree14" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1192, 55)
+scale = Vector2(1.05848, 1.05848)
+
+[node name="Rocks" parent="WorldObjects/StaticObjects" instance=ExtResource("10_wyn4n")]
+position = Vector2(1438, 396)
+scale = Vector2(1.45377, 1.45377)
+
+[node name="Rocks3" parent="WorldObjects/StaticObjects" instance=ExtResource("10_wyn4n")]
+position = Vector2(871, 1155)
+scale = Vector2(1.04734, 1.04734)
+
+[node name="Rocks2" parent="WorldObjects/StaticObjects" instance=ExtResource("10_wyn4n")]
+position = Vector2(1682, 1303)
+scale = Vector2(-1.15883, 1.15883)
+
+[node name="Bush" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]
+position = Vector2(729, 635)
+scale = Vector2(0.80975, 0.80975)
+
+[node name="Bush9" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]
+position = Vector2(241, 534)
+scale = Vector2(0.543351, 0.543351)
+
+[node name="Bush2" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]
+position = Vector2(1221, 860)
+scale = Vector2(0.80975, 0.80975)
+
+[node name="Bush4" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]
+position = Vector2(376, 1187)
+scale = Vector2(0.589339, 0.589339)
+
+[node name="Bush3" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]
+position = Vector2(1716, 1080)
+scale = Vector2(0.80975, 0.80975)
+
+[node name="Bush5" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]
+position = Vector2(2027, 854)
+scale = Vector2(0.80975, 0.80975)
+
+[node name="Bush6" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]
+position = Vector2(1602, 661)
+scale = Vector2(0.80975, 0.80975)
+
+[node name="Bush8" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]
+position = Vector2(1057, 1194)
+scale = Vector2(0.482493, 0.482493)
+
+[node name="Bush7" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]
+position = Vector2(1166, 493)
+scale = Vector2(0.80975, 0.80975)
 
 [node name="IceBlocks" type="Node2D" parent="WorldObjects"]
 y_sort_enabled = true
 script = ExtResource("9_afjbt")
 ice_block_scene = ExtResource("8_y1wcd")
+river_timer_wait_time = 3.0
 
-[node name="Spawner0" type="Marker2D" parent="WorldObjects/IceBlocks"]
-position = Vector2(398, 940)
+[node name="Spawner0" parent="WorldObjects/IceBlocks" instance=ExtResource("11_5sifd")]
+position = Vector2(226, 1493)
 
-[node name="Sprite2D" type="Sprite2D" parent="WorldObjects/IceBlocks/Spawner0"]
-texture = ExtResource("10_r05x6")
+[node name="Spawner1" parent="WorldObjects/IceBlocks" instance=ExtResource("11_5sifd")]
+position = Vector2(1865, 1487)
 
-[node name="Spawner1" type="Marker2D" parent="WorldObjects/IceBlocks"]
-position = Vector2(970, 935)
+[node name="Spawner2" parent="WorldObjects/IceBlocks" instance=ExtResource("11_5sifd")]
+position = Vector2(1028, 1495)
 
-[node name="Sprite2D" type="Sprite2D" parent="WorldObjects/IceBlocks/Spawner1"]
-texture = ExtResource("10_r05x6")
+[node name="RiverMarkers" type="Node" parent="WorldObjects/IceBlocks"]
 
-[node name="Spawner2" type="Marker2D" parent="WorldObjects/IceBlocks"]
-position = Vector2(1511, 940)
+[node name="Marker2D" type="Marker2D" parent="WorldObjects/IceBlocks/RiverMarkers"]
+position = Vector2(-90, 1745)
 
-[node name="Sprite2D" type="Sprite2D" parent="WorldObjects/IceBlocks/Spawner2"]
-texture = ExtResource("10_r05x6")
+[node name="Marker2D2" type="Marker2D" parent="WorldObjects/IceBlocks/RiverMarkers"]
+position = Vector2(-90, 1825)
+
+[node name="Marker2D3" type="Marker2D" parent="WorldObjects/IceBlocks/RiverMarkers"]
+position = Vector2(-90, 1905)
+
+[connection signal="completed" from="WorldObjects/Igloo" to="." method="_on_igloo_completed"]
 
 [editable path="WorldBounds"]

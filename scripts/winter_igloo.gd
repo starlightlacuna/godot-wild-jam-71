@@ -1,6 +1,8 @@
 class_name Igloo
 extends StaticBody2D
 
+signal completed()
+
 var build_progress := 0
 
 var textures := [
@@ -16,11 +18,10 @@ func _ready():
 	update_texture()
 
 func add_build_progress():
-	if build_progress == 3:
-		return
-	
 	build_progress += 1
 	update_texture()
+	if build_progress >= 3:
+		completed.emit()
 
 func update_texture():
 	sprite.set_texture(textures[build_progress])

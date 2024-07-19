@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://oicjq2bcnim8"]
+
+[ext_resource type="Texture2D" uid="uid://bjofkypefk20y" path="res://assets/art/winter/WINTERgrass.png" id="1_4pp07"]
+
+[node name="Spawner0" type="Marker2D"]
+position = Vector2(398, 940)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_4pp07")
