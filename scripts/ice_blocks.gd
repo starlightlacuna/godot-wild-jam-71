@@ -55,7 +55,6 @@ func _on_ice_block_interacted(node: Node) -> void:
 	PlayerInventory.add_item(node)
 
 func _on_river_timer_timeout():
-	print("Spawn river ice block!")
 	var index = randi_range(0, river_markers.size() - 1)
 	var marker_position = river_markers[index].global_position as Vector2
 	var target_position = Vector2(marker_position) + Vector2(2200, 0)

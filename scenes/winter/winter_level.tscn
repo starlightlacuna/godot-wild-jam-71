@@ -20,7 +20,6 @@
 script = ExtResource("1_pf25o")
 
 [node name="UILayer" parent="." instance=ExtResource("1_rcrab")]
-visible = false
 
 [node name="FollowCamera" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_uebdg")]
 limit_right = 2048
@@ -78,6 +77,23 @@ rotation = 0.316756
 scale = Vector2(2.66722, 2.12288)
 texture = ExtResource("10_r05x6")
 
+[node name="IceBlockSpot" type="Sprite2D" parent="Ground"]
+position = Vector2(113, 746.5)
+texture = ExtResource("10_r05x6")
+
+[node name="IceBlockSpot2" type="Sprite2D" parent="Ground"]
+position = Vector2(514, 747.5)
+texture = ExtResource("10_r05x6")
+
+[node name="IceBlockSpot3" type="Sprite2D" parent="Ground"]
+position = Vector2(932.5, 743.5)
+texture = ExtResource("10_r05x6")
+
+[node name="Ground" type="Sprite2D" parent="Ground"]
+position = Vector2(327.5, 179.5)
+scale = Vector2(3.38, 2.3)
+texture = ExtResource("10_r05x6")
+
 [node name="WorldObjects" type="Node2D" parent="."]
 y_sort_enabled = true
 metadata/_edit_lock_ = true
@@ -101,6 +117,10 @@ scale = Vector2(1.0579, 1.0579)
 [node name="Tree25" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
 position = Vector2(772, 1232)
 scale = Vector2(0.66783, 0.66783)
+
+[node name="Tree28" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(845, 1321)
+scale = Vector2(0.530857, 0.502509)
 
 [node name="Tree16" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
 position = Vector2(269, 1023)
@@ -126,6 +146,14 @@ scale = Vector2(0.719966, 0.719966)
 position = Vector2(1818, 1365)
 scale = Vector2(0.814376, 0.814376)
 
+[node name="Tree29" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1580, 1231)
+scale = Vector2(0.685247, 0.685247)
+
+[node name="Tree26" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(1682, 1413)
+scale = Vector2(0.64084, 0.64084)
+
 [node name="Tree21" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
 position = Vector2(1037, 1103)
 scale = Vector2(0.95204, 0.95204)
@@ -133,6 +161,10 @@ scale = Vector2(0.95204, 0.95204)
 [node name="Tree22" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
 position = Vector2(882, 1027)
 scale = Vector2(0.935604, 0.935604)
+
+[node name="Tree27" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
+position = Vector2(937, 1238)
+scale = Vector2(0.832416, 0.832416)
 
 [node name="Tree19" parent="WorldObjects/StaticObjects" instance=ExtResource("9_c8688")]
 position = Vector2(540, 1228)
@@ -199,8 +231,12 @@ position = Vector2(1438, 396)
 scale = Vector2(1.45377, 1.45377)
 
 [node name="Rocks3" parent="WorldObjects/StaticObjects" instance=ExtResource("10_wyn4n")]
-position = Vector2(871, 1155)
+position = Vector2(696, 1513)
 scale = Vector2(1.04734, 1.04734)
+
+[node name="Rocks4" parent="WorldObjects/StaticObjects" instance=ExtResource("10_wyn4n")]
+position = Vector2(618, 1579)
+scale = Vector2(-0.586571, 0.586571)
 
 [node name="Rocks2" parent="WorldObjects/StaticObjects" instance=ExtResource("10_wyn4n")]
 position = Vector2(1682, 1303)
@@ -236,6 +272,14 @@ scale = Vector2(0.80975, 0.80975)
 
 [node name="Bush8" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]
 position = Vector2(1057, 1194)
+scale = Vector2(0.482493, 0.482493)
+
+[node name="Bush11" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]
+position = Vector2(705, 1564)
+scale = Vector2(0.482493, 0.482493)
+
+[node name="Bush10" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]
+position = Vector2(1577, 1383)
 scale = Vector2(0.482493, 0.482493)
 
 [node name="Bush7" parent="WorldObjects/StaticObjects" instance=ExtResource("11_5nqbq")]

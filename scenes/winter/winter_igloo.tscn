@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cw3a5vgyry6et"]
+[gd_scene load_steps=4 format=3 uid="uid://cw3a5vgyry6et"]
 
 [ext_resource type="Script" path="res://scripts/winter_igloo.gd" id="1_cbb1a"]
-[ext_resource type="Texture2D" uid="uid://bjofkypefk20y" path="res://assets/art/winter/WINTERgrass.png" id="2_qbum1"]
 [ext_resource type="Script" path="res://scripts/components/interactable_component.gd" id="3_eu8bt"]
 [ext_resource type="Texture2D" uid="uid://d0aiojme65i66" path="res://assets/art/winter/WINTERigloo4.png" id="3_oin31"]
 
@@ -9,10 +8,6 @@
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_cbb1a")
-
-[node name="Ground" type="Sprite2D" parent="."]
-scale = Vector2(6.76102, 4.60102)
-texture = ExtResource("2_qbum1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -87)
