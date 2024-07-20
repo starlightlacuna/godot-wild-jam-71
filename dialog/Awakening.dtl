@@ -1,24 +1,43 @@
-[background arg="res://assets/art/dialog/BG_Convo2_Spaceship.PNG.png" fade="0.0"]
+[update_position vector="Vector2(60, 0)" time="0.0"]
+[update_position position="4" vector="Vector2(-60, 0)" time="0.0"]
+[background arg="res://assets/art/backgrounds/BG_Convo1_Spaceship.PNG" fade="0.0"]
+[music path="res://assets/music/3_AWAKENING_Smoke Signals_1st Contact.mp3" fade="0.0" volume="0.0"]
 join Laika (Dizzy) 0
 Laika (Dizzy): Oh my–where am I?
-update Laika [ mirrored="true"]
+update Laika (Shocked) [ mirrored="true"]
 Laika: What happened to my ship?
-join "Alien Cat" (Neutral) 4 [ z_index="1"]
-"Alien Cat" (Neutral): Greetings Earthling! Welcome to our planet!
+join Keeki 4
+Keeki (Wave): Greetings Earthling! Welcome to the planet of Drook!
 update Laika [animation="Tada" length="0.2" mirrored="false"]
-Laika (Sparkle): Whoa... a green cat?!
-Laika (Neutral): Who are you?
+Laika (Sparkle): W-whoa... a green cat?!
+Laika (Questioning): W-who are you?
 set {alien_cat_name} = "Keeki"
-"Alien Cat": My name is Keeki. I am a guardian of this planet.
-Laika: I'm Laika! I was supposed to be orbiting Earth, but somehow my space ship was pulled away from orbit.
-"Alien Cat": It appears that you were caught in the wake of a passing spacecraft's warp drive.
-"Alien Cat": The turbulence ripped off parts of your ship and scattered them across our planet. It caused quite a commotion.
-Laika (Disappointed): I... I'm so sorry, this was never meant to happen.
+Keeki (Neutral): My name is Keeki. I am a guardian of this planet.
+Laika (Neutral): Hi Keeki, I'm Laika! I was supposed to be on a mission to orbit Earth, but somehow my spaceship strayed from the course.
+Laika (Neutral): And now I'm in...???
+Laika (Questioning): What is this planet?
+Keeki: Drook is a planet in a neighboring galaxy of your Milky Way.
+Keeki: There are four unique weather regions that coexist due to our unique revolution.
+Keeki: Each quadrant is managed by a guardian such as myself.
+Laika (Neutral): Oh, I see! Kind of like the seasons on Earth?
+Keeki (Angry): What are "seasons"?
+Laika (Cringe): It's kinda hard to explain, but it's basically...
+[clear time="1.0" step="false" music="false" positions="false" style="false"]
+[wait time="1.0"]
+[background arg="res://assets/art/backgrounds/BG_Convo2_Spaceship.PNG" fade="0.0"]
+join Laika 0 [animation="Fade In Up"]
+join Keeki 4 [animation="Fade In Up"]
+Laika (Neutral): Anyway--
+Laika (Questioning): Do you know what happened to my ship?
+Keeki (Neutral): Yes - your craft was caught in Drook’s magnetic field and crashed here about an hour ago.
+Keeki (Neutral): The turbulence ripped off parts of your ship and scattered them across our planet.\
+It caused quite a commotion.
+Laika (Sad): It did?
+Laika: I... I'm so sorry, this was never meant to happen.
 update Laika [ mirrored="true"]
 Laika: And the ship is in bad shape... I can't possibly finish my mission now.
-"Alien Cat": Worry not, my friends have collected the parts of your ship.
-update Laika (Neutral) [animation="Bounce" length="0.2" mirrored="false"]
-"Alien Cat": They are usually delighted to welcome visitors, but they are quite upset at the moment. If you help repair what you have broken, I am sure they will be willing to return those parts to you.
+Keeki (Wave): Worry not, my friends have collected the parts of your ship.
+update Laika (Sparkle) [animation="Bounce" length="0.2" mirrored="false"]
+Keeki (Neutral): They are usually delighted to welcome visitors, but they are quite upset at the moment. If you help repair what you have broken, I am sure they will be willing to return those parts to you.
 Laika (Starstruck): R-really? I'll do anything I can to help! I need to finish my mission no matter what!
-"Alien Cat" (Happy): I am glad to hear it. Here is a map of all the locations where the parts were found.
-[update_position time="0.0"]
+Keeki (Happy): I am glad to hear it. Here is a map of all the locations where the parts were found.

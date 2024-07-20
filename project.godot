@@ -23,7 +23,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"Alien Cat": "res://dialog/Alien Cat.dch",
+"Keeki": "res://dialog/Keeki.dch",
 "Laika": "res://dialog/Laika.dch"
 }
 directories/dtl_directory={

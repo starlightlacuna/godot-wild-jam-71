@@ -13,11 +13,11 @@
 "display_name": "Laika",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(60, 0),
+"offset": Vector2(0, 0),
 "portraits": {
-"Disappointed": {
+"Cringe": {
 "export_overrides": {
-"image": "\"res://assets/art/dialog/LAIKA right2.png\""
+"image": "\"res://assets/art/dialog/LAIKA7.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -26,7 +26,7 @@
 },
 "Dizzy": {
 "export_overrides": {
-"image": "\"res://assets/art/dialog/LAIKA right4.png\""
+"image": "\"res://assets/art/dialog/LAIKA4.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -35,7 +35,7 @@
 },
 "Neutral": {
 "export_overrides": {
-"image": "\"res://assets/art/dialog/LAIKA right1.png\""
+"image": "\"res://assets/art/dialog/LAIKA1.png\""
 },
 "ignore_char_scale": false,
 "mirror": false,
@@ -43,9 +43,36 @@
 "scale": 1.0,
 "scene": ""
 },
+"Questioning": {
+"export_overrides": {
+"image": "\"res://assets/art/dialog/LAIKA8.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://assets/art/dialog/LAIKA2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Shocked": {
+"export_overrides": {
+"image": "\"res://assets/art/dialog/LAIKA6.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Sparkle": {
 "export_overrides": {
-"image": "\"res://assets/art/dialog/LAIKA right3.png\""
+"image": "\"res://assets/art/dialog/LAIKA3.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -54,7 +81,7 @@
 },
 "Starstruck": {
 "export_overrides": {
-"image": "\"res://assets/art/dialog/LAIKA right5.png\""
+"image": "\"res://assets/art/dialog/LAIKA5.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
