@@ -15,7 +15,19 @@ func add_item(item_node: Node) -> void:
 func get_items() -> Array:
 	return items
 
+## Returns the first instance of an item in the inventory.
+## If none found, returns -1.
+func get_item_id_index(item_id: int) -> int:
+	for i in items.size():
+		if (items[i].get_node("ItemComponent") as ItemComponent).get_item_id() == item_id:
+			return i
+	return -1
+
 func remove_item_at(index: int) -> Node:
 	var item_node = items.pop_at(index)
 	inventory_updated.emit()
 	return item_node
+
+func clear() -> void:
+	items.clear()
+	inventory_updated.emit()

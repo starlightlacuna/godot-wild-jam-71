@@ -1,17 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://7dye65i2xd2d"]
 
-[ext_resource type="Texture2D" uid="uid://1apbmyedglev" path="res://assets/art/trees/SPRINGtree.png" id="1_5mk7t"]
+[ext_resource type="Texture2D" uid="uid://wxi7v8iv3ln2" path="res://assets/art/spring/SPRINGtree.png" id="1_wilkp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwx40"]
-size = Vector2(19.3479, 128.986)
+[sub_resource type="CircleShape2D" id="CircleShape2D_sury6"]
+radius = 26.7344
 
 [node name="SpringTree" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_5mk7t")
+texture = ExtResource("1_wilkp")
+offset = Vector2(0, -200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.500001, 44)
 scale = Vector2(1.08539, 1.08539)
-shape = SubResource("RectangleShape2D_lwx40")
+shape = SubResource("CircleShape2D_sury6")

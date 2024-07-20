@@ -1,54 +1,524 @@
-[gd_scene load_steps=4 format=3 uid="uid://b77nmr4qdelma"]
+[gd_scene load_steps=18 format=3 uid="uid://bk05u7rlgs1u5"]
 
-[ext_resource type="Script" path="res://scripts/spring_level.gd" id="1_4fduf"]
-[ext_resource type="Texture2D" uid="uid://dfl4n557jq2po" path="res://assets/Plant.png" id="1_e34fw"]
-[ext_resource type="PackedScene" uid="uid://bc85tc1241p10" path="res://scenes/watering_can.tscn" id="3_mettt"]
+[ext_resource type="PackedScene" uid="uid://c5vf0jvpw54qa" path="res://scenes/ui_layer.tscn" id="1_aba1y"]
+[ext_resource type="Script" path="res://scripts/spring_level.gd" id="1_aklh0"]
+[ext_resource type="PackedScene" uid="uid://uhsbhwmmsc57" path="res://scenes/follow_camera.tscn" id="2_4fdij"]
+[ext_resource type="PackedScene" uid="uid://cgg27ylg2xu8t" path="res://scenes/spring/spring_seed.tscn" id="2_ro6bh"]
+[ext_resource type="PackedScene" uid="uid://cl8kkitjm8svm" path="res://scenes/world_bounds.tscn" id="3_htffx"]
+[ext_resource type="PackedScene" uid="uid://bj4lyjvqat0g1" path="res://scenes/laika.tscn" id="5_ann41"]
+[ext_resource type="Texture2D" uid="uid://gllaqnrnqrgl" path="res://assets/art/spring/SPRINGsoil.png" id="6_nwjks"]
+[ext_resource type="Texture2D" uid="uid://bjhec1babqs6y" path="res://assets/art/spring/Suelo hierba2.png" id="7_m6iex"]
+[ext_resource type="PackedScene" uid="uid://chmoyewv6v0lm" path="res://scenes/summer/summer_rock.tscn" id="7_xnmfg"]
+[ext_resource type="PackedScene" uid="uid://1hr0ih2ihffq" path="res://scenes/spring/spring_crushed_flower.tscn" id="8_8jike"]
+[ext_resource type="PackedScene" uid="uid://cowc77movk8se" path="res://scenes/spring/spring_yellow_flower.tscn" id="9_xbhpu"]
+[ext_resource type="PackedScene" uid="uid://b6p22ukcqvr58" path="res://scenes/spring/spring_garbage_can.tscn" id="10_b0kr1"]
+[ext_resource type="PackedScene" uid="uid://cx81j574wsguy" path="res://scenes/spring/spring_seed_pile.tscn" id="11_twglt"]
+[ext_resource type="PackedScene" uid="uid://d27lydw8jib75" path="res://scenes/spring/spring_pink_flower.tscn" id="12_mauga"]
+[ext_resource type="PackedScene" uid="uid://7dye65i2xd2d" path="res://scenes/spring/spring_tree.tscn" id="13_3hp1a"]
+[ext_resource type="PackedScene" uid="uid://da04xued578q" path="res://scenes/spring/spring_plant_plot.tscn" id="13_fx63f"]
+[ext_resource type="PackedScene" uid="uid://dj4gqj04nu3tk" path="res://scenes/spring/spring_bush.tscn" id="14_4s57j"]
 
 [node name="SpringLevel" type="Node"]
-script = ExtResource("1_4fduf")
+script = ExtResource("1_aklh0")
+seed_scene = ExtResource("2_ro6bh")
+crushed_plant_scene = ExtResource("8_8jike")
 
-[node name="Plant" type="Sprite2D" parent="."]
-position = Vector2(697, 481)
-texture = ExtResource("1_e34fw")
+[node name="UILayer" parent="." instance=ExtResource("1_aba1y")]
+visible = false
 
-[node name="WateringCan" parent="." instance=ExtResource("3_mettt")]
-position = Vector2(457, 392)
-transition_speed = 5
+[node name="FollowCamera" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_4fdij")]
+limit_right = 3418
+limit_bottom = 1024
+player_node = NodePath("../WorldObjects/Laika")
 
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="WorldBounds" parent="." instance=ExtResource("3_htffx")]
 
-[node name="ProgressBar" type="ProgressBar" parent="UI"]
-layout_mode = 0
-offset_left = 829.0
-offset_top = 333.0
-offset_right = 1151.0
-offset_bottom = 360.0
-max_value = 1.0
-show_percentage = false
+[node name="Bottom" parent="WorldBounds" index="2"]
+position = Vector2(3218, 1024)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Right" parent="WorldBounds" index="3"]
+position = Vector2(3418, 824)
 
-[node name="ToggleParticlesButton" type="Button" parent="UI/VBoxContainer"]
-layout_mode = 2
-text = "Toggle Particles"
+[node name="Ground" type="TextureRect" parent="."]
+offset_right = 1709.0
+offset_bottom = 512.0
+scale = Vector2(2, 2)
+texture = ExtResource("7_m6iex")
+stretch_mode = 1
 
-[node name="StartWateringButton" type="Button" parent="UI/VBoxContainer"]
-layout_mode = 2
-text = "Start Watering"
+[node name="PlantZone" type="Sprite2D" parent="Ground"]
+position = Vector2(1266.8, 144.2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_nwjks")
 
-[node name="StopWateringButton" type="Button" parent="UI/VBoxContainer"]
-layout_mode = 2
-text = "Stop Watering"
+[node name="PlantZone2" type="Sprite2D" parent="Ground"]
+position = Vector2(1143.8, 173.7)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_nwjks")
 
-[connection signal="pressed" from="UI/VBoxContainer/ToggleParticlesButton" to="." method="_on_toggle_particles_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/StartWateringButton" to="WateringCan" method="_on_start_watering_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/StopWateringButton" to="WateringCan" method="_on_stop_watering_button_pressed"]
+[node name="PlantZone3" type="Sprite2D" parent="Ground"]
+position = Vector2(1057.5, 233.5)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_nwjks")
+
+[node name="PlantZone4" type="Sprite2D" parent="Ground"]
+position = Vector2(1137.3, 295.2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_nwjks")
+
+[node name="PlantZone8" type="Sprite2D" parent="Ground"]
+position = Vector2(1387.8, 171.2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_nwjks")
+
+[node name="PlantZone7" type="Sprite2D" parent="Ground"]
+position = Vector2(1469.3, 231.7)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_nwjks")
+
+[node name="PlantZone6" type="Sprite2D" parent="Ground"]
+position = Vector2(1398.8, 296.2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_nwjks")
+
+[node name="PlantZone5" type="Sprite2D" parent="Ground"]
+position = Vector2(1267.8, 322.7)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_nwjks")
+
+[node name="WorldObjects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Laika" parent="WorldObjects" instance=ExtResource("5_ann41")]
+position = Vector2(230, 256)
+
+[node name="StaticObjects" type="Node2D" parent="WorldObjects"]
+y_sort_enabled = true
+
+[node name="YellowFlower" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
+position = Vector2(1936, 248)
+scale = Vector2(0.5, 0.5)
+
+[node name="YellowFlower2" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
+position = Vector2(2251, 76)
+scale = Vector2(0.5, 0.5)
+
+[node name="YellowFlower3" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
+position = Vector2(2571, 37)
+scale = Vector2(0.5, 0.5)
+
+[node name="YellowFlower4" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
+position = Vector2(2872, 85)
+scale = Vector2(0.5, 0.5)
+
+[node name="YellowFlower5" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
+position = Vector2(3129, 210)
+scale = Vector2(0.5, 0.5)
+
+[node name="YellowFlower6" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
+position = Vector2(3297, 407)
+scale = Vector2(0.5, 0.5)
+
+[node name="YellowFlower7" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
+position = Vector2(3265, 658)
+scale = Vector2(0.5, 0.5)
+
+[node name="YellowFlower8" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
+position = Vector2(3058, 832)
+scale = Vector2(0.5, 0.5)
+
+[node name="YellowFlower9" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
+position = Vector2(2766, 939)
+scale = Vector2(0.5, 0.5)
+
+[node name="YellowFlower10" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
+position = Vector2(2420, 952)
+scale = Vector2(0.5, 0.5)
+
+[node name="YellowFlower12" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
+position = Vector2(2420, 952)
+scale = Vector2(0.5, 0.5)
+
+[node name="YellowFlower11" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
+position = Vector2(2056, 865)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinkFlower" parent="WorldObjects/StaticObjects" instance=ExtResource("12_mauga")]
+position = Vector2(2412, 43)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinkFlower3" parent="WorldObjects/StaticObjects" instance=ExtResource("12_mauga")]
+position = Vector2(2730, 50)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinkFlower4" parent="WorldObjects/StaticObjects" instance=ExtResource("12_mauga")]
+position = Vector2(3009, 135)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinkFlower5" parent="WorldObjects/StaticObjects" instance=ExtResource("12_mauga")]
+position = Vector2(3234, 303)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinkFlower6" parent="WorldObjects/StaticObjects" instance=ExtResource("12_mauga")]
+position = Vector2(3298, 530)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinkFlower7" parent="WorldObjects/StaticObjects" instance=ExtResource("12_mauga")]
+position = Vector2(3177, 751)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinkFlower8" parent="WorldObjects/StaticObjects" instance=ExtResource("12_mauga")]
+position = Vector2(2924, 889)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinkFlower9" parent="WorldObjects/StaticObjects" instance=ExtResource("12_mauga")]
+position = Vector2(2603, 960)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinkFlower10" parent="WorldObjects/StaticObjects" instance=ExtResource("12_mauga")]
+position = Vector2(2233, 922)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinkFlower11" parent="WorldObjects/StaticObjects" instance=ExtResource("12_mauga")]
+position = Vector2(1908, 760)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinkFlower2" parent="WorldObjects/StaticObjects" instance=ExtResource("12_mauga")]
+position = Vector2(2091, 152)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(1798, 255)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock2" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(1845, 208)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock3" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(1892, 168)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock4" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(1945, 128)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock5" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2004, 90)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock6" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2128, 25)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock8" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2962, 12)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock9" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3031, 32)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock10" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3098, 60)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock11" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3164, 97)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock12" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3224, 134)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock13" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3278, 182)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock14" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3335, 232)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock15" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3382, 285)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock16" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3418, 350)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock17" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3432, 416)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock18" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3436, 481)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock19" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3436, 552)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock20" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3428, 619)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock21" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3393, 678)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock22" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3357, 737)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock23" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3308, 782)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock24" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3255, 834)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock25" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3195, 875)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock26" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3130, 910)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock27" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(3060, 942)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock28" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2988, 972)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock29" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2914, 1000)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock30" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2839, 1023)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock31" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2757, 1038)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock32" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2678, 1051)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock33" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2597, 1057)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock34" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2517, 1058)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock35" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2435, 1058)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock36" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2353, 1054)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock37" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2274, 1039)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock38" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2199, 1023)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock39" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2124, 1002)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock40" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2052, 980)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock41" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(1979, 956)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock42" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(1912, 922)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock43" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(1843, 885)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock44" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(1801, 839)
+scale = Vector2(0.5, 0.5)
+
+[node name="Rock7" parent="WorldObjects/StaticObjects" instance=ExtResource("7_xnmfg")]
+position = Vector2(2062, 56)
+scale = Vector2(0.5, 0.5)
+
+[node name="SpringTree" parent="WorldObjects/StaticObjects" instance=ExtResource("13_3hp1a")]
+position = Vector2(138, 699)
+scale = Vector2(0.83389, 0.83389)
+
+[node name="SpringTree5" parent="WorldObjects/StaticObjects" instance=ExtResource("13_3hp1a")]
+position = Vector2(1072, 1170)
+scale = Vector2(0.83389, 0.83389)
+
+[node name="SpringTree9" parent="WorldObjects/StaticObjects" instance=ExtResource("13_3hp1a")]
+position = Vector2(1555, 1303)
+scale = Vector2(0.83389, 0.83389)
+
+[node name="SpringTree10" parent="WorldObjects/StaticObjects" instance=ExtResource("13_3hp1a")]
+position = Vector2(3293, 1207)
+scale = Vector2(0.83389, 0.83389)
+
+[node name="SpringTree3" parent="WorldObjects/StaticObjects" instance=ExtResource("13_3hp1a")]
+position = Vector2(636, 810)
+scale = Vector2(0.676087, 0.676087)
+
+[node name="SpringTree7" parent="WorldObjects/StaticObjects" instance=ExtResource("13_3hp1a")]
+position = Vector2(405, 1158)
+scale = Vector2(0.638795, 0.638795)
+
+[node name="SpringTree8" parent="WorldObjects/StaticObjects" instance=ExtResource("13_3hp1a")]
+position = Vector2(735, 1095)
+scale = Vector2(0.841195, 0.841195)
+
+[node name="SpringTree4" parent="WorldObjects/StaticObjects" instance=ExtResource("13_3hp1a")]
+position = Vector2(106, 70.0001)
+scale = Vector2(0.676087, 0.676087)
+
+[node name="SpringTree2" parent="WorldObjects/StaticObjects" instance=ExtResource("13_3hp1a")]
+position = Vector2(579, 243)
+scale = Vector2(0.809348, 0.809348)
+
+[node name="SpringTree6" parent="WorldObjects/StaticObjects" instance=ExtResource("13_3hp1a")]
+position = Vector2(969, 99)
+scale = Vector2(0.916834, 0.916834)
+
+[node name="SpringTree11" parent="WorldObjects/StaticObjects" instance=ExtResource("13_3hp1a")]
+position = Vector2(3331, 37)
+scale = Vector2(0.916834, 0.916834)
+
+[node name="SpringTree12" parent="WorldObjects/StaticObjects" instance=ExtResource("13_3hp1a")]
+position = Vector2(1663, 72)
+scale = Vector2(0.747946, 0.747946)
+
+[node name="Bush" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(373, 111)
+scale = Vector2(0.317632, 0.317632)
+
+[node name="Bush2" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(346, 699)
+rotation = -0.186858
+scale = Vector2(0.3486, 0.3486)
+
+[node name="Bush3" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(1002, 760)
+rotation = 0.654356
+scale = Vector2(0.341819, 0.341819)
+
+[node name="Bush11" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(1323, 950)
+rotation = 0.220467
+scale = Vector2(0.409996, 0.409996)
+
+[node name="Bush12" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(1536, 903)
+rotation = -0.0968479
+scale = Vector2(0.338598, 0.338598)
+
+[node name="Bush5" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(783, 84.0001)
+rotation = 0.348317
+scale = Vector2(0.316581, 0.316581)
+
+[node name="Bush6" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(1324, 41)
+rotation = 0.115859
+scale = Vector2(0.316581, 0.316581)
+
+[node name="Bush13" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(1169, 92)
+rotation = -0.336688
+scale = Vector2(0.38082, 0.38082)
+
+[node name="Bush7" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(1515, 111)
+rotation = -0.100072
+scale = Vector2(0.285257, 0.285257)
+
+[node name="Bush4" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(832, 807)
+rotation = 0.654356
+scale = Vector2(0.252278, 0.252278)
+
+[node name="Bush8" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(415, 866)
+rotation = 0.851367
+scale = Vector2(0.332294, 0.332294)
+
+[node name="Bush9" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(181, 879)
+rotation = 0.222196
+scale = Vector2(0.2985, 0.2985)
+
+[node name="Bush10" parent="WorldObjects/StaticObjects" instance=ExtResource("14_4s57j")]
+position = Vector2(284, 956)
+rotation = -0.0553941
+scale = Vector2(0.491937, 0.491937)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WorldObjects/StaticObjects"]
+
+[node name="PlantPlots" type="Node2D" parent="WorldObjects"]
+
+[node name="PlantPlot" parent="WorldObjects/PlantPlots" instance=ExtResource("13_fx63f")]
+position = Vector2(2533, 279)
+scale = Vector2(0.5, 0.5)
+
+[node name="PlantPlot2" parent="WorldObjects/PlantPlots" instance=ExtResource("13_fx63f")]
+position = Vector2(2288, 337)
+scale = Vector2(0.5, 0.5)
+
+[node name="PlantPlot3" parent="WorldObjects/PlantPlots" instance=ExtResource("13_fx63f")]
+position = Vector2(2116, 456)
+scale = Vector2(0.5, 0.5)
+
+[node name="PlantPlot4" parent="WorldObjects/PlantPlots" instance=ExtResource("13_fx63f")]
+position = Vector2(2275, 581)
+scale = Vector2(0.5, 0.5)
+
+[node name="PlantPlot5" parent="WorldObjects/PlantPlots" instance=ExtResource("13_fx63f")]
+position = Vector2(2537, 635)
+scale = Vector2(0.5, 0.5)
+
+[node name="PlantPlot6" parent="WorldObjects/PlantPlots" instance=ExtResource("13_fx63f")]
+position = Vector2(2798, 582)
+scale = Vector2(0.5, 0.5)
+
+[node name="PlantPlot7" parent="WorldObjects/PlantPlots" instance=ExtResource("13_fx63f")]
+position = Vector2(2938, 456)
+scale = Vector2(0.5, 0.5)
+
+[node name="PlantPlot8" parent="WorldObjects/PlantPlots" instance=ExtResource("13_fx63f")]
+position = Vector2(2776, 334)
+scale = Vector2(0.5, 0.5)
+
+[node name="SeedPile" parent="WorldObjects" instance=ExtResource("11_twglt")]
+position = Vector2(1269, 275)
+scale = Vector2(0.4, 0.4)
+collision_layer = 6
+collision_mask = 0
+
+[node name="GarbageCan" parent="WorldObjects" instance=ExtResource("10_b0kr1")]
+position = Vector2(1487, 276)
+scale = Vector2(0.4, 0.4)
+
+[editable path="WorldBounds"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cxo3sllttr1gy"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_0x6bb"]
+
+[resource]
+script = ExtResource("1_0x6bb")
+item_id = 4
+item_name = "Seed"
+texture_path = "res://assets/art/spring/SPRINGseed.png"

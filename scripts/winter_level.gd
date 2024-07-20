@@ -16,6 +16,5 @@ func _on_igloo_interacted(_node: Node) -> void:
 		igloo.add_build_progress()
 		ice_blocks.spawn_ice_block()
 
-
 func _on_igloo_completed():
 	print("Level complete!")

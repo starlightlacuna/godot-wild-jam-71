@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj4gqj04nu3tk"]
+
+[ext_resource type="Texture2D" uid="uid://k6fn03oqgs0p" path="res://assets/art/spring/SPRINGbush1.png" id="1_s0nv5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ps6o6"]
+radius = 63.0317
+
+[node name="Bush" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+texture = ExtResource("1_s0nv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ps6o6")

@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx81j574wsguy"]
+
+[ext_resource type="Texture2D" uid="uid://7nb1rvfix41w" path="res://assets/art/spring/SPRINGseed.png" id="1_8duxg"]
+[ext_resource type="Script" path="res://scripts/components/interactable_component.gd" id="2_ymxsj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_01frb"]
+radius = 43.0
+height = 270.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u6vn"]
+size = Vector2(266, 160)
+
+[node name="SeedPile" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.81116, -32)
+rotation = -0.521569
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-35.1888, -25)
+rotation = 0.179023
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(68.8112, -33)
+rotation = 0.0933931
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(108.811, -36)
+rotation = -0.263829
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(-32.1888, -77)
+rotation = 0.70385
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(16.8112, -87)
+rotation = -0.487723
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(-19.1888, -122)
+rotation = -1.88732
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+position = Vector2(104.811, -103)
+rotation = 0.915931
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(62.8112, -111)
+rotation = -0.304463
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D14" type="Sprite2D" parent="."]
+position = Vector2(3.81116, -209)
+rotation = -0.304463
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(-110.189, -40)
+rotation = 0.342601
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(-82.1888, -87)
+rotation = -3.99483
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-58.1888, -2.00002)
+rotation = 1.93646
+texture = ExtResource("1_8duxg")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+position = Vector2(-29.1888, -164)
+rotation = 0.536428
+texture = ExtResource("1_8duxg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_01frb")
+
+[node name="InteractableComponent" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_ymxsj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_1u6vn")

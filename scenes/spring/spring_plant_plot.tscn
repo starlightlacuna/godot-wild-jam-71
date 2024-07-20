@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://da04xued578q"]
+
+[ext_resource type="Script" path="res://scripts/spring_plant_plot.gd" id="1_mfp5e"]
+[ext_resource type="Texture2D" uid="uid://yktp4eu3de50" path="res://assets/art/spring/SPRINGcrushed.png" id="1_tqlra"]
+[ext_resource type="Script" path="res://scripts/components/interactable_component.gd" id="1_xwiac"]
+[ext_resource type="Texture2D" uid="uid://ioqrjhiv2xkw" path="res://assets/art/spring/SPRINGseed2.png" id="2_0n36f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gkxrw"]
+radius = 76.1643
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6sy12"]
+radius = 17.0
+
+[node name="PlantPlot" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_mfp5e")
+
+[node name="InteractableComponent" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_xwiac")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_gkxrw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_gkxrw")
+
+[node name="CrushedPlant" type="Sprite2D" parent="."]
+texture = ExtResource("1_tqlra")
+
+[node name="Seed" type="StaticBody2D" parent="."]
+position = Vector2(0, 7)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Seed"]
+texture = ExtResource("2_0n36f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seed"]
+position = Vector2(0, -18)
+shape = SubResource("CircleShape2D_6sy12")

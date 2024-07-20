@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cowc77movk8se"]
+
+[ext_resource type="Script" path="res://scripts/spring_flower.gd" id="1_0b4x5"]
+[ext_resource type="Texture2D" uid="uid://kfp010glup7u" path="res://assets/art/spring/SPRINGbush2.png" id="1_rb1d8"]
+[ext_resource type="Texture2D" uid="uid://1u536qdu6pv8" path="res://assets/art/spring/SPRINGitem.png" id="2_pny1d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d4efn"]
+radius = 21.0
+
+[node name="YellowFlower" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_0b4x5")
+
+[node name="Leaves" type="Sprite2D" parent="."]
+texture = ExtResource("1_rb1d8")
+offset = Vector2(0, -60)
+
+[node name="Petals" type="Sprite2D" parent="."]
+position = Vector2(0, -110)
+texture = ExtResource("2_pny1d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d4efn")

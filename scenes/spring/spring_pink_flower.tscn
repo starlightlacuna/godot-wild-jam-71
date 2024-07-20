@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d27lydw8jib75"]
+
+[ext_resource type="PackedScene" uid="uid://cowc77movk8se" path="res://scenes/spring/spring_yellow_flower.tscn" id="1_2kru4"]
+
+[node name="PinkFlower" instance=ExtResource("1_2kru4")]
+
+[node name="Petals" parent="." index="1"]
+modulate = Color(0.878431, 0.505882, 1, 1)
