@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.592081, 0.811917, 0.419638, 1),
+"color": Color(0.839277, 1, 0.953094, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
@@ -10,23 +10,14 @@
 },
 "default_portrait": "Neutral",
 "description": "",
-"display_name": "{alien_cat_name}",
+"display_name": "Yuki",
 "mirror": false,
-"nicknames": ["Keeki"],
+"nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"Angry": {
-"export_overrides": {
-"image": "\"res://assets/art/dialog/KEEKI3.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
 "Happy": {
 "export_overrides": {
-"image": "\"res://assets/art/dialog/KEEKI4.png\""
+"image": "\"res://assets/art/dialog/WINTER2.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -35,16 +26,7 @@
 },
 "Neutral": {
 "export_overrides": {
-"image": "\"res://assets/art/dialog/KEEKI2.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"Wave": {
-"export_overrides": {
-"image": "\"res://assets/art/dialog/KEEKI1.png\""
+"image": "\"res://assets/art/dialog/WINTER1.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

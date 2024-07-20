@@ -1,0 +1,22 @@
+[update_position vector="Vector2(60, 0)" time="0.0"]
+[update_position position="4" vector="Vector2(-60, 0)" time="0.0"]
+[background arg="res://assets/art/backgrounds/BG_Fall1.png" fade="0.0"]
+join Shika 4 [animation="Instant In Or Out"]
+[wait time="1.0"]
+update Shika [animation="Bounce" length="1"]
+join Laika 0 [animation="Slide In Left" length="1" wait="true"]
+Laika: Hello, my name is Laika! I am looking for a missing part of my ship. I was sent here by Keeki.
+Shika (Happy): Hi Laika! I’m so glad you’re here!
+update Shika [animation="Tada"]
+Shika (Neutral): My name is Shika, and I am a guardian of the Harvest quadrant.
+update Shika [ mirrored="true"]
+[update_position position="4" vector="Vector2(0, 20)" time="0.2"]
+Shika: When your ship crashed, my food stock was destroyed.
+update Shika [ mirrored="false"]
+[update_position position="4" vector="Vector2(0, -20)" time="0.0"]
+[update_position position="4" vector="Vector2(-40, 0)" time="0.2"]
+Shika: I’ve been working all day to forage, but I’m getting tired.
+[update_position position="4" vector="Vector2(40, 0)" time="0.2"]
+Shika: Can you help me find berries to rebuild my hoard?
+update Laika [animation="Bounce" length="0.3"]
+Laika (Sparkle): Of course!

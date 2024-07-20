@@ -1,0 +1,11 @@
+[update_position vector="Vector2(60, 0)" time="0.0"]
+[update_position position="4" vector="Vector2(-60, 0)" time="0.0"]
+join Laika (Neutral) 0 [animation="Fade In Up"]
+join Yuki (Neutral) 4 [animation="Fade In Up" wait="true"]
+[wait time="0.5"]
+Yuki (Happy): Thank you so much for helping me rebuild my home!
+join Part4 2 [animation="Zoom In" length="1" wait="true"]
+[wait time="0.5"]
+join Congrats 2 [animation="Bounce In" length="1" wait="true" z_index="1"]
+[wait time="0.5"]
+[wait_input]

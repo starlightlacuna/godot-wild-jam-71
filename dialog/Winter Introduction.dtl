@@ -1,0 +1,17 @@
+[update_position vector="Vector2(60, 0)" time="0.0"]
+[update_position position="4" vector="Vector2(120, 0)" time="0.0"]
+[background arg="res://assets/art/backgrounds/BG_Winter1.png" fade="0.0"]
+join Yuki 4 [animation="Instant In Or Out"]
+[wait time="1.0"]
+join Laika 0 [animation="Slide In Left" length="1" wait="true"]
+Laika: Hello! My name is Laika. Keeki told me that a missing part of my ship is here?
+[update_position position="4" vector="Vector2(-60, 0)" time="1.8"]
+[wait time="1.0" hide_text="false"]
+Yuki: Hi Laika, Keeki mentioned you would be dropping by.
+[update_position position="4" vector="Vector2(-60, 0)" time="1.8"]
+[wait time="1.0" hide_text="false"]
+Yuki: My name is Yuki, and I am a guardian of the Snow quadrant.
+[update_position position="4" vector="Vector2(-60, 0)" time="1.8"]
+[wait time="1.0" hide_text="false"]
+Yuki: As you can see, your ship’s missing part destroyed my home! Can you help me rebuild it?
+Laika (Sparkle): You got it!

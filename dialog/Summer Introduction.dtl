@@ -1,0 +1,16 @@
+[update_position vector="Vector2(60, 0)" time="0.0"]
+[update_position position="4" vector="Vector2(100, 0)" time="0.0"]
+[background arg="res://assets/art/backgrounds/BG_Summer1.png" fade="0.0"]
+join Kani 4 [animation="Instant In Or Out"]
+update Kani [animation="Shake Y" length="2" repeat="2"]
+[wait time="1.0"]
+join Laika 0 [animation="Slide In Left" length="1" wait="true"]
+Laika: Hello, my name is Laika! I heard there was a missing part here?
+[update_position position="4" vector="Vector2(-160, 0)" time="0.5"]
+Kani (Neutral): Hi Laika, just in time!
+update Kani [animation="Shake Y" length="1" repeat="0"]
+Kani: My name is Kani, and I am a guardian of the Shell quadrant.
+Kani: When your ship crashed, my beautiful treasure chest of seashells got swept away. My entire collection was gone in a blink of an eye.
+Kani: Can you help me collect new shells?
+update Laika [animation="Bounce" length="0.3"]
+Laika (Sparkle): Leave it to me!

@@ -23,12 +23,29 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Congrats": "res://dialog/Congrats.dch",
+"Hana": "res://dialog/Hana.dch",
+"Kani": "res://dialog/Kani.dch",
 "Keeki": "res://dialog/Keeki.dch",
-"Laika": "res://dialog/Laika.dch"
+"Laika": "res://dialog/Laika.dch",
+"Part1": "res://dialog/Part1.dch",
+"Part2": "res://dialog/Part2.dch",
+"Part3": "res://dialog/Part3.dch",
+"Part4": "res://dialog/Part4.dch",
+"Shika": "res://dialog/Shika.dch",
+"Yuki": "res://dialog/Yuki.dch"
 }
 directories/dtl_directory={
+"Autumn Complete": "res://dialog/Autumn Complete.dtl",
+"Autumn Introduction": "res://dialog/Autumn Introduction.dtl",
 "Awakening": "res://dialog/Awakening.dtl",
-"Introduction": "res://dialog/Introduction.dtl"
+"Introduction": "res://dialog/Introduction.dtl",
+"Spring Complete": "res://dialog/Spring Complete.dtl",
+"Spring Introduction": "res://dialog/Spring Introduction.dtl",
+"Summer Complete": "res://dialog/Summer Complete.dtl",
+"Summer Introduction": "res://dialog/Summer Introduction.dtl",
+"Winter Complete": "res://dialog/Winter Complete.dtl",
+"Winter Introduction": "res://dialog/Winter Introduction.dtl"
 }
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -50,6 +67,10 @@ text/autopauses={}
 variables={
 "alien_cat_name": "???"
 }
+layout/style_list=["res://assets/art/dialog/Laika.tres"]
+layout/default_style="res://assets/art/dialog/Laika.tres"
+glossary/default_case_sensitive=true
+text/autocolor_names=true
 
 [display]
 

@@ -1,0 +1,13 @@
+[update_position vector="Vector2(60, 0)" time="0.0"]
+[update_position position="4" vector="Vector2(-60, 0)" time="0.0"]
+[background arg="res://assets/art/backgrounds/BG_Spring1.png" fade="0.0"]
+join Hana 4 [animation="Instant In Or Out" length="0" wait="true" mirrored="true"]
+[wait time="1.0"]
+join Laika (Neutral) 0 [animation="Slide In Left" length="1" wait="true"]
+Laika (Neutral): H-hello. My name is Laik-
+update Hana [animation="Bounce" length="0.2" mirrored="false"]
+Hana: Hi Laika! Keeki called earlier telling me you would be dropping by!
+Hana (Happy): My name is Hana, and I am a guardian of the Bloom quadrant.
+Hana (Neutral): When your ship crashed a piece of it flew into my garden and destroyed my lovely flowers!\
+Can you help me grow new ones?
+Laika (Sparkle): Sure thing!

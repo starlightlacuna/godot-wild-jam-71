@@ -24,7 +24,7 @@ Keeki (Angry): What are "seasons"?
 Laika (Cringe): It's kinda hard to explain, but it's basically...
 [clear time="1.0" step="false" music="false" positions="false" style="false"]
 [wait time="1.0"]
-[background arg="res://assets/art/backgrounds/BG_Convo2_Spaceship.PNG" fade="0.0"]
+[background arg="res://assets/art/backgrounds/BG_Convo1_Spaceship.PNG" fade="0.0"]
 join Laika 0 [animation="Fade In Up"]
 join Keeki 4 [animation="Fade In Up"]
 Laika (Neutral): Anyway--
