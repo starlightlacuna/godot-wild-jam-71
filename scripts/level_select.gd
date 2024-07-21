@@ -22,7 +22,7 @@ func _ready():
 	_get_button("AutumnButton").set_disabled(parts["Autumn"])
 	_get_button("WinterButton").set_disabled(parts["Winter"])
 	
-	_get_button("SpringButton").grab_focus.call_deferred()
+	_get_button("SummerButton").grab_focus.call_deferred()
 
 func _get_button(button_name: String) -> TextureButton:
 	return $MarginContainer/GridContainer.get_node(button_name)

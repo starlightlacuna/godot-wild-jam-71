@@ -32,7 +32,7 @@ Laika (Teary): Thank you so much. I will never forget this.
 [wait time="2.0"]
 [update_position vector="Vector2(60, 0)" time="0.0"]
 [update_position position="4" vector="Vector2(-60, 0)" time="0.0"]
-[background arg="res://assets/art/backgrounds/BG_Convo3_Spaceship.png" fade="0.3"]
+[background arg="res://assets/art/backgrounds/BG_Convo2_Spaceship.PNG" fade="0.3"]
 join Laika (Neutral) 0 [animation="Fade In Up"]
 join Keeki (Happy) 4 [animation="Fade In Up" wait="true"]
 Keeki: And now, with your ship in good condition, we are happy to send you off.

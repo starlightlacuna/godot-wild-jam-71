@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_8nm5j"]
 [ext_resource type="FontFile" uid="uid://cskxkyeot0b0l" path="res://assets/fonts/Luckiest Guy/LuckiestGuy-Regular.ttf" id="1_exrtq"]
-[ext_resource type="PackedScene" uid="uid://d366vc17ipsry" path="res://scenes/main_menu.tscn" id="2_ps5fm"]
+[ext_resource type="Theme" uid="uid://c0vr6cplu5cqc" path="res://pause_menu.tres" id="1_lmabf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80w3i"]
 bg_color = Color(0.101961, 0.101961, 0.101961, 0.960784)
@@ -17,24 +17,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_lmabf")
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 script = ExtResource("1_8nm5j")
-main_menu_scene = ExtResource("2_ps5fm")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
+theme = ExtResource("1_lmabf")
 theme_override_styles/panel = SubResource("StyleBoxFlat_80w3i")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
+theme = ExtResource("1_lmabf")
 theme_override_constants/separation = 40
 
 [node name="Title" type="Label" parent="PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
+theme = ExtResource("1_lmabf")
 theme_override_fonts/font = ExtResource("1_exrtq")
 theme_override_font_sizes/font_size = 80
 text = "Paused"
@@ -43,6 +46,7 @@ vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_lmabf")
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_right = 40
 
@@ -50,6 +54,7 @@ theme_override_constants/margin_right = 40
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 1
+theme = ExtResource("1_lmabf")
 theme_override_fonts/font = ExtResource("1_exrtq")
 theme_override_font_sizes/font_size = 40
 text = "[Arrow Keys] Move"
@@ -58,6 +63,7 @@ autowrap_mode = 3
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_lmabf")
 theme_override_constants/separation = 100
 
 [node name="ResumeButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
@@ -65,6 +71,7 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_lmabf")
 theme_override_fonts/font = ExtResource("1_exrtq")
 theme_override_font_sizes/font_size = 40
 text = "Resume"
@@ -74,9 +81,14 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("1_exrtq")
-theme_override_font_sizes/font_size = 40
+theme = ExtResource("1_lmabf")
 text = "Main Menu"
+
+[node name="ReturnToMapButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_lmabf")
+text = "Return to Map"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/ReturnToMapButton" to="." method="_on_return_to_map_button_pressed"]

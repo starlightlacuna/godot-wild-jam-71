@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://tmae7k5ts7y1"]
+[gd_scene load_steps=5 format=3 uid="uid://tmae7k5ts7y1"]
 
 [ext_resource type="Texture2D" uid="uid://be4mdwacuukop" path="res://assets/art/summer/SUMMERitem.png" id="2_b3dfm"]
 [ext_resource type="Script" path="res://scripts/components/interactable_component.gd" id="3_bsm7j"]
 [ext_resource type="Script" path="res://scripts/components/item_component.gd" id="4_c7wrd"]
-[ext_resource type="Resource" uid="uid://c8mdjiy8c3e3a" path="res://items/seashell.tres" id="5_dpigv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_738hg"]
 radius = 42.0
@@ -31,4 +30,4 @@ shape = SubResource("CircleShape2D_738hg")
 
 [node name="ItemComponent" type="Node" parent="."]
 script = ExtResource("4_c7wrd")
-reference = ExtResource("5_dpigv")
+item_id = 1

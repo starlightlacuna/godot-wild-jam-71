@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq7grhwxdyj5d"]
+[gd_scene load_steps=5 format=3 uid="uid://cq7grhwxdyj5d"]
 
 [ext_resource type="Script" path="res://scripts/epilogue.gd" id="1_dlfpk"]
+[ext_resource type="Texture2D" uid="uid://b1mtimaken40x" path="res://assets/art/menus/CREDITSscreen.png" id="2_f4i08"]
+[ext_resource type="AudioStream" uid="uid://dolv0opita82k" path="res://assets/music/9.1_END CREDITS_Star Of The Sea_Jangwa.mp3" id="2_uowj0"]
+[ext_resource type="Theme" uid="uid://ce8rfwuqfwaiq" path="res://credits.tres" id="3_ttwg6"]
 
 [node name="Epilogue" type="Control"]
 layout_mode = 3
@@ -11,15 +14,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dlfpk")
 
-[node name="Black" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -27,37 +21,264 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Background2" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0)
-offset_right = 40.0
-offset_bottom = 40.0
+texture = ExtResource("2_f4i08")
+expand_mode = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-volume_db = -80.0
+stream = ExtResource("2_uowj0")
+autoplay = true
 
-[node name="TextBox" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(500, 100)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -260.0
-offset_top = -153.0
-offset_right = 260.0
-offset_bottom = -33.0
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 1240.0
+offset_bottom = 680.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+theme = ExtResource("3_ttwg6")
 
-[node name="Text" type="Label" parent="TextBox"]
-custom_minimum_size = Vector2(500, 100)
+[node name="Team" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ttwg6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Team"]
+layout_mode = 2
+theme = ExtResource("3_ttwg6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Team/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_ttwg6")
+bbcode_enabled = true
+text = "[font_size=56][center]Laika[/center][/font_size]
+A game by:
+[ul]
+[b]Mellocat[/b] ([url]https://mellocat.carrd.co[/url]) - Sprites, Character Art, Backgrounds
+[b]Beatriz Vera[/b] ([url]https://beacons.ai/atelier_bighari[/url]) - Music Sourcing, Writing, Backgrounds
+[b]StarlightLacuna[/b] ([url]https://starlightlacuna.itch.io[/url]) - Programming, Game Design
+[/ul]"
+
+[node name="GridBoxContainer" type="GridContainer" parent="Team/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 24
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("3_ttwg6")
+columns = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="LaikaButton" type="Button" parent="Team/VBoxContainer/GridBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme = ExtResource("3_ttwg6")
+theme_override_font_sizes/font_size = 30
+text = "The Real Laika"
+
+[node name="AssetsButton" type="Button" parent="Team/VBoxContainer/GridBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme = ExtResource("3_ttwg6")
+theme_override_font_sizes/font_size = 30
+text = "Assets"
+
+[node name="SoftwareButton" type="Button" parent="Team/VBoxContainer/GridBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme = ExtResource("3_ttwg6")
+theme_override_font_sizes/font_size = 30
+text = "Software"
+
+[node name="MainMenuButton" type="Button" parent="Team/VBoxContainer/GridBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme = ExtResource("3_ttwg6")
+theme_override_font_sizes/font_size = 30
+text = "Main Menu"
+
+[node name="Laika" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ttwg6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Laika"]
+layout_mode = 2
+theme = ExtResource("3_ttwg6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Laika/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_ttwg6")
+bbcode_enabled = true
+text = "[font_size=56][center]Laika[/center][/font_size]
+	This game was based on the real-life story of Laika, a Soviet space dog. She crewed Sputnik 2, the second spacecraft to be launched into orbit around Earth. Though the launch was an incredible engineering feat, there were no plans to safely return her to Earth. She died a handful of hours into her flight due to heat and stress.
+	In Moscow, she is memorialized by statues and photos at research facilities, and during the Mars Exploration Rover Opportunity mission in March 2005, NASA unofficially named a soil target within a Martian crater “Laika.”
+	Our retelling of Laika's story is one of hope -- where she survives, makes friends, and experiences a wonderful life after her mission. It's not what she got, but it's what she deserved.
+
+[url]https://en.wikipedia.org/wiki/Laika[/url]
+
+"
+
+[node name="ReturnButton" type="Button" parent="Laika/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_ttwg6")
+text = "Return"
+
+[node name="Software" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ttwg6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Software"]
+layout_mode = 2
+theme = ExtResource("3_ttwg6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Software/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_ttwg6")
+bbcode_enabled = true
+text = "[font_size=48][center]Godot Engine[/center][/font_size]
+    This game uses Godot Engine, available under the following license:
+
+    Copyright (c) 2014-present Godot Engine contributors. Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[font_size=48][center]FreeType[/center][/font_size]
+Portions of this software are copyright ©2024 The FreeType Project (www.freetype.org). All rights reserved.
+
+[font_size=48][center]ENet[/center][/font_size]
+    Copyright (c) 2002-2020 Lee Salzman
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[font_size=48][center]mbed TLS[/center][/font_size]
+    Copyright The Mbed TLS Contributors
+
+    Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+[font_size=48][center]Dialogic[/center][/font_size]
+MIT License
+
+Copyright (c) 2020 - present Emilio Coppola
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the \"Software\"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE."
+
+[node name="ReturnButton" type="Button" parent="Software/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_ttwg6")
+text = "Return"
+
+[node name="Assets" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ttwg6")
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Assets"]
+layout_mode = 2
+theme = ExtResource("3_ttwg6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Assets/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_ttwg6")
+bbcode_enabled = true
+text = "[font_size=48][center]Music[/center][/font_size]
+[ul]
+\"Beyond the Mind\" by BoDleasons. Licensed under [url={https://creativecommons.org/licenses/by-nc-nd/4.0/}]CC BY-NC-ND 4.0[/url]. Available through Free Music Archive ([url]https://freemusicarchive.org/music/bodleasons/epic-music/beyond-the-mind/[/url]). 
+\"The Precarious Bridge\" by William Frederick Davidson. Licensed under [url={https://creativecommons.org/licenses/by-nc/4.0/}]CC BY-NC 4.0[/url]. Available through Free Music Archive ([url]https://freemusicarchive.org/music/william-frederick-davidson/single/the-precarious-bridgemp3/[/url]).
+\"Smoke Signals\" by 1st Contact. Licensed under [url={https://creativecommons.org/licenses/by-sa/4.0/}]CC BY-SA 4.0[/url]. Available through Free Music Archive ([url]https://freemusicarchive.org/music/1st-contact/single/smoke-signals/[/url]).
+\"Awakening\" by Ketsa. Licensed under [url={https://creativecommons.org/licenses/by-nc-nd/4.0/}]CC BY-NC-ND 4.0[/url]. Available through Free Music Archive (https://freemusicarchive.org/music/Ketsa/night-vision/awakening-spring/).
+\"Summers Weekends\" by Artur Aravidi. Licensed under [url={https://creativecommons.org/licenses/by-nc/4.0/}]CC BY-NC 4.0[/url]. Available through Free Music Archive ([url]https://freemusicarchive.org/music/artur-aravidi/single/summers-weekendsmp3/[/url]).
+\"Starlight Night\" by AudioCoffee. [url]https://www.audiocoffee.net/[/url], [url]youtube.com/@audiocoffeemusic[/url]
+\"Rise of Hope\" by BoDleasons. Licensed under [url={https://creativecommons.org/licenses/by-nc-nd/4.0/}]CC BY-NC-ND 4.0[/url]. Available through Free Music Archive ([url]https://freemusicarchive.org/music/bodleasons/legacy-vol-1/rise-of-hope/[/url]).
+\"Motivate Ambient\" by AudioCoffee. [url]https://www.audiocoffee.net/[/url], [url]youtube.com/@audiocoffeemusic[/url]
+\"Star of the Sea\" by Jangwa. Licensed under [url={https://creativecommons.org/licenses/by/4.0/}]CC BY 4.0[/url]. Available through Free Music Archive ([url]https://freemusicarchive.org/music/Dilating_Times/single/star-of-the-sea/[/url]).
+[/ul]
+
+[font_size=48][center]Art[/center][/font_size]
+[ul]
+\"Hand Painted Sand\" by KIIRA. Licensed under [url={https://creativecommons.org/licenses/by/3.0/}]CC-BY 3.0[/url]. Available at [url]https://opengameart.org/content/hand-painted-sand-texture-0[/url]
+\"Animated 2d Water\" by KingCreator11. Released to the public domain under [url={https://creativecommons.org/publicdomain/zero/1.0/}]CC0 1.0[/url]. Available at [url]https://opengameart.org/content/animated-2d-water[/url]
+\"4 cartoony terrains textures\" by Danimal. Released to the public domain under [url={https://creativecommons.org/publicdomain/zero/1.0/}]CC0 1.0[/url]. Available at [url]https://opengameart.org/content/4-cartoony-terrains-textures[/url]
+[/ul]
+
+[font_size=48][center]Fonts[/center][/font_size]
+[ul]
+\"Luckiest Guy\" by Astigmatic One Eye Typographic Institute. Licensed under [url={https://www.apache.org/licenses/LICENSE-2.0}]Apache License Version 2.0[/url].
+\"Patua One\" by LatinoType Limitada (luciano@latinotype.com). Licensed under [url={https://openfontlicense.org/}]SIL Open Font License Version 1.1[/url].
+\"Signika\" by The Signika Project Authors (https://github.com/googlefonts/Signika). Licensed under [url={https://openfontlicense.org/}]SIL Open Font License Version 1.1[/url]
+\"Staatliches\" by The Staatliches Authors (https://github.com/googlefonts/staatliches). Licensed under [url={https://openfontlicense.org/}]SIL Open Font License Version 1.1[/url].
+[/ul]"
+
+[node name="ReturnButton" type="Button" parent="Assets/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_ttwg6")
+theme_override_font_sizes/font_size = 30
+text = "Return"
+
+[connection signal="pressed" from="Team/VBoxContainer/GridBoxContainer/LaikaButton" to="." method="_on_laika_button_pressed"]
+[connection signal="pressed" from="Team/VBoxContainer/GridBoxContainer/AssetsButton" to="." method="_on_assets_button_pressed"]
+[connection signal="pressed" from="Team/VBoxContainer/GridBoxContainer/SoftwareButton" to="." method="_on_software_button_pressed"]
+[connection signal="pressed" from="Team/VBoxContainer/GridBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Laika/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="Software/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="Assets/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c0vr6cplu5cqc"]
+
+[ext_resource type="FontFile" uid="uid://cskxkyeot0b0l" path="res://assets/fonts/Luckiest Guy/LuckiestGuy-Regular.ttf" id="1_pg6fl"]
+
+[resource]
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_pg6fl")

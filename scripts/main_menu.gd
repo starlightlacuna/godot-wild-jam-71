@@ -20,15 +20,12 @@ func _exit_tree() -> void:
 	$ControlsWindow/PanelContainer/VBoxContainer/BackButton.pressed.disconnect(_on_back_button_pressed)
 
 func _on_start_button_pressed():
-	print("Start Button pressed!")
 	get_tree().change_scene_to_file("res://scenes/introduction.tscn")
 
 func _on_quit_button_pressed():
-	print("Quit Button pressed!")
 	get_tree().quit()
 
 func _on_controls_button_pressed():
-	print("Controls Button pressed!")
 	$ControlsWindow.set_visible(true)
 	$ControlsWindow/PanelContainer/VBoxContainer/BackButton.grab_focus.call_deferred()
 

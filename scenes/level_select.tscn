@@ -47,15 +47,6 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 2
 
-[node name="SpringButton" type="TextureButton" parent="MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(610, 330)
-layout_mode = 2
-texture_normal = ExtResource("2_p3ul2")
-texture_disabled = ExtResource("3_q8mfq")
-texture_focused = ExtResource("4_04son")
-ignore_texture_size = true
-stretch_mode = 0
-
 [node name="SummerButton" type="TextureButton" parent="MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(610, 330)
 layout_mode = 2
@@ -83,7 +74,16 @@ texture_focused = ExtResource("4_04son")
 ignore_texture_size = true
 stretch_mode = 0
 
-[connection signal="pressed" from="MarginContainer/GridContainer/SpringButton" to="." method="_on_spring_button_pressed"]
+[node name="SpringButton" type="TextureButton" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(610, 330)
+layout_mode = 2
+texture_normal = ExtResource("2_p3ul2")
+texture_disabled = ExtResource("3_q8mfq")
+texture_focused = ExtResource("4_04son")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="pressed" from="MarginContainer/GridContainer/SummerButton" to="." method="_on_summer_button_pressed"]
 [connection signal="pressed" from="MarginContainer/GridContainer/AutumnButton" to="." method="_on_autumn_button_pressed"]
 [connection signal="pressed" from="MarginContainer/GridContainer/WinterButton" to="." method="_on_winter_button_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/SpringButton" to="." method="_on_spring_button_pressed"]

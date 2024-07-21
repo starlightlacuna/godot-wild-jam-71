@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/spring_level_prototype.gd" id="1_4fduf"]
 [ext_resource type="Texture2D" uid="uid://dfl4n557jq2po" path="res://assets/prototype/Plant.png" id="1_e34fw"]
-[ext_resource type="PackedScene" uid="uid://bc85tc1241p10" path="res://scenes/prototypes/watering_can.tscn" id="3_mettt"]
+[ext_resource type="PackedScene" uid="uid://bc85tc1241p10" path="res://scenes/prototype/watering_can.tscn" id="3_mettt"]
 
 [node name="SpringLevel" type="Node"]
 script = ExtResource("1_4fduf")

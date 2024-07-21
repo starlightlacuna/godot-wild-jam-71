@@ -1,3 +1,19 @@
-[background arg="res://assets/art/backgrounds/PROLOGUE6.png" fade="0.0"]
-And so, Laika left Drook
-[background fade="0.0"]
+[background arg="res://assets/art/backgrounds/BG_Convo3_Spaceship.png" fade="0.0"]
+join Laika (Sparkle) 3
+Laika (Sparkle): What an interesting planet!
+update Laika 1 [ mirrored="true" move_time="1.8"]
+Laika (Neutral): I'll miss my new friends...
+update Laika 2 [ mirrored="false" move_time="1"]
+Laika: Well, time to go home.
+[clear time="1.0"]
+[background arg="res://assets/art/backgrounds/PROLOGUE8.png" fade="1.0"]
+It wasn't long until Laika was able to re-enter Earth's orbit.
+With the ship primarily on auto-pilot, Laika was able to fulfill her mission.
+The trip was uneventful, and Laika spent the days dreaming about the time she spent on Drook.
+With the help of her mission command, her ship landed on Earth in the Northern Pacific Ocean.
+[background arg="res://assets/art/menus/ENDscreen.png" fade="1.0" transition="Swipe Left To Right"]
+She was lauded as a hero for her work, and a few days later, a ceremony awarded her the 1st Dog in Space trophy,
+Thus memorializing her as humanity's first step towards space exploration.
+[clear time="1.0" step="false" background="false"]
+[wait time="3.0"]
+[clear time="1.0" text="false" portraits="false" music="false" positions="false" style="false"]

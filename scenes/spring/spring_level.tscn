@@ -135,10 +135,6 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(2420, 952)
 scale = Vector2(0.5, 0.5)
 
-[node name="YellowFlower12" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
-position = Vector2(2420, 952)
-scale = Vector2(0.5, 0.5)
-
 [node name="YellowFlower11" parent="WorldObjects/StaticObjects" instance=ExtResource("9_xbhpu")]
 position = Vector2(2056, 865)
 scale = Vector2(0.5, 0.5)

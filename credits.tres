@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://ce8rfwuqfwaiq"]
+
+[ext_resource type="FontFile" uid="uid://bnwdjm3evak66" path="res://assets/fonts/Staatliches/Staatliches-Regular.ttf" id="1_q61c5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wd2o"]
+bg_color = Color(0.165656, 0.165656, 0.165656, 0.592157)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[resource]
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_q61c5")
+GridContainer/constants/h_separation = 20
+GridContainer/constants/v_separation = 20
+MarginContainer/constants/margin_bottom = 60
+MarginContainer/constants/margin_left = 80
+MarginContainer/constants/margin_right = 80
+MarginContainer/constants/margin_top = 60
+Panel/styles/panel = SubResource("StyleBoxFlat_6wd2o")
+RichTextLabel/constants/line_separation = 4
+RichTextLabel/font_sizes/bold_font_size = 24
+RichTextLabel/font_sizes/normal_font_size = 24
+VBoxContainer/constants/separation = 20
