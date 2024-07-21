@@ -21,6 +21,8 @@ func _ready() -> void:
 	Dialogic.start("Spring Introduction")
 	Dialogic.timeline_ended.connect(_on_spring_introduction_ended)
 	
+	($UILayer as UILayer).set_pause_menu_hint("Objective: Replace Hana's crushed plants with new seeds!\n\nYou can throw out your inventory by interacting with the garbage can.")
+	
 func _on_plant_plot_interacted(node: Node) -> void:
 	var plant_plot = node as PlantPlot
 	if plant_plot.is_crushed():
@@ -59,3 +61,6 @@ func _on_spring_complete_ended() -> void:
 	PlayerInventory.add_part("Spring")
 	get_tree().change_scene_to_packed(preload("res://scenes/level_select.tscn"))
 
+func _on_laika_pause_action_pressed():
+	get_tree().set_pause(true)
+	($UILayer as UILayer).show_pause_menu()

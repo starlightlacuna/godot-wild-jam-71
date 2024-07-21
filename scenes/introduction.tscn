@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnk7x3cyuxmc"]
+[gd_scene load_steps=8 format=3 uid="uid://dnk7x3cyuxmc"]
 
 [ext_resource type="Script" path="res://scripts/introduction.gd" id="1_5d8lc"]
+[ext_resource type="FontFile" uid="uid://dwu4vumq5p7kk" path="res://assets/fonts/Patua One/PatuaOne-Regular.ttf" id="2_hay5h"]
 
 [sub_resource type="Animation" id="Animation_460ct"]
 length = 0.001
@@ -317,9 +318,27 @@ grow_vertical = 0
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_hay5h")
 theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="SkipButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -49.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "SKIP"
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

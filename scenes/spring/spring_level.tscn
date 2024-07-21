@@ -523,4 +523,6 @@ scale = Vector2(0.4, 0.4)
 stream = ExtResource("18_qalcl")
 autoplay = true
 
+[connection signal="pause_action_pressed" from="WorldObjects/Laika" to="." method="_on_laika_pause_action_pressed"]
+
 [editable path="WorldBounds"]

@@ -38,6 +38,9 @@ update Laika [ mirrored="true"]
 Laika: And the ship is in bad shape... I can't possibly finish my mission now.
 Keeki (Wave): Worry not, my friends have collected the parts of your ship.
 update Laika (Sparkle) [animation="Bounce" length="0.2" mirrored="false"]
-Keeki (Neutral): They are usually delighted to welcome visitors, but they are quite upset at the moment. If you help repair what you have broken, I am sure they will be willing to return those parts to you.
+Keeki (Neutral): They are usually delighted to welcome visitors, but they are quite upset at the moment.
+update Laika (Cringe)
+Keeki: If you help repair what you have broken, I am sure they will be willing to return those parts to you.
 Laika (Starstruck): R-really? I'll do anything I can to help! I need to finish my mission no matter what!
 Keeki (Happy): I am glad to hear it. Here is a map of all the locations where the parts were found.
+[music fade="0.0" volume="0.0"]

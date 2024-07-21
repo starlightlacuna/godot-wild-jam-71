@@ -10,10 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Godot Wild Jam 71"
+config/name="Laika"
+config/version="0.1"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.152941, 0.203922, 0.305882, 1)
+boot_splash/image="res://assets/art/splash_screen.png"
+config/icon="res://assets/art/LAIKAsmol.png"
 
 [autoload]
 
@@ -41,6 +44,7 @@ directories/dtl_directory={
 "Autumn Complete": "res://dialog/Autumn Complete.dtl",
 "Autumn Introduction": "res://dialog/Autumn Introduction.dtl",
 "Awakening": "res://dialog/Awakening.dtl",
+"Epilogue": "res://dialog/Epilogue.dtl",
 "Introduction": "res://dialog/Introduction.dtl",
 "Spring Complete": "res://dialog/Spring Complete.dtl",
 "Spring Introduction": "res://dialog/Spring Introduction.dtl",

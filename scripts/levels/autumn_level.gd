@@ -6,6 +6,8 @@ func _ready():
 	Dialogic.start("Autumn Introduction")
 	Dialogic.timeline_ended.connect(_on_autumn_introduction_ended)
 	
+	($UILayer as UILayer).set_pause_menu_hint("Objective: Forage for berries!\n\nThere are 8 berry bushes spread out across the forest.")
+	
 func _check_win_condition():
 	var count = 0
 	for item in PlayerInventory.get_items():
@@ -24,3 +26,7 @@ func _on_autumn_introduction_ended() -> void:
 func _on_autumn_complete_ended() -> void:
 	PlayerInventory.add_part("Autumn")
 	get_tree().change_scene_to_packed(preload("res://scenes/level_select.tscn"))
+
+func _on_laika_pause_action_pressed():
+	get_tree().set_pause(true)
+	($UILayer as UILayer).show_pause_menu()

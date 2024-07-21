@@ -51,9 +51,9 @@ alignment = 1
 [node name="ControlsButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_pgjn0")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "Options"
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
@@ -61,18 +61,19 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_pgjn0")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 70
 text = "Start"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_pgjn0")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "Quit"
 
 [node name="ControlsWindow" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

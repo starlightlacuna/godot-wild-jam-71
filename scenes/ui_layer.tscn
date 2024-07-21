@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5vf0jvpw54qa"]
+[gd_scene load_steps=8 format=3 uid="uid://c5vf0jvpw54qa"]
 
 [ext_resource type="Script" path="res://scripts/inventory_bar.gd" id="1_h3xei"]
+[ext_resource type="Script" path="res://scripts/ui_layer.gd" id="1_mwufc"]
 [ext_resource type="PackedScene" uid="uid://q7uo116g1vmy" path="res://scenes/inventory_slot.tscn" id="2_yeiw7"]
+[ext_resource type="PackedScene" uid="uid://bdbms817t3jm8" path="res://scenes/pause_menu.tscn" id="3_08sww"]
 
 [sub_resource type="Animation" id="Animation_3br4w"]
 resource_name = "fade_out"
@@ -40,6 +42,7 @@ _data = {
 }
 
 [node name="UILayer" type="CanvasLayer"]
+script = ExtResource("1_mwufc")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -103,3 +106,7 @@ layout_mode = 2
 libraries = {
 "": SubResource("AnimationLibrary_oxo0l")
 }
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_08sww")]
+process_mode = 2
+visible = false

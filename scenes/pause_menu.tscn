@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdbms817t3jm8"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_8nm5j"]
+[ext_resource type="FontFile" uid="uid://cskxkyeot0b0l" path="res://assets/fonts/Luckiest Guy/LuckiestGuy-Regular.ttf" id="1_exrtq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80w3i"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 0.960784)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="PauseMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+script = ExtResource("1_8nm5j")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_80w3i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_exrtq")
+theme_override_font_sizes/font_size = 80
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="Objective" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_exrtq")
+theme_override_font_sizes/font_size = 40
+text = "[Arrow Keys] Move"
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="ResumeButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_exrtq")
+theme_override_font_sizes/font_size = 40
+text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_exrtq")
+theme_override_font_sizes/font_size = 40
+text = "Main Menu"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

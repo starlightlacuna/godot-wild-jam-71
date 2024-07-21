@@ -1,6 +1,8 @@
 extends Node
 
 func _ready():
+	($UILayer as UILayer).set_pause_menu_hint("Objective: Collect seashells for Kani!\n\nThere are 10 seashells in total.")
+	
 	PlayerInventory.clear()
 	PlayerInventory.inventory_updated.connect(_check_win_condition)
 	Dialogic.start("Summer Introduction")
@@ -24,3 +26,7 @@ func _on_summer_introduction_ended() -> void:
 func _on_summer_complete_ended() -> void:
 	PlayerInventory.add_part("Summer")
 	get_tree().change_scene_to_packed(preload("res://scenes/level_select.tscn"))
+
+func _on_laika_pause_action_pressed():
+	get_tree().set_pause(true)
+	($UILayer as UILayer).show_pause_menu()

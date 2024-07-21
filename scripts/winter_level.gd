@@ -10,6 +10,8 @@ func _ready() -> void:
 	Dialogic.start("Winter Introduction")
 	Dialogic.timeline_ended.connect(_on_winter_introduction_ended)
 	
+	($UILayer as UILayer).set_pause_menu_hint("Objective: Build a new house for Yuki!\n\nCheck the riverbank for ice blocks you can use as material.")
+	
 func _on_igloo_interacted(_node: Node) -> void:
 	var items: Array = (PlayerInventory as Inventory).get_items()
 	for index in items.size():
@@ -33,3 +35,8 @@ func _on_winter_introduction_ended() -> void:
 func _on_winter_complete_ended() -> void:
 	PlayerInventory.add_part("Winter")
 	get_tree().change_scene_to_packed(preload("res://scenes/level_select.tscn"))
+
+func _on_laika_pause_action_pressed():
+	get_tree().set_pause(true)
+	($UILayer as UILayer).show_pause_menu()
+	

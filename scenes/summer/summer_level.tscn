@@ -192,3 +192,5 @@ position = Vector2(3154, 55)
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_tqt1u")
 autoplay = true
+
+[connection signal="pause_action_pressed" from="WorldObjects/Laika" to="." method="_on_laika_pause_action_pressed"]

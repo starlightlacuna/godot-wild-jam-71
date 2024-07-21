@@ -317,6 +317,7 @@ position = Vector2(-90, 1905)
 stream = ExtResource("16_5wwm6")
 autoplay = true
 
+[connection signal="pause_action_pressed" from="WorldObjects/Laika" to="." method="_on_laika_pause_action_pressed"]
 [connection signal="completed" from="WorldObjects/Igloo" to="." method="_on_igloo_completed"]
 
 [editable path="WorldBounds"]

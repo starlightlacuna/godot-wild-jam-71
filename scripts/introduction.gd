@@ -46,6 +46,12 @@ var text_index := -1
 
 func _ready() -> void:
 	animation_player.play("prologue")
+	$SkipButton.set_visible(false)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("action"):
+		$SkipButton.set_visible(true)
+		$SkipButton.grab_focus.call_deferred()
 
 func play_music(index: int) -> void:
 	music.set_stream(music_streams[index])
@@ -62,7 +68,10 @@ func set_background2(index: int) -> void:
 	background2.set_texture(images[index])
 
 func _on_animation_player_animation_finished(anim_name: String) -> void:
-	print("WHAT THE HEY")
 	if anim_name != "prologue":
 		printerr("Introduction didn't play the prologue!")
+	get_tree().change_scene_to_file("res://scenes/awakening.tscn")
+
+
+func _on_skip_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/awakening.tscn")
