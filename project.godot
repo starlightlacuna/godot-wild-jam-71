@@ -36,6 +36,7 @@ directories/dch_directory={
 "Yuki": "res://dialog/Yuki.dch"
 }
 directories/dtl_directory={
+"All Parts Collected": "res://dialog/All Parts Collected.dtl",
 "Autumn Complete": "res://dialog/Autumn Complete.dtl",
 "Autumn Introduction": "res://dialog/Autumn Introduction.dtl",
 "Awakening": "res://dialog/Awakening.dtl",

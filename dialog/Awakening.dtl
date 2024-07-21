@@ -1,6 +1,6 @@
 [update_position vector="Vector2(60, 0)" time="0.0"]
 [update_position position="4" vector="Vector2(-60, 0)" time="0.0"]
-[background arg="res://assets/art/backgrounds/BG_Convo1_Spaceship.PNG" fade="0.0"]
+[background arg="res://assets/art/backgrounds/BG_Convo2_Spaceship.PNG" fade="0.0"]
 [music path="res://assets/music/3_AWAKENING_Smoke Signals_1st Contact.mp3" fade="0.0" volume="0.0"]
 join Laika (Dizzy) 0
 Laika (Dizzy): Oh my–where am I?

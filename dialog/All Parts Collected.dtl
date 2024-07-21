@@ -1,0 +1,41 @@
+[update_position vector="Vector2(60, 0)" time="0.0"]
+[update_position position="4" vector="Vector2(-60, 0)" time="0.0"]
+[background arg="res://assets/art/backgrounds/BG_Convo1_Spaceship.PNG" fade="0.0"]
+[music path="res://assets/music/8_EPILOGUE_Motivate Ambient_Denys Kyshchuk.mp3" fade="0.0" volume="0.0"]
+join Keeki 4 [animation="Instant In Or Out"]
+join Laika (Neutral) 0 [animation="Slide In Left" length="2" wait="true"]
+Keeki (Wave): Welcome back, Laika!
+Keeki (Neutral): I received word that you have successfully helped my friends.
+Keeki (Happy): Thank you so much for all of your work!
+Laika (Sparkle): It’s absolutely no problem!
+Laika (Neutral): Not only did I help repair what I broke, I was able to retrieve all of my missing parts.
+Laika (Sparkle): It feels nice to help others, you know?
+Keeki (Happy): Yes of course!
+Keeki (Neutral): Before you go on your way, let us help you repair your ship--
+leave Keeki
+[update_position vector="Vector2(-60, 0)" time="1.0"]
+[update_position position="4" vector="Vector2(60, 0)" time="0.0"]
+join Hana 1
+join Kani 2
+join Shika 3
+join Yuki 4
+Laika (Shocked): Hana, Kani, Shika, and Yuki?
+Laika (Sparkle): You're here to help me?
+update Hana (Happy) [animation="Bounce" length="0.8"]
+update Kani (Happy) [animation="Bounce" length="0.8"]
+update Shika (Happy) [animation="Bounce" length="0.8"]
+update Yuki (Happy) [animation="Bounce" length="0.8"]
+Yeah!
+update Laika [animation="Tada"]
+Laika (Teary): Thank you so much. I will never forget this.
+[clear time="1.0" step="false" music="false" style="false"]
+[wait time="2.0"]
+[update_position vector="Vector2(60, 0)" time="0.0"]
+[update_position position="4" vector="Vector2(-60, 0)" time="0.0"]
+[background arg="res://assets/art/backgrounds/BG_Convo3_Spaceship.png" fade="0.3"]
+join Laika (Neutral) 0 [animation="Fade In Up"]
+join Keeki (Happy) 4 [animation="Fade In Up" wait="true"]
+Keeki: And now, with your ship in good condition, we are happy to send you off.
+Keeki (Wave): Goodbye, Laika!
+Laika (Sparkle): Goodbye, everyone!
+[clear time="1.0"]
