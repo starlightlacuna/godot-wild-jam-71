@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cgqum4im6hv1q"]
+[gd_scene load_steps=17 format=3 uid="uid://cgqum4im6hv1q"]
 
 [ext_resource type="PackedScene" uid="uid://c5vf0jvpw54qa" path="res://scenes/ui_layer.tscn" id="1_2r5s5"]
 [ext_resource type="PackedScene" uid="uid://bj4lyjvqat0g1" path="res://scenes/laika.tscn" id="1_b62lh"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bqbf74yx1c013" path="res://scenes/summer/summer_water.tscn" id="8_rv3eq"]
 [ext_resource type="PackedScene" uid="uid://chmoyewv6v0lm" path="res://scenes/summer/summer_rock.tscn" id="10_y06n7"]
 [ext_resource type="PackedScene" uid="uid://cdowcuhg5aw7l" path="res://scenes/summer/summer_bush.tscn" id="11_okl1x"]
+[ext_resource type="AudioStream" uid="uid://xo7xd5ppmg6d" path="res://assets/music/5_SUMMER_Summers Weekends_Artur Aravidi.mp3" id="13_tqt1u"]
 
 [sub_resource type="Animation" id="Animation_vssli"]
 length = 0.001
@@ -187,3 +188,7 @@ position = Vector2(132, 487)
 
 [node name="Bush4" parent="WorldObjects" instance=ExtResource("11_okl1x")]
 position = Vector2(3154, 55)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_tqt1u")
+autoplay = true

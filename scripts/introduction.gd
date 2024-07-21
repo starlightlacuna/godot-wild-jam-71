@@ -1,50 +1,5 @@
 extends Control
 
-#var sequence := [
-	#{
-		#"music": preload("res://assets/music/1_PROLOGUE_Beyond the Mind _BoDleasons.mp3"),
-		#"text": "Once upon a time not so long ago..."
-	#},
-	#{
-		#"image": preload("res://assets/art/backgrounds/PROLOGUE1.png"),
-		#"text": "When humans only dreamt of going to the moon,",
-	#},
-	#{
-		#"image": preload("res://assets/art/backgrounds/PROLOGUE2.png"),
-		#"text": "They sent a little dog into space.",
-	#},
-	#{
-		#"image": preload("res://assets/art/backgrounds/PROLOGUE3.png"),
-	#},
-	#{
-		#"image": preload("res://assets/art/backgrounds/PROLOGUE4.png"),
-	#},
-	#{
-		#"image": preload("res://assets/art/backgrounds/PROLOGUE5.png"),
-	#},
-	#{
-		#"image": preload("res://assets/art/backgrounds/PROLOGUE6.png"),
-	#},
-	#{
-		#"image": preload("res://assets/art/backgrounds/PROLOGUE7.png"),
-	#},
-	#{
-		#"image": preload("res://assets/art/backgrounds/PROLOGUE8.png"),
-	#},
-	#{
-		#"image": preload("res://assets/art/backgrounds/PROLOGUE9.png"),
-	#},
-	#{
-		#"image": preload("res://assets/art/backgrounds/PROLOGUE10.png"),
-	#},
-	#{
-		#"image": preload("res://assets/art/backgrounds/PROLOGUE11.png"),
-	#},
-	#{
-		#"image": preload("res://assets/art/backgrounds/PROLOGUE12.png"),
-	#},
-#]
-
 var images := [
 	preload("res://assets/art/backgrounds/PROLOGUE1.png"),
 	preload("res://assets/art/backgrounds/PROLOGUE2.png"),
@@ -92,35 +47,6 @@ var text_index := -1
 func _ready() -> void:
 	animation_player.play("prologue")
 
-#func advance_scene() -> void:
-	#animation_player.play("scene_transition")
-	#index += 1
-	#play_scene()
-	#
-#func play_scene() -> void:
-	#var current_scene: Dictionary = sequence[index]
-	#
-	#if current_scene.has("background"):
-		#background.set_texture(current_scene["image"])
-	#else:
-		#background.set_texture(null)
-	#
-	#if current_scene.has("music"):
-		#music.set_stream(current_scene["music"])
-		#music.play()
-	#
-	#animation_player.play_backwards("scene_transition")
-
-func play_next_music() -> void:
-	music_index += 1
-	music.set_stream(music_streams[music_index])
-	music.play()
-
-func set_next_text() -> void:
-	text_index += 1
-	text.set_text(story_text[text_index])
-	print(story_text[text_index])
-
 func play_music(index: int) -> void:
 	music.set_stream(music_streams[index])
 	if not music.is_playing():
@@ -128,10 +54,13 @@ func play_music(index: int) -> void:
 
 func set_text(index: int) -> void:
 	text.set_text(story_text[index])
-	print(story_text[index])
 
 func set_background(index: int) -> void:
 	background.set_texture(images[index])
 
 func set_background2(index: int) -> void:
 	background2.set_texture(images[index])
+
+func _on_animation_player_animation_finished(anim_name):
+	pass
+	# Move to the next scene

@@ -1,7 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5vf0jvpw54qa"]
+[gd_scene load_steps=6 format=3 uid="uid://c5vf0jvpw54qa"]
 
 [ext_resource type="Script" path="res://scripts/inventory_bar.gd" id="1_h3xei"]
 [ext_resource type="PackedScene" uid="uid://q7uo116g1vmy" path="res://scenes/inventory_slot.tscn" id="2_yeiw7"]
+
+[sub_resource type="Animation" id="Animation_3br4w"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8vwqe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxo0l"]
+_data = {
+"RESET": SubResource("Animation_8vwqe"),
+"fade_out": SubResource("Animation_3br4w")
+}
 
 [node name="UILayer" type="CanvasLayer"]
 
@@ -62,3 +98,8 @@ layout_mode = 2
 
 [node name="InventorySlot9" parent="UI/MarginContainer/InventoryBar" instance=ExtResource("2_yeiw7")]
 layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oxo0l")
+}

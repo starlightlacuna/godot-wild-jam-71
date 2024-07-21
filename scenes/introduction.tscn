@@ -86,7 +86,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_c8co8"]
 resource_name = "prologue"
-length = 74.7
+length = 73.6
 step = 0.05
 tracks/0/type = "method"
 tracks/0/imported = false
@@ -95,7 +95,7 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 55),
+"times": PackedFloat32Array(0, 54.85),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [0],
@@ -112,7 +112,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5.5, 11.5, 17.5, 22.5, 29.9, 37.5, 42.5, 48, 55, 59.9, 63.5, 67),
+"times": PackedFloat32Array(0, 5.5, 11, 16.5, 22.6, 29.6, 37.3, 41.7, 47.7, 54.85, 59.5, 64, 68.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [0],
@@ -162,7 +162,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(11.25, 17.25, 22.25, 29.65, 37.25, 42.25, 47.75, 55, 59.65, 63.25, 66.75),
+"times": PackedFloat32Array(10.75, 16.25, 22.35, 29.35, 37.05, 41.45, 47.45, 54.85, 59.25, 63.75, 67.85),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [1],
@@ -206,7 +206,7 @@ tracks/3/path = NodePath("Background:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(5.5, 6, 11.25, 11.75, 17.25, 17.75, 22.25, 22.75, 29.65, 30.15, 37.25, 37.75, 42.25, 42.75, 47.75, 48.25, 55, 56, 59.65, 60.15, 63.25, 63.75, 66.75, 67.25),
+"times": PackedFloat32Array(5.5, 6, 10.75, 11.25, 16.25, 16.75, 22.35, 22.85, 29.35, 29.85, 36.55, 37.05, 41.45, 41.95, 47.45, 47.95, 54.85, 55.85, 59.25, 59.75, 63.75, 64.25, 67.85, 68.35),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -218,7 +218,7 @@ tracks/4/path = NodePath("Background2:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 11.25, 11.75, 17.25, 17.75, 22.25, 22.75, 29.65, 30.15, 37.25, 37.75, 42.25, 42.75, 47.75, 48.25, 52.5, 53.5, 59.65, 60.15, 63.25, 63.75, 66.75, 67.25, 71.6, 72.6),
+"times": PackedFloat32Array(0, 10.75, 11.25, 16.25, 16.75, 22.35, 22.85, 29.35, 29.85, 37.05, 37.55, 41.45, 41.95, 47.45, 47.95, 52.75, 53.75, 59.25, 59.75, 63.75, 64.25, 67.85, 68.35, 72.6, 73.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -230,10 +230,10 @@ tracks/5/path = NodePath("TextBox:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5, 5, 5.5, 6, 11.25, 11.5, 11.75, 17.25, 17.5, 17.75, 22.25, 22.5, 22.75, 29.65, 29.9, 30.15, 37.25, 37.5, 37.75, 42.25, 42.5, 42.75, 47.75, 48, 48.25, 52.5, 53.5, 55, 56, 59.65, 59.9, 60.15, 63.25, 63.5, 63.75, 66.75, 67, 67.25, 68.35, 68.6, 68.85, 71.6, 72.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 5, 5.5, 6, 10.75, 11, 11.25, 16.25, 16.5, 16.75, 22.35, 22.6, 22.85, 29.35, 29.6, 29.85, 36.55, 37.05, 37.3, 37.55, 41.45, 41.7, 41.95, 47.45, 47.7, 47.95, 52.75, 53.75, 54.85, 55.85, 59.25, 59.5, 59.75, 63.75, 64, 64.25, 67.85, 68.1, 68.35, 72.6, 73.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -242,10 +242,10 @@ tracks/6/path = NodePath("Music:volume_db")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.5, 52.5, 53.5, 55, 55.5, 71.6, 72.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 53, 54.85, 55.4, 72.6, 73.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [-80.0, 0.0, 0.0, -80.0, -80.0, 0.0, 0.0, -80.0]
+"values": [-80.0, 0.0, 0.0, -80.0, 0.0, 0.0, -80.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aji2d"]
@@ -295,7 +295,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-volume_db = -24.0001
+volume_db = -80.0
 
 [node name="TextBox" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(500, 100)
@@ -321,3 +321,5 @@ text = "After all, the first Earthling to go beyond needed to be tough to handle
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
