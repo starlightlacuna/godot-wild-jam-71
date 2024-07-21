@@ -61,6 +61,8 @@ func set_background(index: int) -> void:
 func set_background2(index: int) -> void:
 	background2.set_texture(images[index])
 
-func _on_animation_player_animation_finished(anim_name):
-	pass
-	# Move to the next scene
+func _on_animation_player_animation_finished(anim_name: String) -> void:
+	print("WHAT THE HEY")
+	if anim_name != "prologue":
+		printerr("Introduction didn't play the prologue!")
+	get_tree().change_scene_to_file("res://scenes/awakening.tscn")

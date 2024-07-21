@@ -1,21 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnk7x3cyuxmc"]
+[gd_scene load_steps=7 format=3 uid="uid://dnk7x3cyuxmc"]
 
 [ext_resource type="Script" path="res://scripts/introduction.gd" id="1_5d8lc"]
-[ext_resource type="Texture2D" uid="uid://bc2a3htbfons0" path="res://assets/art/backgrounds/PROLOGUE1.png" id="2_flg14"]
-
-[sub_resource type="Animation" id="Animation_p48ha"]
-resource_name = "play_prologue"
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
-}
 
 [sub_resource type="Animation" id="Animation_460ct"]
 length = 0.001
@@ -56,32 +41,18 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_owjs2"]
-resource_name = "image_transition"
-length = 0.5
-tracks/0/type = "value"
+[sub_resource type="Animation" id="Animation_p48ha"]
+resource_name = "play_prologue"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Background:modulate")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextBox:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_c8co8"]
@@ -162,9 +133,12 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(10.75, 16.25, 22.35, 29.35, 37.05, 41.45, 47.45, 54.85, 59.25, 63.75, 67.85),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(5.5, 10.75, 16.25, 22.35, 29.35, 37.05, 41.45, 47.45, 54.85, 59.25, 63.75, 67.85),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
+"args": [0],
+"method": &"set_background"
+}, {
 "args": [1],
 "method": &"set_background2"
 }, {
@@ -248,6 +222,34 @@ tracks/6/keys = {
 "values": [-80.0, 0.0, 0.0, -80.0, 0.0, 0.0, -80.0]
 }
 
+[sub_resource type="Animation" id="Animation_owjs2"]
+resource_name = "image_transition"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextBox:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aji2d"]
 _data = {
 "RESET": SubResource("Animation_460ct"),
@@ -286,7 +288,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_flg14")
 
 [node name="Background2" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -317,7 +318,6 @@ custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
-text = "After all, the first Earthling to go beyond needed to be tough to handle spaceflight."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

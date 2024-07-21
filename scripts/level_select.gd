@@ -2,6 +2,12 @@ extends Control
 
 func _ready():
 	var parts = PlayerInventory.get_parts()
+	#var parts = { 
+		#"Spring": true,
+		#"Summer": false,
+		#"Autumn": false,
+		#"Winter": false,
+	#}
 	var complete = true
 	for key in parts:
 		if parts[key] == false:
@@ -14,6 +20,8 @@ func _ready():
 	_get_button("SummerButton").set_disabled(parts["Summer"])
 	_get_button("AutumnButton").set_disabled(parts["Autumn"])
 	_get_button("WinterButton").set_disabled(parts["Winter"])
+	
+	_get_button("SpringButton").grab_focus.call_deferred()
 
 func _get_button(button_name: String) -> TextureButton:
 	return $MarginContainer/GridContainer.get_node(button_name)
