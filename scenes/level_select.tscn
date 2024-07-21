@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://bk5ou0688lcvh"]
+
+[ext_resource type="Script" path="res://scripts/level_select.gd" id="1_7ndav"]
+[ext_resource type="Texture2D" uid="uid://d2aejqhl8m7is" path="res://assets/art/backgrounds/BG_Spring1.png" id="2_p3ul2"]
+[ext_resource type="Texture2D" uid="uid://bji5khhd6nb0x" path="res://assets/art/backgrounds/BG_Summer1.png" id="3_akm2v"]
+[ext_resource type="Texture2D" uid="uid://cqchvke76rbu1" path="res://assets/art/backgrounds/BG_Spring1_Complete.png" id="3_q8mfq"]
+[ext_resource type="Texture2D" uid="uid://t14jmm4w3a3w" path="res://assets/art/backgrounds/BG_Fall1.png" id="4_3cw0r"]
+[ext_resource type="Texture2D" uid="uid://ktvvwss3eu5l" path="res://assets/art/backgrounds/BG_Summer1_Complete.png" id="5_8rwvi"]
+[ext_resource type="Texture2D" uid="uid://dnn7fugtkfd68" path="res://assets/art/backgrounds/BG_Winter1.png" id="5_f23si"]
+[ext_resource type="Texture2D" uid="uid://bc43q78dekk2j" path="res://assets/art/backgrounds/BG_Fall1_Complete.png" id="7_qrpfi"]
+[ext_resource type="Texture2D" uid="uid://dm62a6s4pclj7" path="res://assets/art/backgrounds/BG_Winter1_Complete.png" id="9_d4rrj"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ndav")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="SpringButton" type="TextureButton" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(610, 330)
+layout_mode = 2
+texture_normal = ExtResource("2_p3ul2")
+texture_disabled = ExtResource("3_q8mfq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SummerButton" type="TextureButton" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(610, 330)
+layout_mode = 2
+texture_normal = ExtResource("3_akm2v")
+texture_disabled = ExtResource("5_8rwvi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AutumnButton" type="TextureButton" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(610, 330)
+layout_mode = 2
+texture_normal = ExtResource("4_3cw0r")
+texture_disabled = ExtResource("7_qrpfi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="WinterButton" type="TextureButton" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(610, 330)
+layout_mode = 2
+texture_normal = ExtResource("5_f23si")
+texture_disabled = ExtResource("9_d4rrj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="MarginContainer/GridContainer/SpringButton" to="." method="_on_spring_button_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/SummerButton" to="." method="_on_summer_button_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/AutumnButton" to="." method="_on_autumn_button_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/WinterButton" to="." method="_on_winter_button_pressed"]

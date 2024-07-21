@@ -21,5 +21,5 @@ func _on_summer_introduction_ended() -> void:
 	ended_signal.connect(_on_summer_complete_ended)
 
 func _on_summer_complete_ended() -> void:
-	print("Level Done!")
-	# TODO: Transition to Level Select
+	PlayerInventory.add_part("Summer")
+	get_tree().change_scene_to_packed(preload("res://scenes/level_select.tscn"))

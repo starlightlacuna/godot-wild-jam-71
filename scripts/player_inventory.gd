@@ -6,6 +6,13 @@ signal inventory_updated()
 ## An array of item nodes.
 var items := []
 
+var parts := {
+	"Spring": false,
+	"Summer": false,
+	"Autumn": false,
+	"Winter": false,
+}
+
 func add_item(item_node: Node) -> void:
 	assert(item_node.has_node("ItemComponent"), "Item node is missing an ItemComponent!")
 	if items.size() < 10:
@@ -31,3 +38,9 @@ func remove_item_at(index: int) -> Node:
 func clear() -> void:
 	items.clear()
 	inventory_updated.emit()
+
+func get_parts() -> Dictionary:
+	return parts
+	
+func add_part(key: String) -> void:
+	parts[key] = true
