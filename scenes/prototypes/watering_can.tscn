@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://bc85tc1241p10"]
 
 [ext_resource type="Script" path="res://scripts/watering_can.gd" id="1_dflf2"]
-[ext_resource type="Texture2D" uid="uid://b7vx0c7b80lw4" path="res://assets/Watering Can.png" id="2_cfmov"]
-[ext_resource type="Texture2D" uid="uid://c87xac60fk24w" path="res://assets/Water Drop.png" id="3_dragd"]
+[ext_resource type="Texture2D" uid="uid://b7vx0c7b80lw4" path="res://assets/prototype/Watering Can.png" id="2_cfmov"]
+[ext_resource type="Texture2D" uid="uid://c87xac60fk24w" path="res://assets/prototype/Water Drop.png" id="3_dragd"]
 
 [sub_resource type="Curve" id="Curve_qkbey"]
 _data = [Vector2(0, 1), 0.0, -1.52875, 0, 0, Vector2(1, 0), -0.385149, 0.0, 0, 0]

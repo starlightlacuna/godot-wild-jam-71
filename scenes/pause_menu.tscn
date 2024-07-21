@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdbms817t3jm8"]
+[gd_scene load_steps=5 format=3 uid="uid://bdbms817t3jm8"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_8nm5j"]
 [ext_resource type="FontFile" uid="uid://cskxkyeot0b0l" path="res://assets/fonts/Luckiest Guy/LuckiestGuy-Regular.ttf" id="1_exrtq"]
+[ext_resource type="PackedScene" uid="uid://d366vc17ipsry" path="res://scenes/main_menu.tscn" id="2_ps5fm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80w3i"]
 bg_color = Color(0.101961, 0.101961, 0.101961, 0.960784)
@@ -21,6 +22,7 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 script = ExtResource("1_8nm5j")
+main_menu_scene = ExtResource("2_ps5fm")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2

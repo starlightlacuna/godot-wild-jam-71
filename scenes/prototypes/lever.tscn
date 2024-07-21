@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqx0xdl86u1s5"]
 
 [ext_resource type="Script" path="res://scripts/interactables/lever.gd" id="1_r2if6"]
-[ext_resource type="Texture2D" uid="uid://cpmak2dduagvu" path="res://assets/Lever.png" id="1_wg2i0"]
+[ext_resource type="Texture2D" uid="uid://cpmak2dduagvu" path="res://assets/prototype/Lever.png" id="1_wg2i0"]
 [ext_resource type="Script" path="res://scripts/interactables/lever_interactable_component.gd" id="3_tcnbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjkwr"]

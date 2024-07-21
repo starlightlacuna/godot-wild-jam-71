@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvq4tjbluna8q"
-path="res://.godot/imported/Seedling.png-91dfb25b39a0a0ed8eab900940a37177.ctex"
+path="res://.godot/imported/Seedling.png-11388674c8532132d9639565fddf081a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Seedling.png"
-dest_files=["res://.godot/imported/Seedling.png-91dfb25b39a0a0ed8eab900940a37177.ctex"]
+source_file="res://assets/prototype/Seedling.png"
+dest_files=["res://.godot/imported/Seedling.png-11388674c8532132d9639565fddf081a.ctex"]
 
 [params]
 

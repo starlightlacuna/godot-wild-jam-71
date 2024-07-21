@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4ukvud7vkb2u"
-path="res://.godot/imported/Seashell.png-7c245c39fc66810b332f4c4214941275.ctex"
+path="res://.godot/imported/Seashell.png-1ad006390b11d09f4629d01c5bf8a7ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Seashell.png"
-dest_files=["res://.godot/imported/Seashell.png-7c245c39fc66810b332f4c4214941275.ctex"]
+source_file="res://assets/prototype/Seashell.png"
+dest_files=["res://.godot/imported/Seashell.png-1ad006390b11d09f4629d01c5bf8a7ac.ctex"]
 
 [params]
 

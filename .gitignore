@@ -1,6 +1,9 @@
 # Godot 4+ specific ignores
 .godot/
 
+build/
+
 # Copyrighted art
 assets/art/
 assets/music/
+

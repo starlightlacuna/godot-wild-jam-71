@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i1sj7xchtssd"
-path="res://.godot/imported/Trash Can.png-056fc66a12b9e8e2c38aab3050a50899.ctex"
+uid="uid://cpmak2dduagvu"
+path="res://.godot/imported/Lever.png-3cdf61f42e9a9a2734b766cd70a67ead.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Trash Can.png"
-dest_files=["res://.godot/imported/Trash Can.png-056fc66a12b9e8e2c38aab3050a50899.ctex"]
+source_file="res://assets/prototype/Lever.png"
+dest_files=["res://.godot/imported/Lever.png-3cdf61f42e9a9a2734b766cd70a67ead.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6d3nfm4g6jfs"
-path="res://.godot/imported/Laika.png-ca554370f4eef992a5f7c046e5e8ec5c.ctex"
+uid="uid://c5g4vwbq3183s"
+path="res://.godot/imported/Crate.png-e28261a5f05fa18b5647d3e62f24b62c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Laika.png"
-dest_files=["res://.godot/imported/Laika.png-ca554370f4eef992a5f7c046e5e8ec5c.ctex"]
+source_file="res://assets/prototype/Crate.png"
+dest_files=["res://.godot/imported/Crate.png-e28261a5f05fa18b5647d3e62f24b62c.ctex"]
 
 [params]
 

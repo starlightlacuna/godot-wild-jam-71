@@ -54,7 +54,7 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_pgjn0")
 theme_override_font_sizes/font_size = 40
-text = "Options"
+text = "Controls"
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
@@ -133,8 +133,3 @@ size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_pgjn0")
 theme_override_font_sizes/font_size = 40
 text = "Back"
-
-[connection signal="pressed" from="VBoxContainer/ControlsButton" to="." method="_on_controls_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="ControlsWindow/PanelContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

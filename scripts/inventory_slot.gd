@@ -14,7 +14,7 @@ func has_item() -> bool:
 func remove_item():
 	set_item(-1)
 
-func set_item(p_item_id: int):
+func set_item(p_item_id: int) :
 	item_id = p_item_id
 	update_item_texture()
 

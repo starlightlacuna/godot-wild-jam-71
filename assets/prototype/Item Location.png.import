@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c87xac60fk24w"
-path="res://.godot/imported/Water Drop.png-560df010e2337ce27ff19d7f425e1bf3.ctex"
+uid="uid://c1a6drnmgd4bs"
+path="res://.godot/imported/Item Location.png-55a7280181662686c4ef1d83b24c7096.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Water Drop.png"
-dest_files=["res://.godot/imported/Water Drop.png-560df010e2337ce27ff19d7f425e1bf3.ctex"]
+source_file="res://assets/prototype/Item Location.png"
+dest_files=["res://.godot/imported/Item Location.png-55a7280181662686c4ef1d83b24c7096.ctex"]
 
 [params]
 

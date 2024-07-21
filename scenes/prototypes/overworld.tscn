@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cipef8bbjvqce" path="res://scenes/prototypes/item_location.tscn" id="6_jfv4h"]
 [ext_resource type="PackedScene" uid="uid://7dye65i2xd2d" path="res://scenes/spring/spring_tree.tscn" id="7_v2yjh"]
 [ext_resource type="PackedScene" uid="uid://doonoiw2vp4f3" path="res://scenes/item_pickups.tscn" id="8_io7ts"]
-[ext_resource type="PackedScene" uid="uid://da1h2gwu1yrna" path="res://scenes/crate.tscn" id="9_knkmj"]
+[ext_resource type="PackedScene" uid="uid://da1h2gwu1yrna" path="res://scenes/prototypes/crate.tscn" id="9_knkmj"]
 [ext_resource type="PackedScene" uid="uid://tmae7k5ts7y1" path="res://scenes/summer/summer_seashell.tscn" id="10_ra66m"]
 
 [node name="Overworld" type="Node"]
