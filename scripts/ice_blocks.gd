@@ -66,9 +66,10 @@ func _on_river_timer_timeout():
 	tween.tween_property(
 		ice_block,
 		"position",
-		target_position, 
+		target_position,
 		(target_position - marker_position).length() / river_ice_block_speed
 	)
 	tween.tween_callback(func():
-		ice_block.queue_free()
+		if ice_block:
+			ice_block.queue_free()
 	)

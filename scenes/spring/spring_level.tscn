@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bk05u7rlgs1u5"]
+[gd_scene load_steps=19 format=3 uid="uid://bk05u7rlgs1u5"]
 
 [ext_resource type="PackedScene" uid="uid://c5vf0jvpw54qa" path="res://scenes/ui_layer.tscn" id="1_aba1y"]
 [ext_resource type="Script" path="res://scripts/spring_level.gd" id="1_aklh0"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://7dye65i2xd2d" path="res://scenes/spring/spring_tree.tscn" id="13_3hp1a"]
 [ext_resource type="PackedScene" uid="uid://da04xued578q" path="res://scenes/spring/spring_plant_plot.tscn" id="13_fx63f"]
 [ext_resource type="PackedScene" uid="uid://dj4gqj04nu3tk" path="res://scenes/spring/spring_bush.tscn" id="14_4s57j"]
+[ext_resource type="AudioStream" uid="uid://csbxujfg2iru" path="res://assets/music/4_SPRING_Awakening-Spring_Ketsa.mp3" id="18_qalcl"]
 
 [node name="SpringLevel" type="Node"]
 script = ExtResource("1_aklh0")
@@ -24,7 +25,6 @@ seed_scene = ExtResource("2_ro6bh")
 crushed_plant_scene = ExtResource("8_8jike")
 
 [node name="UILayer" parent="." instance=ExtResource("1_aba1y")]
-visible = false
 
 [node name="FollowCamera" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_4fdij")]
 limit_right = 3418
@@ -475,8 +475,6 @@ position = Vector2(284, 956)
 rotation = -0.0553941
 scale = Vector2(0.491937, 0.491937)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="WorldObjects/StaticObjects"]
-
 [node name="PlantPlots" type="Node2D" parent="WorldObjects"]
 
 [node name="PlantPlot" parent="WorldObjects/PlantPlots" instance=ExtResource("13_fx63f")]
@@ -520,5 +518,9 @@ collision_mask = 0
 [node name="GarbageCan" parent="WorldObjects" instance=ExtResource("10_b0kr1")]
 position = Vector2(1487, 276)
 scale = Vector2(0.4, 0.4)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_qalcl")
+autoplay = true
 
 [editable path="WorldBounds"]

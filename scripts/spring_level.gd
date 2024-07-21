@@ -16,8 +16,12 @@ func _ready() -> void:
 	(seed_pile.get_node("InteractableComponent") as InteractableComponent).interacted.connect(_on_seed_pile_interacted)
 	(garbage_can.get_node("InteractableComponent") as InteractableComponent).interacted.connect(_on_garbage_can_interacted)
 	
+	PlayerInventory.clear()
+	PlayerInventory.inventory_updated.connect(_check_win_condition)
+	Dialogic.start("Spring Introduction")
+	Dialogic.timeline_ended.connect(_on_spring_introduction_ended)
+	
 func _on_plant_plot_interacted(node: Node) -> void:
-	print("Mmm... dirt.")
 	var plant_plot = node as PlantPlot
 	if plant_plot.is_crushed():
 		plant_plot.remove_crushed_plant()
@@ -29,19 +33,29 @@ func _on_plant_plot_interacted(node: Node) -> void:
 			return
 		PlayerInventory.remove_item_at(seed_index)
 		plant_plot.plant_seed()
-		__check_objective()
+		_check_win_condition()
 		return
 
-func _on_seed_pile_interacted(node: Node) -> void:
-	print("The evil seed of what you've done germinates within you.")
+func _on_seed_pile_interacted(_node: Node) -> void:
 	PlayerInventory.add_item(seed_scene.instantiate())
 
-func _on_garbage_can_interacted(node: Node) -> void:
-	print("I'm the Trash Man!")
+func _on_garbage_can_interacted(_node: Node) -> void:
 	PlayerInventory.clear()
 
-func __check_objective() -> void:
+func _check_win_condition() -> void:
 	for node in plant_plots:
 		if not (node as PlantPlot).is_seeded():
 			return
-	print("Level complete!")
+	$UILayer/AnimationPlayer.play("fade_out")
+	Dialogic.start("Spring Complete")
+
+func _on_spring_introduction_ended() -> void:
+	var ended_signal = Dialogic.timeline_ended
+	if ended_signal.is_connected(_on_spring_introduction_ended):
+		ended_signal.disconnect(_on_spring_introduction_ended)
+	ended_signal.connect(_on_spring_complete_ended)
+
+func _on_spring_complete_ended() -> void:
+	PlayerInventory.add_part("Spring")
+	get_tree().change_scene_to_packed(preload("res://scenes/level_select.tscn"))
+

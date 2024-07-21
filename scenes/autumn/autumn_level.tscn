@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d33axe0hewbry"]
+[gd_scene load_steps=15 format=3 uid="uid://d33axe0hewbry"]
 
 [ext_resource type="Script" path="res://scripts/levels/autumn_level.gd" id="1_hsa64"]
 [ext_resource type="PackedScene" uid="uid://c5vf0jvpw54qa" path="res://scenes/ui_layer.tscn" id="1_k17lt"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dpvpq6ogmcufh" path="res://scenes/autumn/autumn_mushroom.tscn" id="9_8u2f8"]
 [ext_resource type="PackedScene" uid="uid://1ljqet1bdubp" path="res://scenes/autumn/autumn_grass.tscn" id="10_aqns1"]
 [ext_resource type="PackedScene" uid="uid://bctd13llogu6t" path="res://scenes/autumn/autumn_berry.tscn" id="10_njpgf"]
+[ext_resource type="AudioStream" uid="uid://ln205u3qpwqq" path="res://assets/music/6_FALL_Starlight Night_Denys Kyshchuk.mp3" id="14_fhnw7"]
 
 [node name="AutumnLevel" type="Node"]
 script = ExtResource("1_hsa64")
@@ -447,5 +448,9 @@ position = Vector2(1744, 1773)
 [node name="AutumnBerryBush8" parent="WorldObjects/Berries" instance=ExtResource("9_00eyu")]
 position = Vector2(658, 1686)
 scale = Vector2(1.77922, 1.77922)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_fhnw7")
+autoplay = true
 
 [editable path="WorldBounds"]

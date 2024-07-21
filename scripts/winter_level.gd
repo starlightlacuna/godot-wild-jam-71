@@ -6,6 +6,10 @@ extends Node
 func _ready() -> void:
 	(igloo.get_node("InteractableComponent") as InteractableComponent).interacted.connect(_on_igloo_interacted)
 	
+	PlayerInventory.clear()
+	Dialogic.start("Winter Introduction")
+	Dialogic.timeline_ended.connect(_on_winter_introduction_ended)
+	
 func _on_igloo_interacted(_node: Node) -> void:
 	var items: Array = (PlayerInventory as Inventory).get_items()
 	for index in items.size():
@@ -17,4 +21,15 @@ func _on_igloo_interacted(_node: Node) -> void:
 		ice_blocks.spawn_ice_block()
 
 func _on_igloo_completed():
-	print("Level complete!")
+	$UILayer/AnimationPlayer.play("fade_out")
+	Dialogic.start("Winter Complete")
+	
+func _on_winter_introduction_ended() -> void:
+	var ended_signal = Dialogic.timeline_ended
+	if ended_signal.is_connected(_on_winter_introduction_ended):
+		ended_signal.disconnect(_on_winter_introduction_ended)
+	ended_signal.connect(_on_winter_complete_ended)
+
+func _on_winter_complete_ended() -> void:
+	PlayerInventory.add_part("Winter")
+	get_tree().change_scene_to_packed(preload("res://scenes/level_select.tscn"))

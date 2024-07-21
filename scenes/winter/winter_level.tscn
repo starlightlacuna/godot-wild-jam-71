@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bamqynbi6ep7i"]
+[gd_scene load_steps=17 format=3 uid="uid://bamqynbi6ep7i"]
 
 [ext_resource type="Script" path="res://scripts/winter_level.gd" id="1_pf25o"]
 [ext_resource type="PackedScene" uid="uid://c5vf0jvpw54qa" path="res://scenes/ui_layer.tscn" id="1_rcrab"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d0rbdgt7mc6aa" path="res://scenes/winter/winter_rocks.tscn" id="10_wyn4n"]
 [ext_resource type="PackedScene" uid="uid://dmscuwxl0d314" path="res://scenes/winter/winter_bush.tscn" id="11_5nqbq"]
 [ext_resource type="PackedScene" uid="uid://oicjq2bcnim8" path="res://scenes/winter/ice_block_spawner.tscn" id="11_5sifd"]
+[ext_resource type="AudioStream" uid="uid://ckiap5uwdoxdd" path="res://assets/music/7_WINTER_Rise of Hope_BoDleasons.mp3" id="16_5wwm6"]
 
 [node name="WinterLevel" type="Node"]
 script = ExtResource("1_pf25o")
@@ -311,6 +312,10 @@ position = Vector2(-90, 1825)
 
 [node name="Marker2D3" type="Marker2D" parent="WorldObjects/IceBlocks/RiverMarkers"]
 position = Vector2(-90, 1905)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_5wwm6")
+autoplay = true
 
 [connection signal="completed" from="WorldObjects/Igloo" to="." method="_on_igloo_completed"]
 

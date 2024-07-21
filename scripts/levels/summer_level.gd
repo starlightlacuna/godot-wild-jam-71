@@ -1,11 +1,12 @@
 extends Node
 
 func _ready():
-	PlayerInventory.inventory_updated.connect(check_win_condition)
+	PlayerInventory.clear()
+	PlayerInventory.inventory_updated.connect(_check_win_condition)
 	Dialogic.start("Summer Introduction")
 	Dialogic.timeline_ended.connect(_on_summer_introduction_ended)
 	
-func check_win_condition():
+func _check_win_condition():
 	var count = 0
 	for item in PlayerInventory.get_items():
 		if ((item as Node).get_node("ItemComponent") as ItemComponent).get_item_id() == 1:
